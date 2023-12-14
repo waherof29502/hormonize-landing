@@ -1,12 +1,20 @@
 export const metadata = {
-  title: '文域設計 ｜首頁',
-  description: '深耕"人文藝術文化場域"以設計閱讀世界。'
+  title: '寬堂設計 ｜首頁',
+  description: '123'
 };
+import Hero from '@/src/components/layouts/home/hero';
+import About from '@/src/components/layouts/home/about';
+import Feature from '@/src/components/layouts/home/feature';
+import Service from '@/src/components/layouts/home/service';
+
 
 export default function Home() {
   return (
     <>
-    <h1 className="text-primary bg-hero bg-cover min-h-screen">123</h1>
+      <Hero/>
+      {/* <About/>
+      <Feature/>
+      <Service/> */}
     </>
   );
 }

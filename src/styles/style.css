@@ -9,9 +9,9 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
+    --primary: 0 0% 0%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
+    --secondary: 90 39% 47%;
     --secondary-foreground: 240 5.9% 10%;
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
@@ -53,9 +53,10 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground ;
   }
 }
+
 
 @layer components {
   .zoom-image [data-rmiz-modal-overlay='visible'] {
@@ -67,8 +68,14 @@
   }
 }
 
-@media (max-width: 640px) {
-  .container {
-    @apply px-4;
+.nav-title{
+  @apply text-primary before:bg-subtract text-[24px]
+}
+@layer utilities {
+  .clip-path-polygon {
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  .clip-small-polygon {
+    clip-path: polygon(25% 0.5%, 100% 0%, 100% 100%, 0.2% 100%);
   }
 }
