@@ -1,6 +1,4 @@
-import React from 'react'
+import React from 'react';
 export default function ProjectPage() {
-  return (
-    <div>123</div>
-  )
+  return <div>123</div>;
 }

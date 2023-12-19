@@ -1,28 +1,32 @@
-import React from 'react'
-
+import React from 'react';
 export default function Service() {
   return (
-     <section className="relative">
-         <div className="flex w-full min-h-screen">
+    <section className="relative">
+      <div className="flex w-full min-h-screen">
         <div className="flex flex-col">
-      <div className="w-full h-3/4 flex justify-center items-center">
-        <div className="w-1/4 h-full flex justify-center items-center bg-[#D1D1D1] border-r-[2px] border-primary">
-            <span>ABOUT</span>
-            <span>US</span>
+          <div className="w-full h-3/4 flex justify-center items-center">
+            <div className="w-1/4 h-full flex flex-col justify-center items-center bg-[#D1D1D1] border-r-[2px] border-primary">
+              <span className='text-[30px] 3md:text-[40px] xl:text-[62px] font-brandonLight'>SERVICE</span>
+              <span className='text-[30px] 3md:text-[40px] xl:text-[62px] font-brandonBld'>VALUE</span>
+            </div>
+            <div className="w-1/2 h-full flex flex-col bg-white justify-center px-[90px] gap-y-[37px]">
+              <h2 className="text-primary text-[30px] tracking-[1.8px] leading-[48px] font-medium">
+                朱慶煌<span className="text-primary text-[24px] pl-2">主持設計師</span>
+              </h2>
+              <span className="text-[#3E3E3E] text-[20px] leading-[40px]">
+                我們認為室內設計的重點，在於思考「生活」或「工作」的意義，透過如此的自我探究，使我們回到設計的原點，因為，生活空間或工作空間，必須反應出人類的最根本慾望。藉由設計手法，呈現每一個居住者或使用者的夢想，而不是無意義的樣式的複製而已。<br/>
+                對於我們的客戶來說，居住或工作空間，必須是健康、舒適且充滿活力的，散發居住者個性的，同時，必須達到合理預算的。所以，針對不同的需求，我們著重在創造出一個客製化的居住或工作環境，包括了適切且宜人的規劃，展現品味的風格設計，健康的材料選擇，環保與節能兼顧的品項採用，新穎與便利的設備推薦，以及，符合市場行情的建構費用。<br/>
+                如此的專業執行，才是唯一重要的事，亦是消費者認同的服務價值。
+              </span>
+            </div>
+            <div className="w-1/4 h-full bg-service bg-cover bg-no-repeat"></div>
+          </div>
+          <div className="w-full h-1/4 relative -mt-[0.4px] bg-[#D1D1D1]">
+            <div className="absolute inset-0 bg-primary clip-path-polygon " />
+            <div className="absolute inset-0 clip-small-polygon bg-[#929292] border-solid border-t-[2px] border-primary" />
+          </div>
         </div>
-        <div className="w-1/2 h-full flex flex-col bg-white justify-center px-[100px] gap-y-[37px]">
-            <h2 className="text-primary text-[30px] tracking-[1.8px] leading-[48px]">朱慶煌<span className="text-primary text-[24px] pl-2">主持設計師</span></h2>
-            <span className="text-[#3E3E3E] text-[20px] leading-[40px]">我們認為的獨特性：室內空間必須是一個好的生活容器，是自我的投射。而對於一個住宅內，所有空間相互之間的關係，應如同建築師路易斯‧康（Louis Kahn）所闡述的：住宅平面是數個房間所形成的社區 (A plan is a society of rooms)。 在規劃時，我們不採用任何置入性的風格；極力地將室內空間打開，提高通透度；引入適合的自然光，並營造均質的光線；強調簡單的線條，以降低視覺上的雜亂度；運用表面材料質感及紋路的變化，提高視覺的豐富感。如此，物件與空間的形體能更加顯著，並呈現安靜、簡單及低承載的空間組合，使各個生活機能之間，能更緊密的連結。 針對不同的室內設計，必須一開始就選擇與其風格相互搭配的傢俱及燈飾，同時須考慮其置放的位置，使他們如同藝術品般的被陳列出來，而成為空間的一部份。最後，必須有適度的裝飾，以提高住宅的親切感。</span>
-            <button className="text-primary ml-auto bg-blue-500 w-[120px] mr-4">123</button>
-        </div>
-        <div className="w-1/4 h-full bg-service bg-cover bg-no-repeat"></div>
-      </div>
-      <div className="w-full h-1/4 relative -mt-[0.4px] bg-[#D1D1D1]">
-        <div className="absolute inset-0 bg-primary clip-path-polygon " />
-        <div className="absolute inset-0 clip-small-polygon bg-[#929292] border-solid border-t-[2px] border-primary" />
-      </div>
-      </div>
       </div>
     </section>
-  )
+  );
 }

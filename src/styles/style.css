@@ -53,10 +53,9 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground ;
+    @apply bg-background text-foreground;
   }
 }
-
 
 @layer components {
   .zoom-image [data-rmiz-modal-overlay='visible'] {
@@ -68,8 +67,8 @@
   }
 }
 
-.nav-title{
-  @apply text-primary before:bg-subtract text-[24px]
+.nav-title {
+  @apply text-primary before:bg-subtract text-[24px];
 }
 @layer utilities {
   .clip-path-polygon {

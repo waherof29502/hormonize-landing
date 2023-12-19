@@ -64,24 +64,24 @@ module.exports = {
       },
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],
-        brandonThin:['var(--font-brandon-thin)','sans-serif'],
-        brandonLight:['var(--font-brandon-light)','sans-serif'],
-        brandonReg: ['var(--font-brandon-reg)','sans-serif'],
-        brandonMed: ['var(--font-brandon-med)','sans-serif'],
-        brandonBld: ['var(--font-brandon-bld)','sans-serif'],
+        brandonThin: ['var(--font-brandon-thin)', 'sans-serif'],
+        brandonLight: ['var(--font-brandon-light)', 'sans-serif'],
+        brandonReg: ['var(--font-brandon-reg)', 'sans-serif'],
+        brandonMed: ['var(--font-brandon-med)', 'sans-serif'],
+        brandonBld: ['var(--font-brandon-bld)', 'sans-serif']
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out'
       },
       backgroundImage: {
-        hero: 'url(/image/home/bg-hero.png)',
-        about:'url(/image/home/bg-about.png)',
-        feature:'url(/image/home/bg-feature.png)',
-        service:'url(/image/home/bg-service.png)',
-        footer:'url(/image/home/bg-contact.png)',
-        mobileFooter:'url(/image/home/mobile/bg-contact.png)',
-        subtract:'url(/svg/subtract.svg)'
+        hero: 'url(/images/home/bg-hero.png)',
+        about: 'url(/images/home/bg-about.png)',
+        feature: 'url(/images/home/bg-feature.png)',
+        service: 'url(/images/home/bg-service.png)',
+        footer: 'url(/images/home/bg-contact.png)',
+        mobileFooter: 'url(/images/home/mobile/bg-contact.png)',
+        subtract: 'url(/svg/subtract.svg)'
       },
       screens: {
         ss: '320px',

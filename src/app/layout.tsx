@@ -30,9 +30,6 @@ const brandonBld = localFonts({
   variable: '--font-brandon-bld'
 });
 
-
-
-
 const sans = Noto_Sans_TC({
   subsets: ['latin'],
   variable: '--font-sans',

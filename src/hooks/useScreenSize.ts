@@ -7,14 +7,14 @@ interface ScreenSize {
 export default function useScreenSize() {
   const [screenSize, setScreenSize] = useState<ScreenSize>({
     width: typeof window !== 'undefined' ? window.innerWidth : 0,
-    height: typeof window !== 'undefined' ? window.innerHeight : 0,
+    height: typeof window !== 'undefined' ? window.innerHeight : 0
   });
 
   useEffect(() => {
     const handleResize = () => {
       setScreenSize({
         width: window.innerWidth,
-        height: window.innerHeight,
+        height: window.innerHeight
       });
     };
 
