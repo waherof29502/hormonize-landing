@@ -13,7 +13,7 @@ export default function MobileNav({ header }: { header: boolean }) {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Menu className={`text-[24px] ${pathname === '/' && !header ? 'text-white' : 'text-primary'}`} />
+        <Menu className={`text-[38px] ${pathname === '/' && !header ? 'text-white' : 'text-primary'}`} />
       </SheetTrigger>
 
       <SheetContent>

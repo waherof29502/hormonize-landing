@@ -44,7 +44,7 @@ export default function Footer() {
       </div>
       <div className="md:w-[78%] w-[85%] 3xl:w-[85%] min-h-max mx-auto pt-[47px] pb-8 3md:pb-[87px]">
         {/* desktop footer */}
-        <div className="hidden md:flex items-center justify-between py-10">
+        <div className="hidden 3md:flex items-center justify-between py-10">
           {/* Logo */}
           <div className="flex flex-col text-primary gap-y-3">
             <span className="text-[32px] tracking-[1.28px] leading-[30px] font-brandonMed">HARMONIZE DESIGN</span>
@@ -60,7 +60,7 @@ export default function Footer() {
           </div>
         </div>
         {/* Bottom area */}
-        <div className="hidden md:flex justify-between items-center pt-2">
+        <div className="hidden 3md:flex justify-between items-center pt-2">
           {/* Social as */}
           <div className="flex">
             <Link
@@ -68,14 +68,14 @@ export default function Footer() {
               className="flex justify-center items-center text-primary hover:text-[#515151]"
               aria-label="IG"
             >
-              <IgCircleIcon className="text-[24px]" />
+              <IgCircleIcon className="text-[40px]" />
             </Link>
             <Link
               href="https://www.facebook.com/savvyhd"
               className="flex justify-center items-center ml-2 text-primary hover:text-[#515151]"
               aria-label="Fb"
             >
-              <FbCircleIcon className="text-[24px]" />
+              <FbCircleIcon className="text-[40px]" />
             </Link>
           </div>
           {/* Copyrights note */}
@@ -87,7 +87,7 @@ export default function Footer() {
           </div>
         </div>
         {/* mobile footer */}
-        <div className="md:hidden flex flex-col justify-between py-4 gap-y-20">
+        <div className="3md:hidden flex flex-col justify-between py-4 gap-y-20">
           {/* Logo */}
           <div className="flex flex-col text-primary gap-y-2">
             <span className="text-[24px] tracking-[1.2px] leading-[30px] font-brandonMed">HARMONIZE DESIGN</span>
@@ -98,14 +98,14 @@ export default function Footer() {
                 className="flex justify-center items-center text-primary hover:text-[#515151]"
                 aria-label="IG"
               >
-                <IgCircleIcon className="text-[24px]" />
+                <IgCircleIcon className="text-[40px]" />
               </Link>
               <Link
                 href="https://www.facebook.com/savvyhd"
                 className="flex justify-center items-center ml-2 text-primary hover:text-[#515151]"
                 aria-label="Fb"
               >
-                <FbCircleIcon className="text-[24px]" />
+                <FbCircleIcon className="text-[40px]" />
               </Link>
             </div>
           </div>

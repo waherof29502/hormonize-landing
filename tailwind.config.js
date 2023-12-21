@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: '2rem',
+      padding: '1.5rem',
       screens: {
         wider: '2560px'
       }
@@ -77,8 +77,11 @@ module.exports = {
       backgroundImage: {
         hero: 'url(/images/home/bg-hero.png)',
         about: 'url(/images/home/bg-about.png)',
+        mobileAbout:'url(/images/home/mobile/bg-about.png)',
         feature: 'url(/images/home/bg-feature.png)',
+        mobileFeature:'url(/images/home/mobile/bg-feature.png)',
         service: 'url(/images/home/bg-service.png)',
+        mobileService: 'url(/images/home/mobile/bg-service.png)',
         footer: 'url(/images/home/bg-contact.png)',
         mobileFooter: 'url(/images/home/mobile/bg-contact.png)',
         subtract: 'url(/svg/subtract.svg)'

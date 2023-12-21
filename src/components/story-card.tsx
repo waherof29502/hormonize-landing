@@ -20,7 +20,7 @@ const StoryCard = ({ imgSrc, title,link }: StoryCardProps) => {
               alt={title}
               width={445}
               height={490}
-              className='aspect-[1/1]'
+              className='aspect-[14/16] 3md:aspect-[1/1]'
             />
             </div>
             <div className="absolute inset-0 bg-white/20 opacity-0 hover:opacity-100 ease-in duration-200 group">
