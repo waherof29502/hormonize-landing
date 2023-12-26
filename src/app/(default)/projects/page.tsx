@@ -1,4 +1,9 @@
 import React from 'react';
+import Hero from '@/src/components/layouts/projects/hero';
+import Projects from '@/src/components/layouts/projects/projects';
 export default function ProjectPage() {
-  return <div>123</div>;
+  return <div>
+    <Hero/>
+    <Projects/>
+  </div>;
 }

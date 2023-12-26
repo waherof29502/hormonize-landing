@@ -84,7 +84,9 @@ module.exports = {
         mobileService: 'url(/images/home/mobile/bg-service.png)',
         footer: 'url(/images/home/bg-contact.png)',
         mobileFooter: 'url(/images/home/mobile/bg-contact.png)',
-        subtract: 'url(/svg/subtract.svg)'
+        subtract: 'url(/svg/subtract.svg)',
+        projectHero:'url(/images/project/bg-hero.png)',
+        mobileProjectHero:'url(/images/project/mobile/bg-hero.png)'
       },
       screens: {
         ss: '320px',
