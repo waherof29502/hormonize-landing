@@ -40,13 +40,13 @@ export default function Hero() {
   {/* desktop layout */}
         <div className="hidden w-full lg:flex absolute inset-0 h-[40vh] xl:h-[35%] mt-auto z-20">
         <div className="w-[75%] flex absolute inset-0 ml-auto mt-auto h-full">
-        <h2 className="lg:text-[32px] xl:text-[48px] 3xl:text-[54px] font-sans font-medium leading-normal">擁有自己的天堂</h2>
+        <h2 className="lg:text-[2rem] xl:text-[3rem] 3xl:text-[54px] font-sans font-medium leading-normal">擁有自己的天堂</h2>
         </div>          
       <div className="w-full flex absolute inset-0 mt-auto h-[72%]">
           <div className="w-1/4 h-full border-solid border-r-[2px] border-white">
           </div>
           <div className="w-1/2 h-full flex flex-col px-[95px] gap-y-[37px]">
-            <h2 className="font-sans text-white text-[16px] font-normal leading-[40px]">
+            <h2 className="font-sans text-white text-[1rem] font-normal leading-[40px]">
             以居家住宅為主要範圍，從室內設計到工程施工，我們提供一個全方位統包的工作內容。內容包含：空間的規劃與設計、新居裝修、舊屋翻新、客廳設計、廚房及餐廳設計...</h2>
             <Button containerStyles='font-brandonMed ml-auto border-[1px] border-white px-5 py-2 hover:text-primary hover:bg-white' path="/projects">see all projects</Button>
           </div>
@@ -55,8 +55,8 @@ export default function Hero() {
         </div>
   {/* mobile layout */}
       <div className="lg:hidden w-full flex flex-col absolute inset-0 h-[50vh] xs:h-[40vh] md:h-[35vh] mt-auto z-20">
-          <div className="w-full h-full flex flex-col px-[40px] gap-y-[20px]">
-            <h2 className="font-sans text-[20px] font-medium leading-normal">擁有自己的天堂</h2>
+          <div className="w-full h-full flex flex-col px-[2.5rem] gap-y-[1.25rem]">
+            <h2 className="font-sans text-[1.25rem] font-medium leading-normal">擁有自己的天堂</h2>
             <h2 className="font-sans text-white text-[16px] font-normal leading-[40px]">
             以居家住宅為主要範圍，從室內設計到工程施工，我們提供一個全方位統包的工作內容。內容包含：空間的規劃與設計、新居裝修、舊屋翻新、客廳設計、廚房及餐廳設計...</h2>
             <Button containerStyles='font-brandonMed ml-auto border-[1px] border-white px-5 py-2 hover:text-primary hover:bg-white' path="/projects">see all projects</Button>

@@ -31,8 +31,8 @@ export default function Project() {
       <div className="flex flex-col w-full min-h-[80vh] items-center -mt-[340px] md:-mt-[320px] 3md:-mt-[100px] wide:-mt-[150px] gap-y-16 mb-[120px]">
        <div className="w-full flex flex-col 3md:flex-row  gap-y-12 justify-center items-center">
         <div className="w-1/4 h-1/2 flex flex-col items-center text-primary">
-            <span className='text-[30px] md:text-[48px] 3md:text-[40px] xl:text-[62px] font-brandonLight'>PROJECTS</span>
-            <span className='text-[30px] md:text-[48px] 3md:text-[40px] xl:text-[62px] font-brandonBld'>REVIEW</span>
+            <span className='text-[30px] md:text-[3rem] 3md:text-[2.5rem] xl:text-[62px] font-brandonLight'>PROJECTS</span>
+            <span className='text-[30px] md:text-[3rem] 3md:text-[2.5rem] xl:text-[62px] font-brandonBld'>REVIEW</span>
         </div>
         {/* desktop layout */}
         <div className="hidden 3md:flex 3md:w-3/4 h-full items-center px-10">
@@ -62,8 +62,8 @@ export default function Project() {
       
       <div className="flex w-full flex-col 3md:flex-row gap-y-12 items-center pt-12">
        <div className="w-1/4 h-1/2 flex flex-col items-center text-primary">
-            <span className='text-[30px] md:text-[48px] 3md:text-[40px] xl:text-[62px] font-brandonLight'>DESIGN</span>
-            <span className='text-[30px] md:text-[48px] 3md:text-[40px] xl:text-[62px] font-brandonBld'>STORIES</span>
+            <span className='text-[30px] md:text-[3rem] 3md:text-[2.5rem] xl:text-[62px] font-brandonLight'>DESIGN</span>
+            <span className='text-[30px] md:text-[3rem] 3md:text-[2.5rem] xl:text-[62px] font-brandonBld'>STORIES</span>
         </div>
         {/* desktop layout */}
         <div className="hidden 3md:flex 3md:w-3/4 px-10 h-full">
