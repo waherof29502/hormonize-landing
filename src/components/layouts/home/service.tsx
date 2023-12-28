@@ -50,7 +50,7 @@ export default function Service() {
                 如此的專業執行，才是唯一重要的事，亦是消費者認同的服務價值。
               </span>
          </div>
-         <div className="w-full h-[45vh] bg-[#ECECEC]" />
+         <div className="w-full h-[45vh] bg-[#ECECEC]"/>
         </div>
       </div>
     </section>

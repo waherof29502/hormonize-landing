@@ -38,7 +38,7 @@ export default function Hero() {
       </div>
   {/* hero content */}
   {/* desktop layout */}
-        <div className="hidden w-full lg:flex absolute inset-0 h-[40vh] xl:h-[35%] mt-auto z-20">
+        <div className="hidden w-full lg:flex absolute inset-0 h-[50vh] xl:h-[45vh] 3xl:h-[35%] mt-auto z-20">
         <div className="w-[75%] flex absolute inset-0 ml-auto mt-auto h-full">
         <h2 className="lg:text-[2rem] xl:text-[3rem] 3xl:text-[54px] font-sans font-medium leading-normal">擁有自己的天堂</h2>
         </div>          
