@@ -12,6 +12,8 @@ import Link from 'next/link';
 import { CHPROJECTDETAIL } from '@/src/constants';
 import { useInView } from "react-intersection-observer";
 import RwdYoutube from '../../youtube';
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -173,10 +175,10 @@ export default function Project() {
               }}
               onReady={onPlayerReady}
             /> */}
-             <RwdYoutube
+             {/* <RwdYoutube
             src="https://www.youtube.com/embed/ikd3_3dsHS4?si=fOyGYuOeKDBk7Xm8"
-            />
-           
+            /> */}
+            <LiteYouTubeEmbed id="ikd3_3dsHS4" title=""/>
             <div className='flex w-full items-end justify-end gap-x-[0.75rem] pt-[4rem] pb-[6rem] pr-1'>
             <span className="text-primary text-[1rem] tracking-[0.64px] font-normal font-sans">作品分享</span>
             <FacebookShareButton  url={currentUrl}>
@@ -246,9 +248,10 @@ export default function Project() {
           <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">這個三層樓的透天厝，主要的設計想法，是在挑戰郊區傳統街屋的形式。原始的概念是創造一個「生活的光箱」，使居住者在室內就可以享受到晨昏的變化。為了實現這個概念，在屋頂上設置了大型的玻璃天窗，如此，光線就可以大量的進入室內，使得二樓的起居室及三樓在白天都充滿了光線。另一方面，屋內的燈光可溢出室外，隱約的照亮社區，於是，這個房子在晚上便可扮演起社區的燈塔與標地物的角色。它不僅僅是私人住宅，也因為它的簡單，吸引了這個社區與外來者所有的關注。</span>
           </div>
           <div className=" w-full mx-auto aspect-w-16 aspect-h-9 pt-12">
-             <RwdYoutube
+             {/* <RwdYoutube
             src="https://www.youtube.com/embed/ikd3_3dsHS4?si=fOyGYuOeKDBk7Xm8"
-            />
+            /> */}
+          <LiteYouTubeEmbed id="ikd3_3dsHS4" title=""/>
           </div>
             <div className='flex w-[90%] items-end justify-end gap-x-[0.75rem] pt-[1.5rem] pb-[4rem]'>
             <span className="text-primary text-[1rem] tracking-[0.64px] font-normal font-sans">作品分享</span>   
@@ -268,8 +271,8 @@ export default function Project() {
       <div className="hidden 3md:flex flex-col w-full min-h-fit items-center 3md:-mt-[5rem] xl:-mt-[6rem] wide:-mt-[7rem] gap-y-16 mb-[7.5rem] wider:mb-[10rem]">
        <div className="w-full flex flex-col 3md:flex-row gap-y-12 justify-center items-center">
         <div className="w-1/4 h-1/2 flex flex-col items-center text-primary">
-            <span className='text-[1.875rem] md:text-[3rem] 3md:text-[2.5rem] xl:text-[3.875rem] font-brandonLight text-shadow'>PROJECTS</span>
-            <span className='text-[1.875rem] md:text-[3rem] 3md:text-[2.5rem] xl:text-[3.875rem] font-brandonBld text-shadow'>REVIEW</span>
+            <span className='text-[1.875rem] md:text-[3rem] 3md:text-[2.5rem] xl:text-[3rem] 3xl:text-[3.875rem] font-brandonLight text-shadow'>PROJECTS</span>
+            <span className='text-[1.875rem] md:text-[3rem] 3md:text-[2.5rem] xl:text-[3rem] 3xl:text-[3.875rem] font-brandonBld text-shadow'>REVIEW</span>
         </div>
           <div className="flex w-3/4 h-full items-center px-10 gap-x-[2.375rem] wider:gap-x-[12rem] z-20">
            {PROJECTITEM.map((item,index)=>(
@@ -297,11 +300,11 @@ export default function Project() {
        <div className="3md:hidden flex flex-col w-full min-h-[80vh] items-center gap-y-16 mb-[6rem]">
        <div className="w-full flex flex-col h-[40vh] items-center pt-10 bg-[#ECECEC]">
         <div className="w-1/4 h-1/2 flex flex-col items-center text-primary ">
-            <span className='text-[1.875rem] md:text-[3rem] font-brandonLight'>PROJECTS</span>
-            <span className='text-[1.875rem] md:text-[3rem] font-brandonBld'>REVIEW</span>
+            <span className='text-[1.875rem] md:text-[2.75rem] font-brandonLight'>PROJECTS</span>
+            <span className='text-[1.875rem] md:text-[2.75rem] font-brandonBld'>REVIEW</span>
         </div>
       </div>
-        <div className="lg:hidden w-[120vh] -mt-[10rem] xs:-mt-[18rem] md:-mt-[13rem] 2md:-mt-[8rem] flex h-full items-center px-10 ">
+        <div className="lg:hidden w-[120vh] -mt-[10rem] xs:-mt-[18rem] sm:-mt-[11rem] md:-mt-[8rem] flex h-full items-center px-10 md:px-20">
          <Swiper  slidesPerView={3} initialSlide={1} centeredSlides={true} spaceBetween={spaceBetween()}>
        {PROJECTMOBILEITEM.map((item,index)=>(
             <>

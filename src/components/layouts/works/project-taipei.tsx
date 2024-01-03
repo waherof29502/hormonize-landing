@@ -175,14 +175,6 @@ export default function Project() {
           <h2 className="text-primary text-[1.5rem] font-sans font-medium">概念</h2>
           <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">傳統的住宅單元的規劃，一向以預計的家庭成員，以及購屋的經濟能力來做為考量的原則。同時，以最簡單的生活模式作為出發點，形成單調的「三房兩廳」或「兩房一廳」的標準住宅單元。另外，面對不同的居住者，少子化及高齡化的趨勢，以及，面對現今世代的工作方式，例如，SOHO族、YOUTUBERS、自僱業者、藝術工作者、網路商家…等，這些可能必須以自家空間為出發點的人群，很明顯地，一般僅提供居住及生活功能的傳統住宅單元，已不符合他們的使用。因此，住宅單元必須結合居住者的生活與工作，才不會局限居住者的生活方式，是一種納入更多機能為考量的『第三種住宅單元』：一個針對特定的居住者所形成的『多功能且彈性』的空間規劃概念。如此，才能把有限的空間發揮到最大的效益，亦才能展現住宅單元的價值。本案住宅的主人，是專業的大提琴以及鋼琴演奏者，對於自然有著一樣的愛好，因此，本設計思考的重點在於如何將主人的音樂性與生活態度轉譯成空間，並且以簡潔的空間形式，突顯本身就具備優美造型的鋼琴以及大提琴之存在，成為與主人生活互伴的另外兩個主角。</span>
           <div className="w-full mx-auto aspect-w-16 aspect-h-9 pt-[3.25rem]">
-          {/* <YouTube
-              videoId="ikd3_3dsHS4?si=91vA7W5p86_q_61r"
-              opts={{
-                width: '100%', 
-                height: '690',
-              }}
-              onReady={onPlayerReady}
-            /> */}
             <div className='flex w-full items-end justify-end gap-x-[0.75rem] pt-[4rem] pb-[6rem] pr-1'>
             <span className="text-primary text-[1rem] tracking-[0.64px] font-normal font-sans">作品分享</span>
             <FacebookShareButton  url={currentUrl}>
@@ -289,8 +281,8 @@ export default function Project() {
       <div className="hidden 3md:flex flex-col w-full min-h-fit items-center 3md:-mt-[5rem] xl:-mt-[6rem] wide:-mt-[7rem] gap-y-16 mb-[7.5rem] wider:mb-[10rem]">
        <div className="w-full flex flex-col 3md:flex-row gap-y-12 justify-center items-center">
         <div className="w-1/4 h-1/2 flex flex-col items-center text-primary">
-            <span className='text-[1.875rem] md:text-[3rem] 3md:text-[2.5rem] xl:text-[3.875rem] font-brandonLight text-shadow'>PROJECTS</span>
-            <span className='text-[1.875rem] md:text-[3rem] 3md:text-[2.5rem] xl:text-[3.875rem] font-brandonBld text-shadow'>REVIEW</span>
+            <span className='text-[1.875rem] md:text-[3rem] 3md:text-[2.5rem] xl:text-[3rem] 3xl:text-[3.875rem] font-brandonLight text-shadow'>PROJECTS</span>
+            <span className='text-[1.875rem] md:text-[3rem] 3md:text-[2.5rem] xl:text-[3rem] 3xl:text-[3.875rem] font-brandonBld text-shadow'>REVIEW</span>
         </div>
           <div className="flex w-3/4 h-full items-center px-10 gap-x-[2.375rem] wider:gap-x-[12rem] z-20">
            {PROJECTITEM.map((item,index)=>(
@@ -318,11 +310,11 @@ export default function Project() {
        <div className="3md:hidden flex flex-col w-full min-h-[80vh] items-center gap-y-16 mb-[6rem]">
        <div className="w-full flex flex-col h-[40vh] items-center pt-10 bg-[#ECECEC]">
         <div className="w-1/4 h-1/2 flex flex-col items-center text-primary ">
-            <span className='text-[1.875rem] md:text-[3rem] font-brandonLight'>PROJECTS</span>
-            <span className='text-[1.875rem] md:text-[3rem] font-brandonBld'>REVIEW</span>
+            <span className='text-[1.875rem] md:text-[2.75rem] font-brandonLight'>PROJECTS</span>
+            <span className='text-[1.875rem] md:text-[2.75rem] font-brandonBld'>REVIEW</span>
         </div>
       </div>
-        <div className="lg:hidden w-[120vh] -mt-[10rem] xs:-mt-[18rem] md:-mt-[13rem] 2md:-mt-[8rem] flex h-full items-center px-10 ">
+        <div className="lg:hidden w-[120vh] -mt-[10rem] xs:-mt-[18rem] sm:-mt-[11rem] md:-mt-[8rem] flex h-full items-center px-10 md:px-20">
          <Swiper  slidesPerView={3} initialSlide={1} centeredSlides={true} spaceBetween={spaceBetween()}>
        {PROJECTMOBILEITEM.map((item,index)=>(
             <>
