@@ -24,7 +24,6 @@ const ScrollCard = ({ dataIndex, src,setCurr }: ServiceProps) => {
 
     if (carouselRef.current) {
       const scrollLeft = Math.floor(carouselRef.current.scrollWidth * 0.7 * (i / dataIndex));
-
       scroll(carouselRef.current, scrollLeft);
     }
   };
@@ -61,7 +60,7 @@ const ScrollCard = ({ dataIndex, src,setCurr }: ServiceProps) => {
         onClick={(e) => handleClick(e, dataIndex)}
       >
         <div className="relative overflow-hidden">
-         <div className="bg-cover bg-center w-[161px] h-[109px]" style={{ backgroundImage: `url(${src})` }} onClick={() => setCurr(dataIndex)}/>
+         <div className="bg-cover bg-center w-[221px] h-[150px] 3md:w-[161px] 3md:h-[109px]" style={{ backgroundImage: `url(${src})` }} onClick={() => setCurr(dataIndex)}/>
           {/* <Image src={src} alt='img' width={161} height={109} className="w-full object-contain aspect-square " /> */}
         </div>
       </div>

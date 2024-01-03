@@ -25,11 +25,11 @@ export default function Header() {
       <div className="container mx-auto">
         <div className="flex justify-between items-center">
           <Logo header={header} />
-          <div className="hidden lg:flex items-center gap-x-6">
+          <div className="hidden lg:flex items-center gap-x-6 hover:cursor-pointer">
             <DesktopNav header={header} />
             {/* <Nav containerStyles='hidden lg:flex gap-x-8 items-center' linkStyles="relative hover:text-primary transition-all" underLinkStyles='absolute left-0 top-full h-[2px] bg-primary w-full'/> */}
           </div>
-          <div className="lg:hidden">
+          <div className="lg:hidden hover:cursor-pointer">
             <MobileNav header={header} />
           </div>
         </div>

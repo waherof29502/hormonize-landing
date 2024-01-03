@@ -26,8 +26,8 @@ export default function Template({ children }: { children: React.ReactNode }) {
         {children}
       </motion.main>
       <button onClick={scrollToTop} className="fixed z-50 -right-8 3md:right-3 bottom-5 transition-all duration-700 ">
-        <TopIcon className="hidden 3md:block text-[150px] text-primary hover:text-secondary" />
-        <TopSmallIcon className="3md:hidden text-[150px] text-primary hover:text-secondary" />
+        <TopIcon className="hidden 3md:block text-[163px] text-primary hover:text-secondary" />
+        <TopSmallIcon className="3md:hidden text-[99px] text-primary hover:text-secondary" />
       </button>
     </>
   );

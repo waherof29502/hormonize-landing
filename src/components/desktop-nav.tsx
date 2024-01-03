@@ -32,7 +32,7 @@ export default function DesktopNav({ header }: { header: boolean }) {
             style={{ originX: 0.5, originY: 0.5 }}
             className="ml-auto -mr-8"
           >
-            <LogoIcon width="34" height="35" className="text-[50px] text-primary" />
+            <LogoIcon width="34" height="35" className="text-[3.125rem] text-primary" />
           </motion.div>
           <div className="absolute top-10 z-10 w-[60px] h-10 right-0 bg-white"></div>
           <motion.div
@@ -55,13 +55,13 @@ export default function DesktopNav({ header }: { header: boolean }) {
           />
           <Nav
             containerStyles="lg:py-10 xl:py-20 flex flex-col justify-center items-start gap-y-8"
-            linkStyles="lg:text-[24px] 3xl:text-[32px] wider:text-[48px] text-primary font-brandonReg"
+            linkStyles="lg:text-[1.5rem] 3xl:text-[2rem] wider:text-[3rem] text-primary font-brandonReg"
           />
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 100 }}
             transition={{ delay: 3, duration: 1 }}
-            className="mt-auto text-primary font-brandonMed text-[20px] tracking-[1.12px] leading-[30px]"
+            className="mt-auto text-primary font-brandonMed text-[1.25rem] tracking-[1.12px] leading-[30px]"
           >
             HARM<span className="text-secondary font-brandonBld font-bold">O</span>NIZEDESIGN
           </motion.span>

@@ -19,7 +19,7 @@ export default function Projects() {
   return (
     <section className="relative">
       {/* desktop layout */}
-      <div className="hidden 3md:flex flex-col w-full min-h-[90vh] gap-y-[5rem] -mt-[9rem] mb-[9.25rem]">
+      <div className="hidden 3md:flex flex-col w-full min-h-[90vh] gap-y-[5rem] -mt-[7rem] mb-[9.25rem]">
         {/* project1 */}
         <div  className="w-full flex justify-center items-center" >
          <div ref={refDesktopOne} className="w-1/4 h-[50vh] flex flex-col justify-center items-center text-primary gap-x-2">
@@ -28,20 +28,20 @@ export default function Projects() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ ease:easeIn ,duration: 0.25 }} 
-            className='text-[2.25rem] 3xl:text-[2.5rem] font-brandonBld uppercase'>{PROJECTITEM[0].projectTag}</motion.span>
-            :<span className='text-[2.25rem] 3xl:text-[2.5rem] font-brandonBld uppercase'>{PROJECTITEM[0].category[0]}</span>} 
+            className='text-[2.25rem] 3xl:text-[2.5rem] font-brandonBld uppercase text-shadow'>{PROJECTITEM[0].projectTag}</motion.span>
+            :<span className='text-[2.25rem] 3xl:text-[2.5rem] font-brandonBld uppercase text-shadow'>{PROJECTITEM[0].category[0]}</span>} 
           </div>   
-          <div className="w-[60%] h-full flex justify-center px-[50px] 3xl:px-[90px] gap-y-[16px] 3xl:gap-y-[37px]">
-          <Image src={PROJECTITEM[0].imgProjectSrc} alt="123" width={1343} height={580} className='object-cover rounded-[15px]'/>
+          <div className="w-2/4 h-full flex justify-center px-[50px] 3xl:pl-[0rem] 3xl:pr-[6rem] gap-y-[1rem] 3xl:gap-y-[37px]">
+          <Image src={PROJECTITEM[0].imgProjectSrc} alt={PROJECTITEM[0].title} width={1343} height={580} className='object-cover rounded-[15px]'/>
           </div>
-          <div className="w-1/4 h-full flex flex-col justify-center ">
-              <p className="mt-6 font-sans text-[1.5rem] text-primary font-medium tracking-[0.8px] lg:tracking-[0.96px]">                {PROJECTITEM[0].title}
+          <div className="w-1/4 h-full flex flex-col justify-center gap-y-1 pl-2">
+              <p className="mt-6 font-sans text-[1.5rem] text-primary font-medium tracking-[0.8px] lg:tracking-[0.96px]">{PROJECTITEM[0].title}
               </p>
               <div className="flex gap-x-2 items-center pt-1">
                 <span className="text-[1rem] text-primary">{PROJECTITEM[0].icon}</span>
-                <span className="font-sans text-[#3E3E3E] font-syne text-[1rem] tracking-[0.64px] font-light ">{PROJECTITEM[0].tag}</span>
+                <span className="font-sans text-[#3E3E3E] font-syne text-[1rem] tracking-[0.64px] font-light">{PROJECTITEM[0].tag}</span>
               </div>
-            <Button containerStyles='3xl:w-1/3 font-brandonMed mt-8 mr-auto border-[1px] border-primary px-5 py-2 text-primary hover:text-white hover:bg-primary' path={PROJECTITEM[0].path}>learn more</Button>
+            <Button containerStyles='3xl:w-1/3 font-brandonMed mt-8 mr-auto border-[1px] border-primary px-5 py-2 text-[1.5rem] text-primary hover:text-white hover:bg-primary' path={PROJECTITEM[0].path}>learn more</Button>
           </div>
         </div>
         {/* project2 */}
@@ -60,16 +60,16 @@ export default function Projects() {
             </>
             } 
           </div>   
-          <div className="w-[60%] h-full flex justify-center px-[50px] 3xl:px-[90px] gap-y-[16px] 3xl:gap-y-[37px]">
+          <div className="w-[50%] h-full flex justify-center px-[50px] 3xl:pl-[0rem] 3xl:pr-[6rem] gap-y-[1rem] 3xl:gap-y-[37px]">
           <Image src={PROJECTITEM[1].imgProjectSrc} alt="123" width={1343} height={580} className='object-cover rounded-[15px]'/>
           </div>
-          <div className="w-1/4 h-full flex flex-col justify-center ">
+          <div className="w-1/4 h-full flex flex-col justify-center gap-y-1 pl-2">
               <p className="mt-6 font-sans text-[1.5rem] text-primary font-medium tracking-[0.8px] lg:tracking-[0.96px]">{PROJECTITEM[1].title}</p>
               <div className="flex gap-x-2 items-center pt-1">
                 <span className="text-[1rem] text-primary">{PROJECTITEM[1].icon}</span>
                 <span className="font-sans text-[#3E3E3E] font-syne text-[1rem] tracking-[0.64px] font-light ">{PROJECTITEM[1].tag}</span>
               </div>
-            <Button containerStyles='3xl:w-1/3 font-brandonMed mt-8 mr-auto border-[1px] border-primary px-5 py-2 text-primary hover:text-white hover:bg-primary' path={PROJECTITEM[1].path}>learn more</Button>
+            <Button containerStyles='3xl:w-1/3 font-brandonMed mt-8 mr-auto border-[1px] border-primary px-5 py-2 text-[1.5rem] text-primary hover:text-white hover:bg-primary' path={PROJECTITEM[1].path}>learn more</Button>
           </div>
         </div>
         {/* project3 */}
@@ -88,16 +88,16 @@ export default function Projects() {
             </>
             } 
           </div>   
-          <div className="w-[60%] h-full flex justify-center px-[50px] 3xl:px-[90px] gap-y-[16px] 3xl:gap-y-[37px]">
+          <div className="w-[50%] h-full flex justify-center px-[50px] 3xl:pl-[0rem] 3xl:pr-[6rem] gap-y-[16px] 3xl:gap-y-[37px]">
           <Image src={PROJECTITEM[2].imgProjectSrc} alt="123" width={1343} height={580} className='object-cover rounded-[15px]'/>
           </div>
-          <div className="w-1/4 h-full flex flex-col justify-center ">
+          <div className="w-1/4 h-full flex flex-col justify-center gap-y-1 pl-2">
               <p className="mt-6 font-sans text-[1.5rem] text-primary font-medium tracking-[0.8px] lg:tracking-[0.96px]">{PROJECTITEM[2].title}</p>
               <div className="flex gap-x-2 items-center pt-1">
                 <span className="text-[1rem] text-primary">{PROJECTITEM[2].icon}</span>
                 <span className="font-sans text-[#3E3E3E] font-syne text-[1rem] tracking-[0.64px] font-light ">{PROJECTITEM[2].tag}</span>
               </div>
-            <Button containerStyles='3xl:w-1/3 font-brandonMed mt-8 mr-auto border-[1px] border-primary px-5 py-2 text-primary hover:text-white hover:bg-primary' path={PROJECTITEM[2].path}>learn more</Button>
+            <Button containerStyles='3xl:w-1/3 font-brandonMed mt-8 mr-auto border-[1px] border-primary px-5 py-2 text-[1.5rem] text-primary hover:text-white hover:bg-primary' path={PROJECTITEM[2].path}>learn more</Button>
           </div>
         </div>
     
@@ -106,7 +106,7 @@ export default function Projects() {
        <div className="3md:hidden flex flex-col w-full min-h-fit pb-[60px] pt-6 gap-y-[5rem]">
          {/* project1 */}
         <div  className="w-full flex flex-col justify-center items-center md:px-6" >
-         <div ref={refOne} className="w-full h-[10vh] flex flex-col justify-center items-center text-primary ">
+         <div ref={refOne} className="w-full h-[10vh] flex flex-col justify-center items-center text-primary">
            {ViewOne ?  
            <motion.span 
             initial={{ opacity: 0 }}

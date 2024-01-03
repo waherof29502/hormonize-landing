@@ -28,7 +28,7 @@ const Carousel = ({
   return (
     <div className="overflow-x-hidden overflow-y-hidden relative">
       <div
-        className="flex lg:items-center transition-transform ease-out duration-500 h-[80vh]"
+        className="flex 3md:items-center transition-transform ease-out duration-500 md:h-[80vh] 3md:h-[85vh] "
         style={{ transform: `translateX(-${curr * 100}%)`}}
       >
         {children}

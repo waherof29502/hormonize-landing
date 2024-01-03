@@ -12,8 +12,8 @@ interface ProjectCardProps {
 const ProjectCard = ({ imgSrc, title, tag, icon }: ProjectCardProps) => {
 
   return (
-      <div className="flex flex-col gap-y-2 ">
-            <div className="w-full object-contain overflow-hidden rounded-[15px] 3md:rounded-[30px] wide:rounded-[50px]">
+      <div className="flex flex-col gap-y-2">
+            <div className="w-full wider:w-full object-contain overflow-hidden rounded-[15px] 3md:rounded-[30px] wide:rounded-[50px]">
             <Image
               src={imgSrc}
               alt={title}
