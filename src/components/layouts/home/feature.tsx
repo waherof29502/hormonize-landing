@@ -4,7 +4,7 @@ export default function Feature() {
   return (
     <section className="relative overflow-hidden">
       {/* desktop layout */}
-      <div className="hidden lg:flex w-full min-h-[90vh] bg-feature bg-cover bg-no-repeat">
+      <div className="hidden 3md:flex w-full min-h-[90vh] bg-feature bg-cover bg-no-repeat">
         <div className="w-full flex justify-center items-center">
           <div className="w-1/4 h-full flex flex-col justify-center items-center text-white border-solid border-r-[2px] border-white">
             <span className='text-[1.875rem] 3md:text-[2.5rem] xl:text-[3.875rem] font-brandonLight text-shadow'>DESIGN</span>
@@ -23,7 +23,7 @@ export default function Feature() {
       </div>
        {/* mobile layout */}
 
-      <div className="lg:hidden flex flex-col w-full min-h-screen pb-[100px] md:pb-[120px] bg-mobileFeature bg-cover bg-no-repeat">
+      <div className="3md:hidden flex flex-col w-full min-h-screen pb-[100px] md:pb-[120px] bg-mobileFeature bg-cover bg-no-repeat">
         <div className="flex flex-col gap-y-12 w-full justify-center items-center ">
           <div className="block h-[30vh] xs:h-[35vh] 2xs:h-[40vh] sm:h-[63vh] md:h-[70vh]" />
           <div className="w-full h-full flex flex-col justify-center items-center text-white gap-x-2">

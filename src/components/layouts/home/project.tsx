@@ -52,7 +52,7 @@ export default function Project() {
         </Swiper> */}
         </div>
         {/* mobile layout */}
-        <div className="lg:hidden w-[120vh] sm:w-[180vh] flex 3md:w-3/4 h-full items-center px-10">
+        <div className="3md:hidden w-[120vh] sm:w-[180vh] flex 3md:w-3/4 h-full items-center px-10">
          <Swiper  slidesPerView={3} initialSlide={1} centeredSlides={true} spaceBetween={spaceBetween()}>
        {PROJECTMOBILEITEM.map((item,index)=>(
             <>

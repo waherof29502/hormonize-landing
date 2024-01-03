@@ -322,7 +322,7 @@ export default function Project() {
             <span className='text-[1.875rem] md:text-[3rem] font-brandonBld'>REVIEW</span>
         </div>
       </div>
-        <div className="lg:hidden w-[120vh] -mt-[10rem] xs:-mt-[18rem] md:-mt-[13rem] flex h-full items-center px-10 ">
+        <div className="lg:hidden w-[120vh] -mt-[10rem] xs:-mt-[18rem] md:-mt-[13rem] 2md:-mt-[8rem] flex h-full items-center px-10 ">
          <Swiper  slidesPerView={3} initialSlide={1} centeredSlides={true} spaceBetween={spaceBetween()}>
        {PROJECTMOBILEITEM.map((item,index)=>(
             <>

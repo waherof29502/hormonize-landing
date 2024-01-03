@@ -1,6 +1,5 @@
 "use client"
 import React,{useState,useEffect}from 'react';
-import YouTube, { YouTubeProps } from 'react-youtube';
 import { FbSquareIcon, ShareIcon,TwitterSquareIcon } from '@/public/svg'
 import Image from 'next/image';
 import ScrollCard from '../../scroll-card';
@@ -12,6 +11,8 @@ import useScreenSize from '@/src/hooks/useScreenSize'
 import Link from 'next/link';
 import { HCPROJECTDETAIL} from '@/src/constants';
 import { useInView } from "react-intersection-observer";
+import RwdYoutube from '../../youtube';
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -58,7 +59,7 @@ export default function Project() {
   const updateIndex = ({ index: current }: { index: number }) => setCurr(current);
   const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
   const screenSize = useScreenSize();
-  const [threshold, setThreshold] = useState<number>(0.42);
+  const [threshold, setThreshold] = useState<number>(0.38);
    const { ref, inView } = useInView({ threshold });
   useEffect(() => {
     // Adjust the threshold based on screen size
@@ -69,13 +70,10 @@ export default function Project() {
     }else if (screenSize.width <= 1680) {
       setThreshold(0.3);
     } else {
-      setThreshold(0.42);
+      setThreshold(0.38);
     }
   }, [screenSize]);
 
-  const onPlayerReady: YouTubeProps['onReady'] = (event) => {
-    event.target.pauseVideo();
-  }
 
   const copyToClipboard = () => {
   try {
@@ -186,13 +184,8 @@ export default function Project() {
           <h2 className="text-primary text-[1.5rem] font-sans font-medium">概念</h2>
           <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">傳統的住宅單元的規劃，一向以預計的家庭成員，以及購屋的經濟能力來做為考量的原則。同時，以最簡單的生活模式作為出發點，形成單調的「三房兩廳」或「兩房一廳」的標準住宅單元。另外，面對不同的居住者，少子化及高齡化的趨勢，以及，面對現今世代的工作方式，例如，SOHO族、YOUTUBERS、自僱業者、藝術工作者、網路商家…等，這些可能必須以自家空間為出發點的人群，很明顯地，一般僅提供居住及生活功能的傳統住宅單元，已不符合他們的使用。因此，住宅單元必須結合居住者的生活與工作，才不會局限居住者的生活方式，是一種納入更多機能為考量的『第三種住宅單元』：一個針對特定的居住者所形成的『多功能且彈性』的空間規劃概念。如此，才能把有限的空間發揮到最大的效益，亦才能展現住宅單元的價值。本案住宅的主人，是專業的大提琴以及鋼琴演奏者，對於自然有著一樣的愛好，因此，本設計思考的重點在於如何將主人的音樂性與生活態度轉譯成空間，並且以簡潔的空間形式，突顯本身就具備優美造型的鋼琴以及大提琴之存在，成為與主人生活互伴的另外兩個主角。</span>
           <div className="w-full mx-auto aspect-w-16 aspect-h-9 pt-[3.25rem]">
-          <YouTube
-              videoId="K75SjnLDQWA?si=xxGS7B8zZt9aalg_"
-              opts={{
-                width: '100%', 
-                height: '690',
-              }}
-              onReady={onPlayerReady}
+            <RwdYoutube
+            src="https://www.youtube.com/embed/K75SjnLDQWA?si=LbVZ8I1hGB5Goq6v"
             />
             <div className='flex w-full items-end justify-end gap-x-[0.75rem] pt-[4rem] pb-[6rem] pr-1'>
             <span className="text-primary text-[1rem] tracking-[0.64px] font-normal font-sans">作品分享</span>
@@ -238,7 +231,7 @@ export default function Project() {
       <div className="flex flex-col w-full pb-16 pt-16">
               {HCPROJECTDETAIL.map((project, index) => (
               <div key={index} className='flex flex-col gap-y-10 mx-auto font-sans'>
-                <div className="flex gap-x-2 w-full h-[3.75rem] md:w-full md:h-[4.75rem] justify-center items-center">
+                <div className="flex gap-x-2 w-full -ml-[0.5rem] h-[3.75rem] md:w-full md:h-[4.75rem] justify-center items-center">
                  {project.iconImgSrc.map((img, index) => (
                   <Image key={index} src={img} alt={project.title} width={180} height={100} className='aspect-3/4'/>
                   ))}
@@ -262,24 +255,9 @@ export default function Project() {
           <h2 className="text-primary text-[1.25rem] md:text-[1.5rem] font-sans font-normal px-1">概念</h2>
           <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">傳統的住宅單元的規劃，一向以預計的家庭成員，以及購屋的經濟能力來做為考量的原則。同時，以最簡單的生活模式作為出發點，形成單調的「三房兩廳」或「兩房一廳」的標準住宅單元。另外，面對不同的居住者，少子化及高齡化的趨勢，以及，面對現今世代的工作方式，例如，SOHO族、YOUTUBERS、自僱業者、藝術工作者、網路商家…等，這些可能必須以自家空間為出發點的人群，很明顯地，一般僅提供居住及生活功能的傳統住宅單元，已不符合他們的使用。因此，住宅單元必須結合居住者的生活與工作，才不會局限居住者的生活方式，是一種納入更多機能為考量的『第三種住宅單元』：一個針對特定的居住者所形成的『多功能且彈性』的空間規劃概念。如此，才能把有限的空間發揮到最大的效益，亦才能展現住宅單元的價值。本案住宅的主人，是專業的大提琴以及鋼琴演奏者，對於自然有著一樣的愛好，因此，本設計思考的重點在於如何將主人的音樂性與生活態度轉譯成空間，並且以簡潔的空間形式，突顯本身就具備優美造型的鋼琴以及大提琴之存在，成為與主人生活互伴的另外兩個主角。</span>
           </div>
-          <div className="md:hidden w-full mx-auto aspect-w-16 aspect-h-9 pt-12">
-          <YouTube
-              videoId="K75SjnLDQWA?si=xxGS7B8zZt9aalg_"
-              opts={{
-                width: '100%', 
-                height: '242',
-              }}
-              onReady={onPlayerReady}
-            />
-          </div>
-          <div className="hidden md:block w-full mx-auto aspect-w-16 aspect-h-9 pt-12">
-          <YouTube
-              videoId="K75SjnLDQWA?si=xxGS7B8zZt9aalg_"
-              opts={{
-                width: '100%', 
-                height: '442',
-              }}
-              onReady={onPlayerReady}
+          <div className="w-full mx-auto aspect-w-16 aspect-h-9 pt-12">
+          <RwdYoutube
+            src="https://www.youtube.com/embed/K75SjnLDQWA?si=LbVZ8I1hGB5Goq6v"
             />
           </div>
             <div className='flex w-[90%] items-end justify-end gap-x-[0.75rem] pt-[1.5rem] pb-[4rem]'>
@@ -333,7 +311,7 @@ export default function Project() {
             <span className='text-[1.875rem] md:text-[3rem] font-brandonBld'>REVIEW</span>
         </div>
       </div>
-        <div className="lg:hidden w-[120vh] -mt-[10rem] xs:-mt-[18rem] md:-mt-[13rem] flex h-full items-center px-10 ">
+        <div className="lg:hidden w-[120vh] -mt-[10rem] xs:-mt-[18rem] md:-mt-[13rem] 2md:-mt-[8rem] flex h-full items-center px-10 ">
          <Swiper  slidesPerView={3} initialSlide={1} centeredSlides={true} spaceBetween={spaceBetween()}>
        {PROJECTMOBILEITEM.map((item,index)=>(
             <>

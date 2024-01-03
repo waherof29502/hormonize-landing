@@ -38,7 +38,7 @@ export default function Footer() {
             containerStyles="ml-auto w-[45%] md:w-[30%] 3md:w-[50%] py-2 lg:py-4 border-primary border-[1px] text-primary hover:text-white hover:bg-primary"
             path="/contact-us"
           >
-            <span className=" text-[18px] 3xl:text-[1.5rem] font-brandonMed ">leave a message</span>
+            <span className=" text-[1.125rem] 3xl:text-[1.5rem] font-brandonMed ">leave a message</span>
           </Button>
         </div>
       </div>
@@ -79,7 +79,7 @@ export default function Footer() {
             </Link>
           </div>
           {/* Copyrights note */}
-          <div className="text-[16px] text-primary leading-normal font-brandonReg">
+          <div className="text-[1rem] text-primary leading-normal font-brandonReg">
             &copy; HARMONIZE DESIGN 2023.All Rights Reserved.
             <Link href="https://creer-design.com/" target="_blank">
               Web Design By créer.

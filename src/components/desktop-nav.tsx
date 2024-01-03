@@ -15,7 +15,7 @@ export default function DesktopNav({ header }: { header: boolean }) {
     <Sheet>
       <SheetTrigger asChild>
         <span
-          className={`text-[32px] tracking-[1.28px] pr-5 font-brandonMed ${
+          className={`text-[1.5rem] 3xl:text-[2rem] tracking-[1.28px] pr-5 font-brandonMed ${
             pathname === '/' && !header ? 'text-white' : 'text-primary'
           }`}
         >
@@ -34,7 +34,7 @@ export default function DesktopNav({ header }: { header: boolean }) {
           >
             <LogoIcon width="34" height="35" className="text-[3.125rem] text-primary" />
           </motion.div>
-          <div className="absolute top-10 z-10 w-[60px] h-10 right-0 bg-white"></div>
+          <div className="absolute top-10 z-10 w-[3.75rem] h-10 right-0 bg-white"></div>
           <motion.div
             initial={{ x: 1000, y: -36 }}
             animate={{ x: 0, y: -36 }}

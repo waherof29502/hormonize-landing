@@ -20,7 +20,7 @@ export default function Header() {
   });
   return (
     <header
-      className={`fixed w-full py-6 z-30 transition-all ${pathname === '/' && !header ? 'bg-transparent' : 'bg-white'}`}
+      className={`fixed w-full py-2 3xl:py-6 z-30 transition-all ${pathname === '/' && !header ? 'bg-transparent' : 'bg-white'}`}
     >
       <div className="container mx-auto">
         <div className="flex justify-between items-center">

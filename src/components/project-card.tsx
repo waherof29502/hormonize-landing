@@ -22,11 +22,11 @@ const ProjectCard = ({ imgSrc, title, tag, icon }: ProjectCardProps) => {
               className="hover:scale-110 duration-500 ease-linear" 
             />
             </div>
-             <p className="mt-6 font-sans text-[20px] 3md:text-[24px] text-primary font-medium tracking-[0.8px] lg:tracking-[0.96px]">
+             <p className="mt-6 font-sans text-[1.25rem] 3md:text-[1.5rem] text-primary font-medium tracking-[0.8px] lg:tracking-[0.96px]">
                 {title}
               </p>
               <div className="flex gap-x-2 items-center pt-1">
-                <span className="text-[21px] 3md:text-[24px]">{icon}</span>
+                <span className="text-[21px] 3md:text-[1.5rem]">{icon}</span>
               <span className="font-sans text-[#464646] font-syne text-[16px] 3md:text-[20px] tracking-[0.64px] 3md:tracking-[0.42px] font-light">{tag}</span>
               </div>
       </div> 

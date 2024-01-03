@@ -3,7 +3,7 @@ export default function Service() {
   return (
     <section className="relative overflow-hidden">
       {/* desktop layout */}
-      <div className="hidden lg:flex w-full min-h-screen">
+      <div className="hidden 3md:flex w-full min-h-screen">
         <div className="flex flex-col">
           <div className="w-full h-3/4 flex justify-center items-center">
             <div className="w-1/4 h-full flex flex-col justify-center items-center bg-[#D1D1D1] border-r-[2px] border-primary">
@@ -29,7 +29,7 @@ export default function Service() {
         </div>
       </div>
       {/* mobile layout */}
-       <div className="lg:hidden flex flex-col w-full min-h-fit pb-20">
+       <div className="3md:hidden flex flex-col w-full min-h-fit pb-20">
         <div className="flex flex-col gap-y-12 w-full justify-center items-center">
           <div className="w-full h-[45vh] bg-center bg-mobileService bg-cover bg-no-repeat" />
           <div className="w-full h-1/4 flex flex-col justify-center items-center text-primary border-solid border-r-[2px] border-primary gap-x-2">

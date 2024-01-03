@@ -1,6 +1,5 @@
 "use client"
 import React,{useState,useEffect}from 'react';
-import YouTube, { YouTubeProps } from 'react-youtube';
 import { FbSquareIcon, ShareIcon,TwitterSquareIcon } from '@/public/svg'
 import Image from 'next/image';
 import ScrollCard from '../../scroll-card';
@@ -12,6 +11,7 @@ import useScreenSize from '@/src/hooks/useScreenSize'
 import Link from 'next/link';
 import { CHPROJECTDETAIL } from '@/src/constants';
 import { useInView } from "react-intersection-observer";
+import RwdYoutube from '../../youtube';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -55,9 +55,6 @@ export default function Project() {
     }
   }, [screenSize]);
 
-  const onPlayerReady: YouTubeProps['onReady'] = (event) => {
-    event.target.pauseVideo();
-  }
 
   const copyToClipboard = () => {
   try {
@@ -124,7 +121,7 @@ export default function Project() {
             </div>
             {/* right content */}
             {/* TODO:依照未整理的圖片微調，需再調整 */}
-            <div className="w-3/4 h-full flex flex-col mt-[13vh] wide:mt-[13vh] ">
+            <div className="w-3/4 h-full flex flex-col mt-[9vh] lg:mt-[11vh] 2lg:mt-[13vh] ">
             <Lightbox
           open={openLightBox}
           close={toggleLightBoxOpen(false)}
@@ -168,14 +165,18 @@ export default function Project() {
           <h2 className="text-primary text-[1.5rem] font-sans font-medium">”緩慢走入四立方 看見居家幸福模樣 &nbsp;&nbsp;”</h2>
           <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">這個三層樓的透天厝，主要的設計想法，是在挑戰郊區傳統街屋的形式。原始的概念是創造一個「生活的光箱」，使居住者在室內就可以享受到晨昏的變化。為了實現這個概念，在屋頂上設置了大型的玻璃天窗，如此，光線就可以大量的進入室內，使得二樓的起居室及三樓在白天都充滿了光線。另一方面，屋內的燈光可溢出室外，隱約的照亮社區，於是，這個房子在晚上便可扮演起社區的燈塔與標地物的角色。它不僅僅是私人住宅，也因為它的簡單，吸引了這個社區與外來者所有的關注。</span>
           <div className="w-full mx-auto aspect-w-16 aspect-h-9 pt-[3.25rem]">
-          <YouTube
+          {/* <YouTube
               videoId="ikd3_3dsHS4?si=91vA7W5p86_q_61r"
               opts={{
                 width: '100%', 
                 height: '690',
               }}
               onReady={onPlayerReady}
+            /> */}
+             <RwdYoutube
+            src="https://www.youtube.com/embed/ikd3_3dsHS4?si=fOyGYuOeKDBk7Xm8"
             />
+           
             <div className='flex w-full items-end justify-end gap-x-[0.75rem] pt-[4rem] pb-[6rem] pr-1'>
             <span className="text-primary text-[1rem] tracking-[0.64px] font-normal font-sans">作品分享</span>
             <FacebookShareButton  url={currentUrl}>
@@ -219,8 +220,8 @@ export default function Project() {
       </div>
       <div className="flex flex-col w-full pb-16 pt-16">
               {CHPROJECTDETAIL.map((project, index) => (
-              <div key={index} className='flex flex-col gap-y-10 mx-auto font-sans'>
-                <div className="flex gap-x-2 w-[3.75rem] h-[3.75rem] md:w-[4.75rem] md:h-[4.75rem]">
+              <div key={index} className='flex flex-col gap-y-10 mx-auto font-sans justify-center'>
+                <div className="flex gap-x-2 -ml-[2rem] w-[3.75rem] h-[3.75rem] md:w-[4.75rem] md:h-[4.75rem]">
                  {project.iconImgSrc.map((img, index) => (
                   <Image key={index} src={img} alt={project.title} width={100} height={100}/>
                   ))}
@@ -244,24 +245,9 @@ export default function Project() {
           <h2 className="text-primary text-[1.25rem] md:text-[1.5rem] font-sans font-normal px-1">” &nbsp;緩慢走入四立方 看見居家幸福模樣 &nbsp;&nbsp;”</h2>
           <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">這個三層樓的透天厝，主要的設計想法，是在挑戰郊區傳統街屋的形式。原始的概念是創造一個「生活的光箱」，使居住者在室內就可以享受到晨昏的變化。為了實現這個概念，在屋頂上設置了大型的玻璃天窗，如此，光線就可以大量的進入室內，使得二樓的起居室及三樓在白天都充滿了光線。另一方面，屋內的燈光可溢出室外，隱約的照亮社區，於是，這個房子在晚上便可扮演起社區的燈塔與標地物的角色。它不僅僅是私人住宅，也因為它的簡單，吸引了這個社區與外來者所有的關注。</span>
           </div>
-          <div className="md:hidden w-full mx-auto aspect-w-16 aspect-h-9 pt-12">
-          <YouTube
-              videoId="ikd3_3dsHS4?si=91vA7W5p86_q_61r"
-              opts={{
-                width: '100%', 
-                height: '242',
-              }}
-              onReady={onPlayerReady}
-            />
-          </div>
-          <div className="hidden md:block w-full mx-auto aspect-w-16 aspect-h-9 pt-12">
-          <YouTube
-              videoId="ikd3_3dsHS4?si=91vA7W5p86_q_61r"
-              opts={{
-                width: '100%', 
-                height: '442',
-              }}
-              onReady={onPlayerReady}
+          <div className=" w-full mx-auto aspect-w-16 aspect-h-9 pt-12">
+             <RwdYoutube
+            src="https://www.youtube.com/embed/ikd3_3dsHS4?si=fOyGYuOeKDBk7Xm8"
             />
           </div>
             <div className='flex w-[90%] items-end justify-end gap-x-[0.75rem] pt-[1.5rem] pb-[4rem]'>
@@ -315,7 +301,7 @@ export default function Project() {
             <span className='text-[1.875rem] md:text-[3rem] font-brandonBld'>REVIEW</span>
         </div>
       </div>
-        <div className="lg:hidden w-[120vh] -mt-[10rem] xs:-mt-[18rem] md:-mt-[13rem] flex h-full items-center px-10 ">
+        <div className="lg:hidden w-[120vh] -mt-[10rem] xs:-mt-[18rem] md:-mt-[13rem] 2md:-mt-[8rem] flex h-full items-center px-10 ">
          <Swiper  slidesPerView={3} initialSlide={1} centeredSlides={true} spaceBetween={spaceBetween()}>
        {PROJECTMOBILEITEM.map((item,index)=>(
             <>

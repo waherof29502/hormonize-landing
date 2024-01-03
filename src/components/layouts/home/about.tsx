@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section className="relative overflow-hidden">
       {/* desktop layout */}
-      <div className="hidden lg:flex w-full min-h-[90vh]">
+      <div className="hidden 3md:flex w-full min-h-[90vh]">
         <div className="w-full flex justify-center items-center">
           <div className="w-1/4 h-full flex justify-center items-center text-primary border-solid border-r-[2px] border-primary gap-x-2">
             <span className='text-[30px] 3md:text-[40px] xl:text-[62px] font-brandonLight text-shadow'>ABOUT</span>
@@ -27,7 +27,7 @@ export default function About() {
         </div>
       </div>
       {/* mobile layout */}
-       <div className="lg:hidden flex flex-col w-full min-h-fit pb-[60px]">
+       <div className="3md:hidden flex flex-col w-full min-h-fit pb-[60px]">
         <div className="flex flex-col gap-y-12 w-full justify-center items-center">
           <div className="w-full h-[45vh] bg-center bg-mobileAbout bg-cover bg-no-repeat" />
           <div className="w-full h-1/4 flex justify-center items-center text-primary border-solid border-r-[2px] border-primary gap-x-2">
