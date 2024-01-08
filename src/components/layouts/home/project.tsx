@@ -31,8 +31,8 @@ export default function Project() {
       <div className="flex flex-col w-full min-h-[80vh] items-center -mt-[340px] md:-mt-[320px] 3md:-mt-[100px] wide:-mt-[150px] gap-y-16 mb-[120px]">
        <div className="w-full flex flex-col 3md:flex-row  gap-y-12 justify-center items-center">
         <div className="w-1/4 h-1/2 flex flex-col items-center text-primary">
-            <span className='text-[30px] md:text-[3rem] 3md:text-[2.5rem] xl:text-[62px] font-brandonLight text-shadow'>PROJECTS</span>
-            <span className='text-[30px] md:text-[3rem] 3md:text-[2.5rem] xl:text-[62px] font-brandonBld text-shadow'>REVIEW</span>
+            <span className='text-[1.875rem] md:text-[2.75rem] 3xl:text-[3.875rem] font-brandonLight text-shadow'>PROJECTS</span>
+            <span className='text-[1.875rem] md:text-[2.75rem] 3xl:text-[3.875rem] font-brandonBld text-shadow'>REVIEW</span>
         </div>
         {/* desktop layout */}
         <div className="hidden 3md:flex 3md:w-3/4 h-full items-center px-10 gap-x-[2.375rem] wider:gap-x-[12rem]">
@@ -41,18 +41,9 @@ export default function Project() {
             <ProjectCard imgSrc={item.imgSrc} title={item.title} icon={item.icon} tag={item.tag}/>
             </Link>
             ))}
-         {/* <Swiper  slidesPerView={3} initialSlide={1} centeredSlides={true} spaceBetween={spaceBetween()}>
-       {PROJECTITEM.map((item,index)=>(
-            <>
-            <SwiperSlide key={index}>
-            <ProjectCard imgSrc={item.imgSrc} title={item.title} icon={item.icon} tag={item.tag}/>
-            </SwiperSlide>
-            </>
-            ))}
-        </Swiper> */}
         </div>
         {/* mobile layout */}
-        <div className="3md:hidden w-[120vh] sm:w-[180vh] flex 3md:w-3/4 h-full items-center px-10">
+        <div className="3md:hidden w-[140vh] sm:w-[180vh] flex 3md:w-3/4 h-full items-center px-10">
          <Swiper  slidesPerView={3} initialSlide={1} centeredSlides={true} spaceBetween={spaceBetween()}>
        {PROJECTMOBILEITEM.map((item,index)=>(
             <>
@@ -69,8 +60,8 @@ export default function Project() {
       
       <div className="flex w-full flex-col 3md:flex-row gap-y-12 items-center pt-12">
        <div className="w-1/4 h-1/2 flex flex-col items-center text-primary">
-            <span className='text-[30px] md:text-[3rem] 3md:text-[2.5rem] xl:text-[62px] font-brandonLight text-shadow'>DESIGN</span>
-            <span className='text-[30px] md:text-[3rem] 3md:text-[2.5rem] xl:text-[62px] font-brandonBld text-shadow'>STORIES</span>
+            <span className='text-[1.875rem] md:text-[2.75rem] 3xl:text-[3.875rem] font-brandonLight text-shadow'>DESIGN</span>
+            <span className='text-[1.875rem] md:text-[2.75rem] 3xl:text-[3.875rem] font-brandonBld text-shadow'>STORIES</span>
         </div>
         {/* desktop layout */}
         <div className="hidden 3md:flex 3md:w-3/4 px-10 h-full">
@@ -85,7 +76,7 @@ export default function Project() {
         </Swiper>
         </div>  
         {/* mobile layout */}
-        <div className="3md:hidden w-[120vh] sm:w-[180vh] flex px-10 h-full">
+        <div className="3md:hidden w-[140vh] sm:w-[180vh] flex px-10 h-full">
          <Swiper  slidesPerView={3} initialSlide={1} centeredSlides={true} spaceBetween={spaceBetween()}>
        {DESIGNMOBILESTORY.slice(0,3).map((item,index)=>(
             <>

@@ -11,7 +11,6 @@ import useScreenSize from '@/src/hooks/useScreenSize'
 import Link from 'next/link';
 import { CHPROJECTDETAIL } from '@/src/constants';
 import { useInView } from "react-intersection-observer";
-import RwdYoutube from '../../youtube';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
 // Import Swiper React components
@@ -47,13 +46,13 @@ export default function Project() {
   useEffect(() => {
     // Adjust the threshold based on screen size
     if (screenSize.width <= 1280) {
-      setThreshold(0.28);
+      setThreshold(0.18);
     } else if (screenSize.width <= 1440) {
-      setThreshold(0.25);
+      setThreshold(0.20);
     }else if (screenSize.width <= 1680) {
-      setThreshold(0.3);
+      setThreshold(0.25);
     } else {
-      setThreshold(0.42);
+      setThreshold(0.25);
     }
   }, [screenSize]);
 
@@ -123,7 +122,7 @@ export default function Project() {
             </div>
             {/* right content */}
             {/* TODO:依照未整理的圖片微調，需再調整 */}
-            <div className="w-3/4 h-full flex flex-col mt-[9vh] lg:mt-[11vh] 2lg:mt-[13vh] ">
+            <div className="w-3/4 h-full flex flex-col mt-[9vh] 3md:mt-[24vh] 2lg:mt-[24vh] 2xl:mt-[21.25vh] 3xl:mt-[23vh] wide:mt-[23vh]">
             <Lightbox
           open={openLightBox}
           close={toggleLightBoxOpen(false)}
@@ -156,16 +155,43 @@ export default function Project() {
           </SwiperSlide>
         ))} 
           </Swiper>
-          {/* <div className="flex overflow-x-auto gap-x-2 no-scrollbar w-auto max-w-none">
-            {PROJECRIMG01.map((item,index) => (
-              <ScrollCard key={item.id} dataIndex={index} src={item.src} setCurr={setCurr}/>
-            ))}
-          </div> */}
           </div>
-          {/* project detail */}
-          <div className="mx-auto w-[90%] flex flex-col gap-y-10 pt-1 pb-[6rem]">
-          <h2 className="text-primary text-[1.5rem] font-sans font-medium">”緩慢走入四立方 看見居家幸福模樣 &nbsp;&nbsp;”</h2>
-          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">這個三層樓的透天厝，主要的設計想法，是在挑戰郊區傳統街屋的形式。原始的概念是創造一個「生活的光箱」，使居住者在室內就可以享受到晨昏的變化。為了實現這個概念，在屋頂上設置了大型的玻璃天窗，如此，光線就可以大量的進入室內，使得二樓的起居室及三樓在白天都充滿了光線。另一方面，屋內的燈光可溢出室外，隱約的照亮社區，於是，這個房子在晚上便可扮演起社區的燈塔與標地物的角色。它不僅僅是私人住宅，也因為它的簡單，吸引了這個社區與外來者所有的關注。</span>
+          {/* desktop project detail */}
+          <div className="mx-auto w-[90%] flex flex-col gap-y-4 pt-1 pb-[6rem]">
+          <h2 className="text-primary text-[1.5rem] font-sans font-medium">概念</h2>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">『所謂的住宅，起源於人類最根本的慾望，是呈現人類夢想的地方。真的富裕，並不是單純的便利與舒適，而是，就算在有限的空間之中，也能創造豐富。』---安藤忠雄</span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          建築空間，介於都市與室內之間，作為一個生活的容器，作為一個行為的載體，它承載了宏觀與微觀的生活空間的層次。建築位於一個城鎮或都市之中，因為該區域的特色與文化，它表現出獨特的空間形式；也因為居住者的慾望，產生了個人化的空間性質與組合方式，甚至是立面表情。所以，對於都市而言，建築必須與環境對話，以回應「人與都市」的關係，同時，亦必須滿足個人對生活空間的執念與需求，以達到「人與環境」相容共存的場所精神，藉此創造多樣與豐富。</span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          本案的透天厝，位於彰化市的一個平靜的小鎮，一連串街屋的最邊間。概念來自於：<br/>
+          1. 突破傳統街屋的形式 <br/>
+          2. 將自然元素導入室內 <br/>
+          3. 置入都市空間 <br/>
+          </span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          透過現代簡約的設計，來強調本案的強烈的存在感，是本設計主要的訴求。主題「四立方」（House 4x4x4），代表本案的「四個主要的家庭成」、「四個水平與垂直相連的主要空間」，以及，以「四米為模矩」的分割建築量體的操作手法。空間的調性源自於屋主的鮮明個性，藉此而發展其空間佈局與建築外觀，以呈現「理性於外，感性於內」的內斂性格。</span><br/>
+          <h2 className="text-primary text-[1.5rem] font-sans font-medium">背景與訴求</h2>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          屋主在國外經商多年，退休回到了家鄉，希望將舊社區中的一棟自宅的舊房子，改建成一幢三層樓的建築物，不僅要生活機能充沛，節能性高效，充滿陽光和樂趣。準確的結構和佈局使四口之家可以共享庭院，客廳，餐廳和廚房等公共區域。</span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          從這個安靜的住所望出去，給人一種與世隔絕和孤立的感覺，從外注視這棟小白屋，又十分的與眾不同。退休，就像是走下竸技場至隱居之地，擁抱「侘寂」世界，所營造的空間，是經得起時間考驗的簡約美，有意識的放慢腳步，代表著簡單、安靜的生活方式，開始品嚐生活中的不同階段。</span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          它像是一個城市突擊隊般的，帶給這個寧靜且保守，以傳統製造業為主的老舊社區，一陣騷動與波瀾，成為一個建築的話題：它不僅代表一種新的可能，也代表了另一種不同的生活方式，更是一種回應都市、與環境產生互動的生活載體。</span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          在小巷弄裡擁有一間低調的生活空間，既獨特又私密，又不失現代便利性。居住者可以在室內，透過挑高的天窗，白天欣賞白雲和陽光，在夜晚觀看月亮和星星，與天地完美和諧地生活，此小宇宙帶來極大的和平與舒適。</span><br/><br/>
+          <h2 className="text-primary text-[1.5rem] font-sans font-medium">設計與規劃</h2>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          使用簡單的幾何形式和比例創造空間，滿足每個家庭成員的不同需求。例如，在一樓的起居室中，他的終生收藏可以自由展示。二樓寬闊的開放式客廳連結陽台，進一步擴展了視野，無論是從外部還是從內部觀看，都可以在空間上找到樂趣。
+          </span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          三樓中心的空間寬敞且開放，甚至可作無人機的垂直升降。為了充分利用三樓的看台，設計了一個可以水平轉動四分之一圓的平台與窗台相連。
+          </span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          而為了降低溫室效應所帶來的室內熱度，在天窗的側牆，提供了電動的通氣窗，讓室內可以呼吸及循環，減少空調的使用，節能減碳，貫徹回歸自然的生活方式，小住宅也能夠有永續環保的意識與作法。
+          </span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          獨特的純白色外觀，藉由光與影的作用，讓這棟建築像是一個「充滿光線的盒子」，在古老的社區中，房子屹立，就像一座燈塔，可以俯瞰這個的社區。退休生活，在這裡，一切都可以是原始、自然、簡單、真實的美好。為一成不變的舊社區與生活方式，增添一份設計意趣與生活體驗，成為街坊鄰居與外來訪客駐足與打卡的景點之一。
+          </span>
           <div className="w-full mx-auto aspect-w-16 aspect-h-9 pt-[3.25rem]">
           {/* <YouTube
               videoId="ikd3_3dsHS4?si=91vA7W5p86_q_61r"
@@ -242,10 +268,42 @@ export default function Project() {
             </div>
             ))}
             </div>
-          {/* project detail */}
+          {/* mobile project detail */}
           <div className="mx-auto w-[90%] flex flex-col gap-y-6 px-[1rem]">
-          <h2 className="text-primary text-[1.25rem] md:text-[1.5rem] font-sans font-normal px-1">” &nbsp;緩慢走入四立方 看見居家幸福模樣 &nbsp;&nbsp;”</h2>
-          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">這個三層樓的透天厝，主要的設計想法，是在挑戰郊區傳統街屋的形式。原始的概念是創造一個「生活的光箱」，使居住者在室內就可以享受到晨昏的變化。為了實現這個概念，在屋頂上設置了大型的玻璃天窗，如此，光線就可以大量的進入室內，使得二樓的起居室及三樓在白天都充滿了光線。另一方面，屋內的燈光可溢出室外，隱約的照亮社區，於是，這個房子在晚上便可扮演起社區的燈塔與標地物的角色。它不僅僅是私人住宅，也因為它的簡單，吸引了這個社區與外來者所有的關注。</span>
+          <h2 className="text-primary text-[1.25rem] md:text-[1.5rem] font-sans font-normal px-1">概念</h2>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">『所謂的住宅，起源於人類最根本的慾望，是呈現人類夢想的地方。真的富裕，並不是單純的便利與舒適，而是，就算在有限的空間之中，也能創造豐富。』---安藤忠雄</span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          建築空間，介於都市與室內之間，作為一個生活的容器，作為一個行為的載體，它承載了宏觀與微觀的生活空間的層次。建築位於一個城鎮或都市之中，因為該區域的特色與文化，它表現出獨特的空間形式；也因為居住者的慾望，產生了個人化的空間性質與組合方式，甚至是立面表情。所以，對於都市而言，建築必須與環境對話，以回應「人與都市」的關係，同時，亦必須滿足個人對生活空間的執念與需求，以達到「人與環境」相容共存的場所精神，藉此創造多樣與豐富。</span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          本案的透天厝，位於彰化市的一個平靜的小鎮，一連串街屋的最邊間。概念來自於：<br/>
+          1. 突破傳統街屋的形式 <br/>
+          2. 將自然元素導入室內 <br/>
+          3. 置入都市空間 <br/>
+          </span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          透過現代簡約的設計，來強調本案的強烈的存在感，是本設計主要的訴求。主題「四立方」（House 4x4x4），代表本案的「四個主要的家庭成」、「四個水平與垂直相連的主要空間」，以及，以「四米為模矩」的分割建築量體的操作手法。空間的調性源自於屋主的鮮明個性，藉此而發展其空間佈局與建築外觀，以呈現「理性於外，感性於內」的內斂性格。</span>
+          <h2 className="text-primary text-[1.25rem] md:text-[1.5rem] font-sans font-normal px-1">背景與訴求</h2>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          屋主在國外經商多年，退休回到了家鄉，希望將舊社區中的一棟自宅的舊房子，改建成一幢三層樓的建築物，不僅要生活機能充沛，節能性高效，充滿陽光和樂趣。準確的結構和佈局使四口之家可以共享庭院，客廳，餐廳和廚房等公共區域。</span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          從這個安靜的住所望出去，給人一種與世隔絕和孤立的感覺，從外注視這棟小白屋，又十分的與眾不同。退休，就像是走下竸技場至隱居之地，擁抱「侘寂」世界，所營造的空間，是經得起時間考驗的簡約美，有意識的放慢腳步，代表著簡單、安靜的生活方式，開始品嚐生活中的不同階段。</span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          它像是一個城市突擊隊般的，帶給這個寧靜且保守，以傳統製造業為主的老舊社區，一陣騷動與波瀾，成為一個建築的話題：它不僅代表一種新的可能，也代表了另一種不同的生活方式，更是一種回應都市、與環境產生互動的生活載體。</span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          在小巷弄裡擁有一間低調的生活空間，既獨特又私密，又不失現代便利性。居住者可以在室內，透過挑高的天窗，白天欣賞白雲和陽光，在夜晚觀看月亮和星星，與天地完美和諧地生活，此小宇宙帶來極大的和平與舒適。</span>
+          <h2 className="text-primary text-[1.25rem] md:text-[1.5rem] font-sans font-normal px-1">設計與規劃</h2>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">使用簡單的幾何形式和比例創造空間，滿足每個家庭成員的不同需求。例如，在一樓的起居室中，他的終生收藏可以自由展示。二樓寬闊的開放式客廳連結陽台，進一步擴展了視野，無論是從外部還是從內部觀看，都可以在空間上找到樂趣。</span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          三樓中心的空間寬敞且開放，甚至可作無人機的垂直升降。為了充分利用三樓的看台，設計了一個可以水平轉動四分之一圓的平台與窗台相連。
+          </span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          而為了降低溫室效應所帶來的室內熱度，在天窗的側牆，提供了電動的通氣窗，讓室內可以呼吸及循環，減少空調的使用，節能減碳，貫徹回歸自然的生活方式，小住宅也能夠有永續環保的意識與作法。
+          </span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          獨特的純白色外觀，藉由光與影的作用，讓這棟建築像是一個「充滿光線的盒子」，在古老的社區中，房子屹立，就像一座燈塔，可以俯瞰這個的社區。退休生活，在這裡，一切都可以是原始、自然、簡單、真實的美好。為一成不變的舊社區與生活方式，增添一份設計意趣與生活體驗，成為街坊鄰居與外來訪客駐足與打卡的景點之一。
+          </span>
+
+
           </div>
           <div className=" w-full mx-auto aspect-w-16 aspect-h-9 pt-12">
              {/* <RwdYoutube
@@ -271,8 +329,8 @@ export default function Project() {
       <div className="hidden 3md:flex flex-col w-full min-h-fit items-center 3md:-mt-[5rem] xl:-mt-[6rem] wide:-mt-[7rem] gap-y-16 mb-[7.5rem] wider:mb-[10rem]">
        <div className="w-full flex flex-col 3md:flex-row gap-y-12 justify-center items-center">
         <div className="w-1/4 h-1/2 flex flex-col items-center text-primary">
-            <span className='text-[1.875rem] md:text-[3rem] 3md:text-[2.5rem] xl:text-[3rem] 3xl:text-[3.875rem] font-brandonLight text-shadow'>PROJECTS</span>
-            <span className='text-[1.875rem] md:text-[3rem] 3md:text-[2.5rem] xl:text-[3rem] 3xl:text-[3.875rem] font-brandonBld text-shadow'>REVIEW</span>
+            <span className='text-[1.875rem] md:text-[2.75rem] 3xl:text-[3.875rem] font-brandonLight text-shadow'>PROJECTS</span>
+            <span className='text-[1.875rem] md:text-[2.75rem] 3xl:text-[3.875rem] font-brandonBld text-shadow'>REVIEW</span>
         </div>
           <div className="flex w-3/4 h-full items-center px-10 gap-x-[2.375rem] wider:gap-x-[12rem] z-20">
            {PROJECTITEM.map((item,index)=>(
@@ -299,12 +357,12 @@ export default function Project() {
       {/* mobile layout */}
        <div className="3md:hidden flex flex-col w-full min-h-[80vh] items-center gap-y-16 mb-[6rem]">
        <div className="w-full flex flex-col h-[40vh] items-center pt-10 bg-[#ECECEC]">
-        <div className="w-1/4 h-1/2 flex flex-col items-center text-primary ">
+        <div className="w-1/4 h-1/2 flex flex-col items-center text-primary">
             <span className='text-[1.875rem] md:text-[2.75rem] font-brandonLight'>PROJECTS</span>
             <span className='text-[1.875rem] md:text-[2.75rem] font-brandonBld'>REVIEW</span>
         </div>
       </div>
-        <div className="lg:hidden w-[120vh] -mt-[10rem] xs:-mt-[18rem] sm:-mt-[11rem] md:-mt-[8rem] flex h-full items-center px-10 md:px-20">
+        <div className="lg:hidden w-[120vh] md:w-[190vh] -mt-[10rem] xs:-mt-[18rem] sm:-mt-[11rem] md:-mt-[8rem] flex h-full items-center px-10 ">
          <Swiper  slidesPerView={3} initialSlide={1} centeredSlides={true} spaceBetween={spaceBetween()}>
        {PROJECTMOBILEITEM.map((item,index)=>(
             <>

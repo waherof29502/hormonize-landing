@@ -12,11 +12,11 @@ export default function Footer() {
     <footer>
       <div className="relative bg-cover bg-mobileFooter 3md:bg-footer bg-center 3md:bg-right w-full min-h-[90vh] 3md:min-h-[58vh]">
         {/* desktop contact us */}
-        <div className="hidden 3md:flex flex-col min-h-[58vh] md:justify-center items-center 3md:items-start 3md:w-[45%] 2lg:w-[36%] wide:w-1/3 lg:pl-2 xl:pl-0 3md:pr-[100px] xl:pr-[180px] ml-auto gap-y-[30px] lg:gap-y-[15px] ">
-          <h2 className="text-[1.875rem] 3xl:text-[3.875rem] text-primary font-brandonLight">
+        <div className="hidden 3md:flex flex-col min-h-[58vh] md:justify-center items-center 3md:items-start 3md:w-[45%] 2lg:w-[36%]  wide:w-1/3 lg:pl-2 xl:pl-0 3md:pr-[100px] xl:pr-[120px] 2xl:pr-[180px] ml-auto gap-y-[30px] lg:gap-y-[15px] ">
+          <h2 className="text-[1.875rem] xl:text-[3rem] 3xl:text-[3.875rem] text-primary font-brandonLight">
             CONTACT <span className="font-brandonBld">US</span>
           </h2>
-          <span className="text-primary text-[1.25rem] 3xl:text-[1.5rem] wider:text-[2.125rem] pb-4">
+          <span className="text-primary text-[1.25rem] xl:text-[1.25rem] 3xl:text-[1.5rem] wider:text-[2.125rem] pb-4">
             了解如何用設計為你的生活開拓嶄新視野歡迎與我們聯繫。
           </span>
           <Button

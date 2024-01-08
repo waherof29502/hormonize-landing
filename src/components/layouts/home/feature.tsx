@@ -7,8 +7,8 @@ export default function Feature() {
       <div className="hidden 3md:flex w-full min-h-[90vh] bg-feature bg-cover bg-no-repeat">
         <div className="w-full flex justify-center items-center">
           <div className="w-1/4 h-full flex flex-col justify-center items-center text-white border-solid border-r-[2px] border-white">
-            <span className='text-[1.875rem] 3md:text-[2.5rem] xl:text-[3.875rem] font-brandonLight text-shadow'>DESIGN</span>
-            <span className='text-[1.875rem] 3md:text-[2.5rem] xl:text-[3.875rem] font-brandonBld text-shadow'>DNA</span>
+            <span className='text-[1.875rem] md:text-[2.75rem] 3xl:text-[3.875rem] font-brandonLight text-shadow'>DESIGN</span>
+            <span className='text-[1.875rem] md:text-[2.75rem] 3xl:text-[3.875rem] font-brandonBld text-shadow'>DNA</span>
           </div>
           <div className="w-1/2 h-full flex flex-col justify-center pl-[3.125rem] 3xl:pl-[5.625rem] gap-y-[1rem] 3xl:gap-y-[2.3125rem]">
             <h2 className="text-white text-[1.25rem] 3xl:text-[1.875rem] tracking-[1.8px] leading-[3rem] font-medium">

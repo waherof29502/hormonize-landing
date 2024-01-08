@@ -23,13 +23,23 @@ export default function Projects() {
         {/* project1 */}
         <div  className="w-full flex justify-center items-center" >
          <div ref={refDesktopOne} className="w-1/4 h-[50vh] flex flex-col justify-center items-center text-primary gap-x-2">
-           {ViewDesktopOne ?  
+          <div className='flex flex-col overflow-hidden h-1/4'>
+          <span className="group-hover:-translate-y-16 ease-linear duration-300 font-brandonMed text-[1.75rem] tracking-[1.12px] leading-[1.875rem]">
+            HARM<span className="text-secondary font-brandonBld font-bold">O</span>NIZE
+            <br />
+            DESIGN
+          </span>
+          <span className="font-sans group-hover:-translate-y-[3.25rem] ease-linear duration-300 text-[1.25rem] 3xl:text-[1.75rem] tracking-[2.24px]">
+            寬堂空間設計
+          </span>
+          </div>
+           {/* {ViewDesktopOne ?  
            <motion.span 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ ease:easeIn ,duration: 0.25 }} 
             className='text-[2.25rem] 3xl:text-[2.5rem] font-brandonBld uppercase text-shadow'>{PROJECTITEM[0].projectTag}</motion.span>
-            :<span className='text-[2.25rem] 3xl:text-[2.5rem] font-brandonBld uppercase text-shadow'>{PROJECTITEM[0].category[0]}</span>} 
+            :<span className='text-[2.25rem] 3xl:text-[2.5rem] font-brandonBld uppercase text-shadow'>{PROJECTITEM[0].category[0]}</span>}  */}
           </div>   
           <div className="w-2/4 h-full flex justify-center px-[50px] 3xl:pl-[0rem] 3xl:pr-[6rem] gap-y-[1rem] 3xl:gap-y-[37px]">
           <Image src={PROJECTITEM[0].imgProjectSrc} alt={PROJECTITEM[0].title} width={1343} height={580} className='object-cover rounded-[15px]'/>
@@ -105,7 +115,7 @@ export default function Projects() {
       {/* mobile layout */}
        <div className="3md:hidden flex flex-col w-full min-h-fit pb-[60px] pt-6 gap-y-[5rem]">
          {/* project1 */}
-        <div  className="w-full flex flex-col justify-center items-center md:px-6" >
+        <div  className="w-full flex flex-col justify-center items-center md:px-6">
          <div ref={refOne} className="w-full h-[10vh] flex flex-col justify-center items-center text-primary">
            {ViewOne ?  
            <motion.span 

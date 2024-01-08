@@ -1,9 +1,9 @@
 import React from 'react';
 import {PROJECTITEM} from '@/src/constants';
 import Image from 'next/image';
-import Button from '../../button';
+import Button from '../button';
 
-export default function Hero() {
+export default function Projects() {
   return (
     <section className="relative overflow-hidden">
       {/* desktop layout */}
@@ -41,7 +41,7 @@ export default function Hero() {
         <>
         <div className="w-full flex justify-center items-center " >
          <div  className="w-1/5 3xl:w-1/4 h-[35vh] flex flex-col justify-center items-center text-primary gap-x-2">
-         <div className="w-full h-[44%] wider:h-[20%] flex flex-col justify-center items-center group overflow-hidden">
+         <div className="w-full h-[28%] wider:h-[20%] flex flex-col justify-center items-center group overflow-hidden">
          <div className='flex flex-col justify-center items-center'>
          <span className='text-[1.5rem] md:text-[2rem] xl:text-[2.25rem] font-brandonBld uppercase text-shadow ease-linear duration-300 translate-y-5 group-hover:-translate-y-24'>{item.category[0]}</span>
          <span className='text-[1.5rem] md:text-[2rem] xl:text-[2.25rem] font-brandonBld uppercase text-shadow ease-linear duration-300 translate-y-5 group-hover:-translate-y-24'>{item.category[1]}</span>
@@ -66,7 +66,7 @@ export default function Hero() {
       ))}
         </div>
         {/* mobile layout */}
-       <div className="3md:hidden flex flex-col w-full min-h-screen pb-[60px] pt-6 gap-y-[5rem] -mt-[22rem] md:-mt-[16.75rem] ">
+       <div className="3md:hidden flex flex-col w-full min-h-fit pb-[60px] pt-6 gap-y-[5rem] -mt-[28rem] sm:-mt-[23.75rem] ">
           {PROJECTITEM.map((item)=>(
           <>
           <div  className="w-full flex flex-col justify-center items-center md:px-6 ">

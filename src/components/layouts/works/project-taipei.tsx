@@ -53,11 +53,11 @@ export default function Project() {
     if (screenSize.width <= 1280) {
       setThreshold(0.28);
     } else if (screenSize.width <= 1440) {
-      setThreshold(0.25);
+      setThreshold(0.28);
     }else if (screenSize.width <= 1680) {
       setThreshold(0.36);
     } else {
-      setThreshold(0.44);
+      setThreshold(0.38);
     }
   }, [screenSize]);
 
@@ -131,7 +131,7 @@ export default function Project() {
             {/* right content */}
             {/* TODO:通知設計專案圖片尺寸統一 */}
             {/* <div className="w-3/4 h-full flex flex-col mt-[8vh] wide:mt-[10vh] "> */}
-            <div className="w-3/4 h-full flex flex-col mt-[8vh] wide:mt-[9vh] ">
+            <div className="w-3/4 h-full flex flex-col mt-[8vh] 3md:mt-[18vh] xl:mt-[15vh] wide:mt-[15vh] ">
             <Lightbox
           open={openLightBox}
           close={toggleLightBoxOpen(false)}
@@ -170,12 +170,48 @@ export default function Project() {
             ))}
           </div> */}
           </div>
-          {/* project detail */}
-          <div className="mx-auto w-[90%] flex flex-col gap-y-10 pt-1 pb-[6rem]">
+          {/* desktop project detail */}
+          <div className="mx-auto w-[90%] flex flex-col gap-y-4 pt-1 pb-[6rem]">
           <h2 className="text-primary text-[1.5rem] font-sans font-medium">概念</h2>
-          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">傳統的住宅單元的規劃，一向以預計的家庭成員，以及購屋的經濟能力來做為考量的原則。同時，以最簡單的生活模式作為出發點，形成單調的「三房兩廳」或「兩房一廳」的標準住宅單元。另外，面對不同的居住者，少子化及高齡化的趨勢，以及，面對現今世代的工作方式，例如，SOHO族、YOUTUBERS、自僱業者、藝術工作者、網路商家…等，這些可能必須以自家空間為出發點的人群，很明顯地，一般僅提供居住及生活功能的傳統住宅單元，已不符合他們的使用。因此，住宅單元必須結合居住者的生活與工作，才不會局限居住者的生活方式，是一種納入更多機能為考量的『第三種住宅單元』：一個針對特定的居住者所形成的『多功能且彈性』的空間規劃概念。如此，才能把有限的空間發揮到最大的效益，亦才能展現住宅單元的價值。本案住宅的主人，是專業的大提琴以及鋼琴演奏者，對於自然有著一樣的愛好，因此，本設計思考的重點在於如何將主人的音樂性與生活態度轉譯成空間，並且以簡潔的空間形式，突顯本身就具備優美造型的鋼琴以及大提琴之存在，成為與主人生活互伴的另外兩個主角。</span>
-          <div className="w-full mx-auto aspect-w-16 aspect-h-9 pt-[3.25rem]">
-            <div className='flex w-full items-end justify-end gap-x-[0.75rem] pt-[4rem] pb-[6rem] pr-1'>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          隨著網路世代的興起，人與人之間的互動與連結，早已不再侷限於固定的面對面形式、時間或地點。傳統的集體工作形式，已逐漸被彈性且多元的線上和雲端功能所取代。
+          </span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          針對個人而言，過往的工作形式，透過移動，從家到工作場所，是一種「點到點」的過程。現今的網路環境，工作地點可以是任何場所，甚至是在移動的過程中，就可以進行的。
+          </span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          工作空間的進化，已由過去的由高至低的，以管理階層為主的規劃方式，漸漸的以水平化的管理模式為主，以大多數的員工為優先，由下而上的翻轉，以「人性化」為核心概念，顛覆了過往的封閉且千篇一律的方式，趨向於一個「舒適且減壓」的工作環境，謀取員工最大福利並創造最佳產能，於是，「第三空間」的概念油然而生。
+          </span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          第三空間，於形式上，帶出企業體的核心價值與產品特色，提供一個有別於傳統視角或既定刻版的印象，用以詮釋該企業體獨特的面向。本案企圖以「在咖啡廳內工作」的氛圍來傳達第三空間的概念。例如，利用大地色系來創造溫度，採用木質的面材來提高親和感，利用點光源及間接照明來降低冷色系的高科技感等。
+          </span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          第三空間的營造，可以適度的釋放壓力，轉換注意力與情緒，亦可以提高工作及溝通的效能，具有滿足社會心理性的效益。於工作空間之中，運用第三空間的設計與規劃，成為客製化的核心概念，使工作空間可以呈現多元且人性化的面向。<br/><br/>
+          </span>
+          <h2 className="text-primary text-[1.5rem] font-sans font-medium">設計與規劃</h2>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          本案位於內湖科學園區，規劃面積為165平方公尺的室內單元。
+          </span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          於平面規劃上，長向矩型的辦公空間，由入口開始，依據功能上的需求，分為前後兩部份。
+          </span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          前半部為對外開放區，包括網路控制及展示中心及入口接待區。
+          </span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          後半部為後場辦公區，不對外開放，包括內部會議室及開放式工作區。
+          </span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          這四個主要的空間，以側邊的走道來連結，以保持空間的最大使用，亦將走道過渡空間作最簡捷的動線安排。走道中央，以玻璃門作門禁控管，以保持後場辦公區的私密性。
+          </span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          就工作空間的辨識度而言，工作空間除了滿足機能上的需求之外，它亦必須外顯公司組織的本質與特色，也就是企業體的核心價值，透過實體空間這個媒介，傳達該組織的身份與特質（Identity）。
+          </span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          於是，透過特定工作場所的空間營造，體現企業的訴求形象，以取得外界的認知，以及內部成員的認同，則成為辦公空間規劃設計的重點。
+          </span>
+          <div className="w-full mx-auto aspect-w-16 aspect-h-9 pt-5 3xl:pt-10">
+            <div className='flex w-full items-end justify-end gap-x-[0.75rem]  pb-[6rem] pr-1'>
             <span className="text-primary text-[1rem] tracking-[0.64px] font-normal font-sans">作品分享</span>
             <FacebookShareButton  url={currentUrl}>
             <FbSquareIcon className="text-[1.5rem] bg-primary text-white" />   
@@ -238,10 +274,46 @@ export default function Project() {
             </div>
             ))}
             </div>
-          {/* project detail */}
+          {/* mobile project detail */}
           <div className="mx-auto w-[90%] flex flex-col gap-y-6 px-[1rem]">
           <h2 className="text-primary text-[1.25rem] md:text-[1.5rem] font-sans font-normal px-1">概念</h2>
-          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">傳統的住宅單元的規劃，一向以預計的家庭成員，以及購屋的經濟能力來做為考量的原則。同時，以最簡單的生活模式作為出發點，形成單調的「三房兩廳」或「兩房一廳」的標準住宅單元。另外，面對不同的居住者，少子化及高齡化的趨勢，以及，面對現今世代的工作方式，例如，SOHO族、YOUTUBERS、自僱業者、藝術工作者、網路商家…等，這些可能必須以自家空間為出發點的人群，很明顯地，一般僅提供居住及生活功能的傳統住宅單元，已不符合他們的使用。因此，住宅單元必須結合居住者的生活與工作，才不會局限居住者的生活方式，是一種納入更多機能為考量的『第三種住宅單元』：一個針對特定的居住者所形成的『多功能且彈性』的空間規劃概念。如此，才能把有限的空間發揮到最大的效益，亦才能展現住宅單元的價值。本案住宅的主人，是專業的大提琴以及鋼琴演奏者，對於自然有著一樣的愛好，因此，本設計思考的重點在於如何將主人的音樂性與生活態度轉譯成空間，並且以簡潔的空間形式，突顯本身就具備優美造型的鋼琴以及大提琴之存在，成為與主人生活互伴的另外兩個主角。</span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          隨著網路世代的興起，人與人之間的互動與連結，早已不再侷限於固定的面對面形式、時間或地點。傳統的集體工作形式，已逐漸被彈性且多元的線上和雲端功能所取代。
+          </span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          針對個人而言，過往的工作形式，透過移動，從家到工作場所，是一種「點到點」的過程。現今的網路環境，工作地點可以是任何場所，甚至是在移動的過程中，就可以進行的。
+          </span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          工作空間的進化，已由過去的由高至低的，以管理階層為主的規劃方式，漸漸的以水平化的管理模式為主，以大多數的員工為優先，由下而上的翻轉，以「人性化」為核心概念，顛覆了過往的封閉且千篇一律的方式，趨向於一個「舒適且減壓」的工作環境，謀取員工最大福利並創造最佳產能，於是，「第三空間」的概念油然而生。
+          </span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          第三空間，於形式上，帶出企業體的核心價值與產品特色，提供一個有別於傳統視角或既定刻版的印象，用以詮釋該企業體獨特的面向。本案企圖以「在咖啡廳內工作」的氛圍來傳達第三空間的概念。例如，利用大地色系來創造溫度，採用木質的面材來提高親和感，利用點光源及間接照明來降低冷色系的高科技感等。
+          </span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          第三空間的營造，可以適度的釋放壓力，轉換注意力與情緒，亦可以提高工作及溝通的效能，具有滿足社會心理性的效益。於工作空間之中，運用第三空間的設計與規劃，成為客製化的核心概念，使工作空間可以呈現多元且人性化的面向。<br/><br/>
+          </span>
+          <h2 className="text-primary text-[1.25rem] md:text-[1.5rem] font-sans font-normal px-1">設計與規劃</h2>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          本案位於內湖科學園區，規劃面積為165平方公尺的室內單元。
+          </span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          於平面規劃上，長向矩型的辦公空間，由入口開始，依據功能上的需求，分為前後兩部份。
+          </span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          前半部為對外開放區，包括網路控制及展示中心及入口接待區。
+          </span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          後半部為後場辦公區，不對外開放，包括內部會議室及開放式工作區。
+          </span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          這四個主要的空間，以側邊的走道來連結，以保持空間的最大使用，亦將走道過渡空間作最簡捷的動線安排。走道中央，以玻璃門作門禁控管，以保持後場辦公區的私密性。
+          </span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          就工作空間的辨識度而言，工作空間除了滿足機能上的需求之外，它亦必須外顯公司組織的本質與特色，也就是企業體的核心價值，透過實體空間這個媒介，傳達該組織的身份與特質（Identity）。
+          </span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          於是，透過特定工作場所的空間營造，體現企業的訴求形象，以取得外界的認知，以及內部成員的認同，則成為辦公空間規劃設計的重點。<br/><br/>
+          </span>
           </div>
           {/* <div className="md:hidden w-full mx-auto aspect-w-16 aspect-h-9 pt-12">
           <YouTube
@@ -281,8 +353,8 @@ export default function Project() {
       <div className="hidden 3md:flex flex-col w-full min-h-fit items-center 3md:-mt-[5rem] xl:-mt-[6rem] wide:-mt-[7rem] gap-y-16 mb-[7.5rem] wider:mb-[10rem]">
        <div className="w-full flex flex-col 3md:flex-row gap-y-12 justify-center items-center">
         <div className="w-1/4 h-1/2 flex flex-col items-center text-primary">
-            <span className='text-[1.875rem] md:text-[3rem] 3md:text-[2.5rem] xl:text-[3rem] 3xl:text-[3.875rem] font-brandonLight text-shadow'>PROJECTS</span>
-            <span className='text-[1.875rem] md:text-[3rem] 3md:text-[2.5rem] xl:text-[3rem] 3xl:text-[3.875rem] font-brandonBld text-shadow'>REVIEW</span>
+            <span className='text-[1.875rem] md:text-[2.75rem] 3xl:text-[3.875rem] font-brandonLight text-shadow'>PROJECTS</span>
+            <span className='text-[1.875rem] md:text-[2.75rem] 3xl:text-[3.875rem] font-brandonBld text-shadow'>REVIEW</span>
         </div>
           <div className="flex w-3/4 h-full items-center px-10 gap-x-[2.375rem] wider:gap-x-[12rem] z-20">
            {PROJECTITEM.map((item,index)=>(
@@ -314,7 +386,7 @@ export default function Project() {
             <span className='text-[1.875rem] md:text-[2.75rem] font-brandonBld'>REVIEW</span>
         </div>
       </div>
-        <div className="lg:hidden w-[120vh] -mt-[10rem] xs:-mt-[18rem] sm:-mt-[11rem] md:-mt-[8rem] flex h-full items-center px-10 md:px-20">
+        <div className="lg:hidden w-[120vh] md:w-[190vh] -mt-[10rem] xs:-mt-[18rem] sm:-mt-[11rem] md:-mt-[8rem] flex h-full items-center px-10">
          <Swiper  slidesPerView={3} initialSlide={1} centeredSlides={true} spaceBetween={spaceBetween()}>
        {PROJECTMOBILEITEM.map((item,index)=>(
             <>

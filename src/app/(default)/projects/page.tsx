@@ -4,6 +4,6 @@ import Projects from '@/src/components/layouts/projects/projects';
 export default function ProjectPage() {
   return <div>
     <Hero/>
-    <Projects/>
+    {/* <Projects/> */}
   </div>;
 }

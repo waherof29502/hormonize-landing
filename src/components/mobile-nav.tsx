@@ -40,7 +40,7 @@ export default function MobileNav({ header }: { header: boolean }) {
             initial={{ y: -1, opacity: 0 }}
             animate={{ y: -1, opacity: 1 }}
             transition={{ delay: 2.5, duration: 0.4 }}
-            className="absolute w-full h-[6px] bg-white "
+            className="absolute w-full h-[6px] bg-white"
           ></motion.div>
           <motion.div
             initial={{ y: 0, opacity: 0 }}
@@ -51,9 +51,10 @@ export default function MobileNav({ header }: { header: boolean }) {
              <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 100 }}
-            transition={{ delay: 3, duration: 1 }}
+            transition={{ delay: 3, duration: 0 }}
             className="mt-auto text-primary font-brandonMed text-[1.25rem] tracking-[1.12px] leading-[30px]"
           >
+            <div className="mt-3"></div>
             HARM<span className="text-secondary font-brandonBld font-bold">O</span>NIZEDESIGN
           </motion.span>
           </motion.div>

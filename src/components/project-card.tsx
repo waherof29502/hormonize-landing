@@ -19,7 +19,7 @@ const ProjectCard = ({ imgSrc, title, tag, icon }: ProjectCardProps) => {
               alt={title}
               width={445}
               height={267}
-              className="hover:scale-110 duration-500 ease-linear" 
+              className="hover:scale-110 duration-500 ease-linear aspect-auto" 
             />
             </div>
              <p className="mt-6 font-sans text-[1.25rem] 3md:text-[1.5rem] text-primary font-medium tracking-[0.8px] lg:tracking-[0.96px]">

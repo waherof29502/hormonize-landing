@@ -16,7 +16,7 @@ export default function Logo({ header }: any) {
             !header && pathName === '/' ? 'text-white' : 'text-primary'
           }`}
         >
-          <span className="group-hover:-translate-y-16 ease-linear duration-300 font-brandonMed  text-[1.75rem] tracking-[1.12px] leading-[1.875rem]">
+          <span className="group-hover:-translate-y-16 ease-linear duration-300 font-brandonMed text-[1.75rem] tracking-[1.12px] leading-[1.875rem]">
             HARM<span className="text-secondary font-brandonBld font-bold">O</span>NIZE
             <br />
             DESIGN
@@ -30,7 +30,7 @@ export default function Logo({ header }: any) {
             !header && pathName === '/' ? 'text-white' : 'text-primary'
           }`}
         >
-          <span className="group-hover:-translate-y-10 ease-linear duration-300 font-brandonMed text-[1.25rem]  tracking-[1.12px] leading-[1.25rem] 3xl:leading-[1.875rem]">
+          <span className="group-hover:-translate-y-10 ease-linear duration-300 font-brandonMed text-[1.25rem] tracking-[1.12px] leading-[1.25rem] 3xl:leading-[1.875rem]">
             HARM<span className="text-secondary font-brandonBld font-bold">O</span>NIZE
             <br />
             DESIGN
@@ -42,7 +42,7 @@ export default function Logo({ header }: any) {
       </div>
       <div className="3md:hidden flex justify-center items-center">
         <LogoWhite
-          className={`text-[2.5rem] md:ml-2 mb-1 ${!header && pathName === '/' ? 'text-white' : 'text-primary'}`}
+          className={`text-[2.5rem] -ml-1 md:ml-2 mb-1 ${!header && pathName === '/' ? 'text-white' : 'text-primary'}`}
         />
         <div
           className={`flex flex-col group overflow-hidden h-[29px] mt-auto ${

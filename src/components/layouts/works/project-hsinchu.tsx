@@ -61,18 +61,18 @@ export default function Project() {
   const updateIndex = ({ index: current }: { index: number }) => setCurr(current);
   const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
   const screenSize = useScreenSize();
-  const [threshold, setThreshold] = useState<number>(0.38);
+  const [threshold, setThreshold] = useState<number>(0.42);
    const { ref, inView } = useInView({ threshold });
   useEffect(() => {
     // Adjust the threshold based on screen size
     if (screenSize.width <= 1280) {
-      setThreshold(0.28);
+      setThreshold(0.20);
     } else if (screenSize.width <= 1440) {
-      setThreshold(0.25);
+      setThreshold(0.20);
     }else if (screenSize.width <= 1680) {
-      setThreshold(0.3);
+      setThreshold(0.25);
     } else {
-      setThreshold(0.38);
+      setThreshold(0.28);
     }
   }, [screenSize]);
 
@@ -142,7 +142,7 @@ export default function Project() {
             </div>
             {/* right content */}
              {/* TODO:通知設計專案圖片尺寸統一，在接續調整*/}
-            <div className="w-3/4 h-full flex flex-col mt-[14vh] wide:mt-[14vh]">
+            <div className="w-3/4 h-full flex flex-col mt-[7vh] 3md:mt-[24vh] 2lg:mt-[23vh] 2xl:mt-[20vh] 3xl:mt-[23vh] wide:mt-[21vh]">
             <Lightbox
           open={openLightBox}
           close={toggleLightBoxOpen(false)}
@@ -181,10 +181,47 @@ export default function Project() {
             ))}
           </div> */}
           </div>
-          {/* project detail */}
-          <div className="mx-auto w-[90%] flex flex-col gap-y-10 pt-1 pb-[6rem]">
+          {/* desktop project detail */}
+          <div className="mx-auto w-[90%] flex flex-col gap-y-4 pt-1 pb-[6rem]">
           <h2 className="text-primary text-[1.5rem] font-sans font-medium">概念</h2>
-          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">傳統的住宅單元的規劃，一向以預計的家庭成員，以及購屋的經濟能力來做為考量的原則。同時，以最簡單的生活模式作為出發點，形成單調的「三房兩廳」或「兩房一廳」的標準住宅單元。另外，面對不同的居住者，少子化及高齡化的趨勢，以及，面對現今世代的工作方式，例如，SOHO族、YOUTUBERS、自僱業者、藝術工作者、網路商家…等，這些可能必須以自家空間為出發點的人群，很明顯地，一般僅提供居住及生活功能的傳統住宅單元，已不符合他們的使用。因此，住宅單元必須結合居住者的生活與工作，才不會局限居住者的生活方式，是一種納入更多機能為考量的『第三種住宅單元』：一個針對特定的居住者所形成的『多功能且彈性』的空間規劃概念。如此，才能把有限的空間發揮到最大的效益，亦才能展現住宅單元的價值。本案住宅的主人，是專業的大提琴以及鋼琴演奏者，對於自然有著一樣的愛好，因此，本設計思考的重點在於如何將主人的音樂性與生活態度轉譯成空間，並且以簡潔的空間形式，突顯本身就具備優美造型的鋼琴以及大提琴之存在，成為與主人生活互伴的另外兩個主角。</span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          傳統的住宅單元的規劃，一向以預計的家庭成員，以及購屋的經濟能力來做為考量的原則。同時，以最簡單的生活模式作為出發點，形成單調的「三房兩廳」或「兩房一廳」的標準住宅單元。
+          </span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          另外，面對不同的居住者，少子化及高齡化的趨勢，以及，面對現今世代的工作方式，例如，SOHO族、YOUTUBERS、自僱業者、藝術工作者、網路商家…等，這些可能必須以自家空間為出發點的人群，很明顯地，一般僅提供居住及生活功能的傳統住宅單元，已不符合他們的使用。
+          </span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          因此，住宅單元必須結合居住者的生活與工作，才不會局限居住者的生活方式，是一種納入更多機能為考量的『第三種住宅單元』：一個針對特定的居住者所形成的『多功能且彈性』的空間規劃概念。如此，才能把有限的空間發揮到最大的效益，亦才能展現住宅單元的價值。
+          </span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          本案住宅的主人，是專業的大提琴以及鋼琴演奏者，對於自然有著一樣的愛好，因此，本設計思考的重點在於如何將主人的音樂性與生活態度轉譯成空間，並且以簡潔的空間形式，突顯本身就具備優美造型的鋼琴以及大提琴之存在，成為與主人生活互伴的另外兩個主角。<br/><br/>
+          </span>
+          <h2 className="text-primary text-[1.5rem] font-sans font-medium">設計與規劃</h2>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          空間的策略上，以餐廳為核心作發散，具備同時連結琴房與客房的作用，並作為教學、預演、協奏等活動的起點。
+          </span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          琴房中的鋼琴無疑地成為空間的視覺主角，特地的將之設計為開放式的表演廳，即使空間有限，依然設計了減低聲音反射的天花及格架，以優化回響時間，強化聲音的品質。鋼琴上方更具體而微地呈現了舞台般的聚光燈，用以模擬音樂廳的演奏經驗。
+          </span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          琴房中的主牆面以明鏡及灰色鏡的組合來作為空間的延伸及象徵鋼琴的黑白鍵。面走道的透明玻璃拉門可以調節空間，除了切換鋼琴空間的機能性與視覺性之外，也能夠用來暫時關閉廚房，以強化客廳與琴房的公共性。
+          </span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          大提琴的個性細膩而滑潤，藏身於開放的客房之中，其藝術品般的造型讓她即使只是靜靜地站在一旁，都讓房間充滿主題性。因此，在大提琴的空間中，傾斜相交的白色書架暗示著樂譜中的「升記號」。下方的隱藏式掀床櫃，櫃板上垂直線條重現了鋼琴黑白鍵的秩序。
+          </span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          客房中的木紋書架嵌入白牆中以界定其領域感，而圓弧狀的天花，除了模擬大提琴共鳴箱內部空間之外，也讓空間產生共鳴箱的機能。與餐廳之間的金屬玻璃折門，則是轉譯自樹枝的造型，呼應客廳側電視櫃上方的樹枝狀的線條飾板，以及木紋地板與木質餐桌的有機紋理及樹林意象。如此，三者共居的主題性，自然成形。
+          </span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          主臥室低調且溫柔，顯露出主人的個性。特別設計的滑動化妝鏡，採用完美的幾何造型，增添了房間中的趣味性，其具備化妝的照明之外，也能在不使用時，優雅地收納於櫃內，不會霸道與強勢的佔據窗面，而讓陽光成為空間的主角。天花的投射燈，則為主人搭配服裝時，提供最好的視覺效果。
+          </span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          空間就像音樂一樣，是流動的，有節奏的，是連續的，是富戲劇性的，是明暗對比的。藉由無隔間、活動隔間或滑動隔間的方式，呈現空間的流動感，多樣性與連續性，除了滿足功能之外，亦讓室內有著不一樣的表情。
+          </span>
+          <span className="text-[#3E3E3E] text-[1.25rem] font-sans font-light leading-[2.5rem]">
+          整體上，以白色面漆與白橡木為基調，呈現空間的暖度；藉由舞台空間的意象表達，呈現表演空間的聚焦與舞台感，使空間有別於一般單純居家空間的生活。屋主的不同面相可呈現於此，是個人特質付諸於空間個性的體現。
+          </span>
+          
           <div className="w-full mx-auto aspect-w-16 aspect-h-9 pt-[3.25rem]">
             {/* <RwdYoutube
             src="https://www.youtube.com/embed/K75SjnLDQWA?si=LbVZ8I1hGB5Goq6v"
@@ -253,10 +290,47 @@ export default function Project() {
             </div>
             ))}
             </div>
-          {/* project detail */}
+          {/* mobile project detail */}
           <div className="mx-auto w-[90%] flex flex-col gap-y-6 px-[1rem]">
+
           <h2 className="text-primary text-[1.25rem] md:text-[1.5rem] font-sans font-normal px-1">概念</h2>
-          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem]font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">傳統的住宅單元的規劃，一向以預計的家庭成員，以及購屋的經濟能力來做為考量的原則。同時，以最簡單的生活模式作為出發點，形成單調的「三房兩廳」或「兩房一廳」的標準住宅單元。另外，面對不同的居住者，少子化及高齡化的趨勢，以及，面對現今世代的工作方式，例如，SOHO族、YOUTUBERS、自僱業者、藝術工作者、網路商家…等，這些可能必須以自家空間為出發點的人群，很明顯地，一般僅提供居住及生活功能的傳統住宅單元，已不符合他們的使用。因此，住宅單元必須結合居住者的生活與工作，才不會局限居住者的生活方式，是一種納入更多機能為考量的『第三種住宅單元』：一個針對特定的居住者所形成的『多功能且彈性』的空間規劃概念。如此，才能把有限的空間發揮到最大的效益，亦才能展現住宅單元的價值。本案住宅的主人，是專業的大提琴以及鋼琴演奏者，對於自然有著一樣的愛好，因此，本設計思考的重點在於如何將主人的音樂性與生活態度轉譯成空間，並且以簡潔的空間形式，突顯本身就具備優美造型的鋼琴以及大提琴之存在，成為與主人生活互伴的另外兩個主角。</span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem] font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          傳統的住宅單元的規劃，一向以預計的家庭成員，以及購屋的經濟能力來做為考量的原則。同時，以最簡單的生活模式作為出發點，形成單調的「三房兩廳」或「兩房一廳」的標準住宅單元。
+          </span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem] font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          另外，面對不同的居住者，少子化及高齡化的趨勢，以及，面對現今世代的工作方式，例如，SOHO族、YOUTUBERS、自僱業者、藝術工作者、網路商家…等，這些可能必須以自家空間為出發點的人群，很明顯地，一般僅提供居住及生活功能的傳統住宅單元，已不符合他們的使用。
+          </span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem] font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          因此，住宅單元必須結合居住者的生活與工作，才不會局限居住者的生活方式，是一種納入更多機能為考量的『第三種住宅單元』：一個針對特定的居住者所形成的『多功能且彈性』的空間規劃概念。如此，才能把有限的空間發揮到最大的效益，亦才能展現住宅單元的價值。
+          </span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem] font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          本案住宅的主人，是專業的大提琴以及鋼琴演奏者，對於自然有著一樣的愛好，因此，本設計思考的重點在於如何將主人的音樂性與生活態度轉譯成空間，並且以簡潔的空間形式，突顯本身就具備優美造型的鋼琴以及大提琴之存在，成為與主人生活互伴的另外兩個主角。<br/><br/>
+          </span>
+          <h2 className="text-primary text-[1.25rem] md:text-[1.5rem] font-sans font-normal px-1">設計與規劃</h2>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem] font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          空間的策略上，以餐廳為核心作發散，具備同時連結琴房與客房的作用，並作為教學、預演、協奏等活動的起點。
+          </span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem] font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          琴房中的鋼琴無疑地成為空間的視覺主角，特地的將之設計為開放式的表演廳，即使空間有限，依然設計了減低聲音反射的天花及格架，以優化回響時間，強化聲音的品質。鋼琴上方更具體而微地呈現了舞台般的聚光燈，用以模擬音樂廳的演奏經驗。
+          </span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem] font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          琴房中的主牆面以明鏡及灰色鏡的組合來作為空間的延伸及象徵鋼琴的黑白鍵。面走道的透明玻璃拉門可以調節空間，除了切換鋼琴空間的機能性與視覺性之外，也能夠用來暫時關閉廚房，以強化客廳與琴房的公共性。
+          </span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem] font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          大提琴的個性細膩而滑潤，藏身於開放的客房之中，其藝術品般的造型讓她即使只是靜靜地站在一旁，都讓房間充滿主題性。因此，在大提琴的空間中，傾斜相交的白色書架暗示著樂譜中的「升記號」。下方的隱藏式掀床櫃，櫃板上垂直線條重現了鋼琴黑白鍵的秩序。
+          </span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem] font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          客房中的木紋書架嵌入白牆中以界定其領域感，而圓弧狀的天花，除了模擬大提琴共鳴箱內部空間之外，也讓空間產生共鳴箱的機能。與餐廳之間的金屬玻璃折門，則是轉譯自樹枝的造型，呼應客廳側電視櫃上方的樹枝狀的線條飾板，以及木紋地板與木質餐桌的有機紋理及樹林意象。如此，三者共居的主題性，自然成形。
+          </span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem] font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          主臥室低調且溫柔，顯露出主人的個性。特別設計的滑動化妝鏡，採用完美的幾何造型，增添了房間中的趣味性，其具備化妝的照明之外，也能在不使用時，優雅地收納於櫃內，不會霸道與強勢的佔據窗面，而讓陽光成為空間的主角。天花的投射燈，則為主人搭配服裝時，提供最好的視覺效果。
+          </span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem] font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          空間就像音樂一樣，是流動的，有節奏的，是連續的，是富戲劇性的，是明暗對比的。藉由無隔間、活動隔間或滑動隔間的方式，呈現空間的流動感，多樣性與連續性，除了滿足功能之外，亦讓室內有著不一樣的表情。
+          </span>
+          <span className="text-[#3E3E3E] text-[1rem] md:text-[1.25rem] font-sans font-[350] tracking-[0.8px] leading-[2.25rem] text-shadow">
+          整體上，以白色面漆與白橡木為基調，呈現空間的暖度；藉由舞台空間的意象表達，呈現表演空間的聚焦與舞台感，使空間有別於一般單純居家空間的生活。屋主的不同面相可呈現於此，是個人特質付諸於空間個性的體現。
+          </span>
           </div>
           <div className="w-full mx-auto aspect-w-16 aspect-h-9 pt-12">
           {/* <RwdYoutube
@@ -283,8 +357,8 @@ export default function Project() {
       <div className="hidden 3md:flex flex-col w-full min-h-fit items-center 3md:-mt-[5rem] xl:-mt-[6rem] wide:-mt-[7rem] gap-y-16 mb-[7.5rem] wider:mb-[10rem]">
        <div className="w-full flex flex-col 3md:flex-row gap-y-12 justify-center items-center">
         <div className="w-1/4 h-1/2 flex flex-col items-center text-primary">
-            <span className='text-[1.875rem] md:text-[3rem] 3md:text-[2.5rem] xl:text-[3rem] 3xl:text-[3.875rem] font-brandonLight text-shadow'>PROJECTS</span>
-            <span className='text-[1.875rem] md:text-[3rem] 3md:text-[2.5rem] xl:text-[3rem] 3xl:text-[3.875rem] font-brandonBld text-shadow'>REVIEW</span>
+            <span className='text-[1.875rem] md:text-[2.75rem] 3xl:text-[3.875rem] font-brandonLight text-shadow'>PROJECTS</span>
+            <span className='text-[1.875rem] md:text-[2.75rem] 3xl:text-[3.875rem] font-brandonBld text-shadow'>REVIEW</span>
         </div>
           <div className="flex w-3/4 h-full items-center px-10 gap-x-[2.375rem] wider:gap-x-[12rem] z-20">
            {PROJECTITEM.map((item,index)=>(
@@ -316,7 +390,7 @@ export default function Project() {
             <span className='text-[1.875rem] md:text-[2.75rem] font-brandonBld'>REVIEW</span>
         </div>
       </div>
-        <div className="lg:hidden w-[120vh] -mt-[10rem] xs:-mt-[18rem] sm:-mt-[11rem] md:-mt-[8rem] flex h-full items-center px-10 md:px-20">
+        <div className="lg:hidden w-[120vh] md:w-[190vh] -mt-[10rem] xs:-mt-[18rem] sm:-mt-[11rem] md:-mt-[8rem] flex h-full items-center px-10 ">
          <Swiper  slidesPerView={3} initialSlide={1} centeredSlides={true} spaceBetween={spaceBetween()}>
        {PROJECTMOBILEITEM.map((item,index)=>(
             <>

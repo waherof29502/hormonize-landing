@@ -63,6 +63,7 @@ export default function DesktopNav({ header }: { header: boolean }) {
             transition={{ delay: 3, duration: 1 }}
             className="mt-auto text-primary font-brandonMed text-[1.25rem] tracking-[1.12px] leading-[30px]"
           >
+            <div className="mt-3"></div>
             HARM<span className="text-secondary font-brandonBld font-bold">O</span>NIZEDESIGN
           </motion.span>
         </div>

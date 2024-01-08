@@ -26,8 +26,8 @@ const StoryCard = ({ imgSrc, title,link }: StoryCardProps) => {
             <div className="absolute inset-0 bg-white/20 opacity-0 hover:opacity-100 ease-in duration-200 group">
             <div className="absolute bg-primary/70 inset-0 h-[45%] mt-auto opacity-0 group-hover:opacity-100 ease-in duration-200">
                 <div className="flex flex-col h-full justify-between p-6 wide:p-10">
-                <span className="text-[16px] wide:text-[24px]">{title}</span>
-                <Button containerStyles="border-white border-[1px] ml-auto px-3 py-1 text-[1rem] wide:text-[1.25rem] font-brandonMed hover:text-primary hover:bg-white" path={link}>learn more</Button>
+                <span className="text-[1rem] md:text-[1.25rem] wide:text-[1.5rem]">{title}</span>
+                <Button containerStyles="border-white border-[1px] ml-auto px-3 py-1 text-[1rem] md:text-[1.25rem] wide:text-[1.25rem] font-brandonMed hover:text-primary hover:bg-white" path={link}>learn more</Button>
                 </div>
             </div>
             </div>
