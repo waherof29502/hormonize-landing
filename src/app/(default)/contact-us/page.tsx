@@ -34,7 +34,7 @@ export default function ContactUsPage() {
             </div>
             </div>
             <div className="w-3/4 h-[120vh] flex items-center justify-center">
-              {/* <ContactForm/> */}
+              <ContactForm/>
             </div>
           </div>
         </div>
