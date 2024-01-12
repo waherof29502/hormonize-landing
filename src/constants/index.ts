@@ -6,7 +6,7 @@ export const LINKS = [
   { path: '/about-us', name: 'ABOUT US' },
   { path: '/projects', name: 'PROJECTS REVIEW' },
   { path: '/process-charges', name: 'PROCESS & CHARGES' },
-  { path: '/news', name: 'BLOG & FORUM' },
+  { path: '/blog-forum', name: 'BLOG & FORUM' },
   { path: '/contact-us', name: 'CONTACT US' }
 ] as const;
 

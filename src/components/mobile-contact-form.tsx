@@ -18,7 +18,7 @@ interface FormValues {
   captcha:string;
 }
 
-export default function ContactForm() {
+export default function MobileContactForm() {
   const [ authCode, setAuthCode ] = useState('');
   // 設定生成隨機驗證碼的 logic
   const codeHandler = () => {
@@ -61,9 +61,9 @@ export default function ContactForm() {
         line: values.line,
         picked:values.picked,
         required: values.required,
-        captcha:values.captcha
+        captcha:values.captcha,
       };
-    console.log("submit form",queryParams)
+    console.log("123",queryParams)
     }
   });
   const OnSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -71,14 +71,13 @@ export default function ContactForm() {
     formik.handleSubmit();
   };
   return (
-    <div className='flex flex-col w-[90%] min-h-screen gap-y-10'>
+    <div className='flex flex-col w-full min-h-screen gap-y-10'>
       <form
         onSubmit={formik.handleSubmit}
         className="flex flex-wrap flex-row rounded-lg w-full"
       >
             {/* 聯絡人資訊區塊 */}
-            <div className="flex flex-col w-full text-[#1b1b1b] px-4 gap-y-10 ">
-            <div className='flex w-full gap-x-[6rem] 2xl:gap-x-[10rem] px-10 wide:pl-20 wide:pr-[14rem]'>
+            <div className="flex flex-col w-full text-[#1b1b1b] px-4 gap-y-8 ">
             {/* Name input field */}
             <div className="flex flex-col w-full gap-y-1">
               <label htmlFor="email" className="block pb-2">
@@ -93,14 +92,14 @@ export default function ContactForm() {
                 onBlur={formik.handleBlur}
               />
               <span
-                className={` font-sans text-[1rem] tracking-wide ${
+                className={` font-sans text-[0.75rem] tracking-wide ${
                   formik.touched.name && formik.errors.name ? 'text-red-400' : ''
                 } `}
               >
                 {' '}
                 {formik.touched.name && formik.errors.name ? formik.errors.name : ''}
               </span>
-            </div>
+              </div>
             {/* Phone input field */}
             <div className="flex flex-col w-full gap-y-1">
               <label htmlFor="email" className="block pb-2">
@@ -115,7 +114,7 @@ export default function ContactForm() {
                 onBlur={formik.handleBlur}
               />
               <span
-                className={`font-sans text-[1rem] tracking-wide ${
+                className={`font-sans text-[0.75rem] tracking-wide ${
                   formik.touched.phone && formik.errors.phone ? 'text-red-400' : ''
                 } `}
               >
@@ -123,8 +122,6 @@ export default function ContactForm() {
                 {formik.touched.phone && formik.errors.phone ? formik.errors.phone : ''}
               </span>
             </div>
-            </div>
-            <div className='flex gap-x-[6rem] 2xl:gap-x-[10rem] px-10 wide:pl-20 wide:pr-[14rem]'>          
             {/* Line input field */}
             <div className="flex flex-col w-full gap-y-1">
               <label htmlFor="email" className="block pb-2">
@@ -153,22 +150,21 @@ export default function ContactForm() {
                 onBlur={formik.handleBlur}
               />
               <span
-                className={` font-sans text-[1rem] tracking-wide ${
+                className={` font-sans text-[0.75rem] tracking-wide ${
                   formik.touched.email && formik.errors.email ? 'text-red-400' : ''
                 } `}
               >
                 {' '}
                 {formik.touched.email && formik.errors.email ? formik.errors.email : ''}
               </span>
-            </div>
             </div> 
              {/* 諮詢項目區塊 */}
-            <div className="flex flex-col w-full gap-y-5 mt-5 px-10 wide:pl-20 wide:pr-[14rem]">
+            <div className="flex flex-col w-full gap-y-5">
             {/* Radio field */}
             <label htmlFor="picked" className="block pb-2">
               <span className="text-[1.25rem] tracking-[0.72px] font-medium font-sans">諮詢項目</span>
             </label>
-            <div role="group" aria-labelledby="my-radio-group" className='flex gap-x-10 xl:gap-x-20'>
+            <div role="group" aria-labelledby="my-radio-group" className='flex flex-col gap-y-5'>
               <label className="custom-radio">
                 <input
                   type="radio"
@@ -236,7 +232,7 @@ export default function ContactForm() {
               </label>          
             </div>
             <span
-                className={` font-sans text-[1rem] tracking-wide ${
+                className={` font-sans text-[0.75rem] tracking-wide ${
                   formik.touched.picked && formik.errors.picked ? 'text-red-400' : ''
                 } `}
               >
@@ -244,7 +240,7 @@ export default function ContactForm() {
                 {formik.touched.picked && formik.errors.picked ? formik.errors.picked : ''}
               </span>
             {/* Require input field */}
-            <div className="flex flex-col w-full py-8">
+            <div className="flex flex-col w-full ">
               <label htmlFor="require" className="block pb-2">
                 <span className="text-[1.25rem] tracking-[0.72px] font-medium font-sans">需求說明</span>             
               </label>
@@ -259,11 +255,11 @@ export default function ContactForm() {
               />
             </div>
              {/* 驗證碼 input field */}
-            <div className="flex flex-col w-1/2 my-4">         
+            <div className="flex flex-col w-full my-4 gap-y-4">         
               <label htmlFor="captcha" className="block pb-2">
                 <span className="text-[1.25rem] tracking-[0.72px] font-medium font-sans">驗證碼</span>             
               </label>
-              <div className='w-full flex gap-x-10'>
+              <div className='w-full flex flex-col gap-y-2'>
               <input
                 className="bg-[#F4F4F4] p-3 w-full focus:border-b-1 focus:border-t-0 focus:border-r-0 focus:border-l-0 focus:border-b-[#1b1b1b] focus:ring-transparent"
                 type="text"
@@ -272,31 +268,32 @@ export default function ContactForm() {
                 value={formik.values.captcha.toUpperCase()}
                 onBlur={formik.handleBlur}
               />
-              <div className='w-full'>
-                <PicAuthCode code={codeHandler} />
-              </div>
-                </div>
-               <span
-                className={`font-sans text-[1rem] tracking-wide ${
+              <span
+                className={`mt-2 font-sans text-[0.75rem] tracking-wide ${
                   formik.touched.captcha && formik.errors.captcha ? 'text-red-400' : ''
                 } `}
               >
                 {' '}
                 {formik.touched.captcha && formik.errors.captcha ? formik.errors.captcha : ''}
               </span>
-              {/* <Image src={Captcha} alt="captcha" className="w-full h-full aspect-auto"/> */}
+              <div className='flex justify-center items-center sm:justify-start sm:ml-16 w-full mt-8'>
+                <div className='relative transform scale-[1.9] px-2'>
+                <PicAuthCode code={codeHandler} />
+                </div>
+              </div>
+               </div>
             </div>
             </div>
         </div>
       </form>
-      <div className="flex w-full items-center px-10 wide:pl-20 wide:pr-[14rem] mt-5">
+      <div className="flex flex-col w-full items-center mt-5 gap-y-10">
       <div className="w-full h-full flex items-center gap-x-4 px-6">
-        <ClockIcon className="text-[1.5rem] 2xl:text-[2rem] text-primary"/>
-        <span className="text-primary text-[1.25rem] 2xl:text-[1.25rem] tracking-[0.72px] font-medium leading-[20px]">感謝諮詢! 我們收到訊息後將於8小時內回覆您 。</span>
+        <ClockIcon className="text-[2rem] text-primary"/>
+        <span className="text-primary text-[1.25rem] sm:text-[1.5rem] md:text-[1.5rem] tracking-[0.8px] font-medium leading-[40px]">感謝諮詢! 我們收到訊息後將於8小時內回覆您 。</span>
       </div>
       <button
         type="submit"
-        className="flex justify-center ml-auto w-[14rem] bg-primary hover:bg-[#77A849] py-2  mr-5"
+        className="flex justify-center ml-auto w-[7rem] md:w-[10rem] bg-primary hover:bg-[#77A849] py-2  mr-5"
         onClick={OnSubmit}
       >
         <span className="text-white text-[1rem] 2xl:text-[1.5rem] tracking-[0.72px] font-medium ">
