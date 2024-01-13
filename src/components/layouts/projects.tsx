@@ -2,7 +2,7 @@ import React from 'react';
 import {PROJECTITEM} from '@/src/constants';
 import Image from 'next/image';
 import Button from '../button';
-
+import Link from 'next/link';
 export default function Projects() {
   return (
     <section className="relative overflow-hidden">
@@ -39,7 +39,7 @@ export default function Projects() {
       <div className="relative hidden 3md:flex flex-col w-full min-h-[90vh] 3md:gap-y-0 xl:gap-y-[5rem] 3md:-mt-[5rem] -mt-[7rem] mb-[9.25rem]">
       {PROJECTITEM.map((item)=>(
         <>
-        <div className="w-full flex justify-center items-center scale-90 xl:scale-100" >
+        <div className="w-full flex justify-center items-center scale-90 xl:scale-100 group " >
          <div  className="w-1/5 3xl:w-1/4 h-[35vh] flex flex-col justify-center items-center text-primary gap-x-2">
          <div className="w-full h-[44%] wider:h-[20%] flex flex-col justify-center items-center group overflow-hidden">
          <div className='flex flex-col justify-center items-center'>
@@ -50,15 +50,19 @@ export default function Projects() {
           </div>
           </div>   
           <div className="w-2/4 h-full flex justify-center px-[50px] 3xl:pl-[0rem] 3xl:pr-[6rem] gap-y-[1rem] 3xl:gap-y-[37px]">
-          <Image src={item.imgProjectSrc} alt={"12"} width={1343} height={580} className='object-cover rounded-[15px]'/>
+          <Link href={item.path} className='cursor-pointer'>
+          <Image src={item.imgProjectSrc} alt={"12"} width={1343} height={580} className='object-cover rounded-[15px] '/>
+          </Link>
           </div>
           <div className="w-1/4 h-full flex flex-col justify-center gap-y-1 pl-2">
+              <Link href={item.path} className='cursor-pointer'>
               <p className="mt-6 font-sans text-[1.5rem] text-primary font-medium tracking-[0.8px] lg:tracking-[0.96px]">{item.title}
               </p>
               <div className="flex gap-x-2 items-center pt-1">
                 <span className="text-[1rem] text-primary">{item.icon}</span>
                 <span className="font-sans text-[#3E3E3E] font-syne text-[1rem] tracking-[0.64px] font-light">{item.tag}</span>
               </div>
+              </Link>
             <Button containerStyles='wide:w-1/3 font-brandonMed mt-8 mr-auto border-[1px] border-primary px-5 py-2 text-[1.5rem] text-primary hover:text-white hover:bg-primary' path={item.path}>learn more</Button>
           </div>
         </div>

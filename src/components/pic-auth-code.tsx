@@ -26,10 +26,11 @@ const PicAuthCode: FC<PicAuthCodeProps> = (props) => {
 
   useEffect(() => {
     refresh();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   useEffect(() => {
     identifyCode && drawPic();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [identifyCode]);
 
   const randomNum = (min: number, max: number): number => {

@@ -50,10 +50,12 @@ export default function Footer() {
         {/* desktop footer */}
         <div className="hidden 3md:flex items-center justify-between py-10">
           {/* Logo */}
-          <div className="flex flex-col text-primary gap-y-3">
+          <Link href="/">
+          <div className="flex flex-col text-primary gap-y-3"> 
             <span className="text-[2rem] tracking-[1.28px] leading-[1.875rem] font-brandonMed">HARMONIZE DESIGN</span>
             <span className="text-[1.875rem] tracking-[1.2px] text-primary font-normal">寬堂空間設計</span>
           </div>
+           </Link>
           {/* Service Nav as */}
           <div className="flex flex-col items-end gap-y-[0.75rem]">
             {FOOTERITEMS.map((item, index) => (

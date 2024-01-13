@@ -5,7 +5,7 @@ import Button from '../../button';
 import {ArrowRightIcon,ArrowLeftIcon} from '@/public/svg';
 // Import Swiper React components
 import { Swiper, SwiperSlide} from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Navigation,Autoplay } from 'swiper/modules';
 // Import Swiper styles
 import 'swiper/css';
 
@@ -16,14 +16,19 @@ export default function Hero() {
     <section className="relative overflow-hidden">
       <div className="w-full min-h-screen">
       <Swiper
+      loop
       slidesPerView={1}
       navigation={{
         nextEl:'.button-next-slide',
         prevEl:'.button-prev-slide'
       }}
       onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-      modules={[Navigation]}
+      modules={[Navigation,Autoplay]}
       pagination={{clickable:true}}
+      autoplay= {{
+      delay: 3000,
+      disableOnInteraction: false
+    }}
     >
     {HEROITEM.map((item,index)=>(
       <SwiperSlide key={index} >
@@ -31,9 +36,9 @@ export default function Hero() {
       </SwiperSlide>
       ))} 
     </Swiper>
-     <div className="hidden absolute w-full 3md:flex items-center justify-between h-full inset-0 z-20">
+     <div className="hidden absolute w-full 3md:flex items-center justify-between h-full inset-0 z-20 bg-primary/25">
         <button className={`flex justify-end text-primary w-[7.5rem] button-prev-slide ${activeIndex === 0 ?"opacity-0" :"opacity-100"}`} ><ArrowLeftIcon className="text-[48px] text-white"/></button>
-        <button className={`text-primary w-[7.5rem] button-next-slide ${activeIndex === HEROITEM.length-1 ?"opacity-0" :"opacity-100"}`} ><ArrowRightIcon className="text-[48px] text-white"/></button>
+        <button className={`text-primary w-[7.5rem] button-next-slide opacity-100}`} ><ArrowRightIcon className="text-[48px] text-white"/></button>
     </div>
       </div>
   {/* hero content */}

@@ -91,6 +91,9 @@ module.exports = {
         mobileAboutUsHero:'url(/images/about/mobile/bg-hero.png)',
         serviceHero:'url(/images/service/bg-hero.png)',
         serviceSectionBg:'url(/images/service/1-1.png)',
+        mobileServiceHero:'url(/images/service/mobile/bg-hero.png)',
+        mobileServiceSectionImg01:'url(/images/service/mobile/2-1.png)',
+        mobileServiceSectionImg02:'url(/images/service/mobile/2-2.png)',
         contact:'url(/images/success/bg-contact.png)',
       },
       screens: {

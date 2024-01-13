@@ -36,3 +36,9 @@ export {default as ServiceIcon1} from './service-icon-01.svg';
 export {default as ServiceIcon2} from './service-icon-02.svg';
 export {default as ServiceIcon3} from './service-icon-03.svg';
 export {default as ServiceIcon4} from './service-icon-04.svg';
+
+export {default as TagIcon} from './icon-tag.svg';
+export {default as CateIcon} from './icon-cate.svg';
+export {default as DateIcon} from './icon-date.svg'
+export {default as SearchIcon} from './icon-search.svg'
+export {default as CateItemIcon} from './icon-cate-item.svg'

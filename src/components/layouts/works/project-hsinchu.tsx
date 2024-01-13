@@ -14,6 +14,7 @@ import { useInView } from "react-intersection-observer";
 import RwdYoutube from '../../youtube';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
+import AwardImage from '@/public/images/about/2-1.png';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -75,7 +76,6 @@ export default function Project() {
       setThreshold(0.28);
     }
   }, [screenSize]);
-
 
   const copyToClipboard = () => {
   try {
@@ -224,7 +224,7 @@ export default function Project() {
           
           <div className="w-full mx-auto aspect-w-16 aspect-h-9 pt-[3.25rem]">
             {/* <RwdYoutube
-            src="https://www.youtube.com/embed/K75SjnLDQWA?si=LbVZ8I1hGB5Goq6v"
+            src="https://www.youtube.com/embed/K75SjnLDQWA?si=Qbk6i3l7PMmYiHpi"
             /> */}
             <LiteYouTubeEmbed id="K75SjnLDQWA" title=""/>
             <div className='flex w-full items-end justify-end gap-x-[0.75rem] pt-[4rem] pb-[6rem] pr-1'>

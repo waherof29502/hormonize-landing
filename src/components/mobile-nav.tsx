@@ -33,25 +33,25 @@ export default function MobileNav({ header }: { header: boolean }) {
           <motion.div
             initial={{ x: 1000, y: -36 }}
             animate={{ x: 0, y: -36 }}
-            transition={{ delay: 1, duration: 1 }}
+            transition={{ delay: 1, duration: 0.5 }}
             className="relative w-full h-[1.8px] bg-primary "
           ></motion.div>
           <motion.div
             initial={{ y: -1, opacity: 0 }}
             animate={{ y: -1, opacity: 1 }}
-            transition={{ delay: 2.5, duration: 0.4 }}
+            transition={{ delay: 1.7, duration: 0.4 }}
             className="absolute w-full h-[6px] bg-white"
           ></motion.div>
           <motion.div
             initial={{ y: 0, opacity: 0 }}
             animate={{ y: screenSize.height - 160, opacity: 1 }}
-            transition={{ delay: 2.5, duration: 0.3 }}
+            transition={{ delay: 1.7, duration: 0.2 }}
             className="relative w-full h-[2px] bg-primary transform transition-transform group-hover:ease-linear duration-800"
           >
              <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 100 }}
-            transition={{ delay: 3, duration: 0 }}
+            transition={{ delay: 2, duration: 0 }}
             className="mt-auto text-primary font-brandonMed text-[1.25rem] tracking-[1.12px] leading-[30px]"
           >
             <div className="mt-3"></div>

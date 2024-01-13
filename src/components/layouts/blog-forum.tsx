@@ -1,16 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 import Button from '../button';
-import AwardImage from '@/public/images/about/2-1.png';
-import GrayBg from '@/public/images/about/2-2.png'
-import Signature from '@/public/images/about/3-1.png';
 import ChargeImg01 from '@/public/images/service/2-2.png'
-import ChargeImg02 from '@/public/images/service/2-1.png'
 import MobileAwardImage from '@/public/images/service/mobile/1-1.png';
-import MobileChargeImg01 from '@/public/images/service/mobile/2-1.png'
-import MobileChargeImg02 from '@/public/images/service/mobile/2-2.png'
+import { ServiceIcon1,ServiceIcon2,ServiceIcon3,ServiceIcon4, DateIcon,CateIcon,TagIcon,SearchIcon, CateItemIcon } from '@/public/svg';
 
-import { ServiceIcon1,ServiceIcon2,ServiceIcon3,ServiceIcon4 } from '@/public/svg';
 
 export default function BlogForum() {
   return (
@@ -43,22 +37,102 @@ export default function BlogForum() {
       <div className="hidden 3md:flex flex-col w-full -mt-20">
       {/* 第一區塊 */}
       <div className="flex w-full min-h-screen ">
-        <div className="w-full flex justify-center items-center ">
-          <div className="w-[60%] h-full flex flex-col gap-y-10 items-center bg-purple-600">
-            <div className="w-[85%] bg-amber-950 h-[70vh]">
-              <div className="w-full h-[65%]">
-              <Image src={ChargeImg01} alt="image.charge" className='w-full h-full aspect-auto'/>
+        <div className="w-full flex justify-center items-center pb-[7rem]">
+          {/* 左邊文字區塊 */}
+          <div className="w-[60%] h-full flex flex-col gap-y-20 items-center">
+            {/* 第一篇 */}
+            <div className="w-[80%] ">
+              <div className="w-full border-solid border-[1px] border-[#D1D1D1] min-h-fit">
+              <div className="w-full h-[50vh]">
+              <Image src={ChargeImg01} alt="image.charge" className='w-full h-full object-cover'/>
               </div>
-              <div className="w-full h-[35%]">
-                <div></div>
+              <div className="w-full min-h-fit py-2">
+                <div className='flex flex-col gap-y-2 p-5'>
+                  <h2 className='text-primary text-[1.75rem] tracking-[0.56px] font-medium'>個人工作室V.S住家</h2>
+                  <div className='flex items-center gap-x-4'>
+                    <div className='flex items-center gap-x-1'>
+                    <TagIcon className='text-[#929292] text-[1.625rem]'/>
+                    <p className='text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]'>室內設計,房間裝修,台北市</p>
+                    </div>
+                     <div className='flex items-center gap-x-1'>
+                    <DateIcon className='text-[#929292] text-[1.625rem]'/>
+                    <p className='text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]'>2020/8/21</p>
+                    </div>
+                     <div className='flex items-center gap-x-1'>
+                    <CateIcon className='text-[#929292] text-[1.625rem]'/>
+                    <p className='text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]'>室內設計</p>
+                    </div>
+                  </div>
+                  <p className='mt-2  text-[#3E3E3E] text-[1.25rem] tracking-[1px] leading-[29px] font-sans font-[350]'>住宅的主人，是專業的大提琴以及鋼琴演奏者，對於自然有著一樣的愛好，因此，本設計思考的重點在於如何將主人的音樂性與生活態度轉譯成空間，並且以簡潔的空間形式，突顯本身就具備優美造型的鋼琴以及大提琴之存在，成為與主人生活互伴的另外兩個主角。</p>
+                  <Button containerStyles='wide:w-1/3 font-brandonMed mt-2 ml-auto border-[1px] border-primary px-5 py-2 text-[1.5rem] text-primary hover:text-white hover:bg-primary' path="/">learn more</Button>
+
+                </div>
+              </div>
               </div>
             </div>
-            <div className="w-[85%] bg-amber-950 h-1/2"></div>
-            <div className="w-[85%] bg-amber-950 h-1/2"></div>
-
+            {/* second */}
+         <div className="w-[80%] ">
+              <div className="w-full border-solid border-[1px] border-[#D1D1D1] min-h-fit">
+              <div className="w-full h-[50vh]">
+              <Image src={ChargeImg01} alt="image.charge" className='w-full h-full object-cover'/>
+              </div>
+              <div className="w-full h-[40vh] py-2">
+                <div className='flex flex-col gap-y-2 p-5'>
+                  <h2 className='text-primary text-[1.75rem] tracking-[0.56px] font-medium'>個人工作室V.S住家</h2>
+                  <div className='flex items-center gap-x-4'>
+                    <div className='flex items-center gap-x-1'>
+                    <TagIcon className='text-[#929292] text-[1.625rem]'/>
+                    <p className='text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]'>室內設計,房間裝修,台北市</p>
+                    </div>
+                     <div className='flex items-center gap-x-1'>
+                    <DateIcon className='text-[#929292] text-[1.625rem]'/>
+                    <p className='text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]'>2020/8/21</p>
+                    </div>
+                     <div className='flex items-center gap-x-1'>
+                    <CateIcon className='text-[#929292] text-[1.625rem]'/>
+                    <p className='text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]'>室內設計</p>
+                    </div>
+                  </div>
+                  <p className='text-[#3E3E3E] text-[1.25rem] tracking-[1px] leading-[29px] font-sans font-[350]'>住宅的主人，是專業的大提琴以及鋼琴演奏者，對於自然有著一樣的愛好，因此，本設計思考的重點在於如何將主人的音樂性與生活態度轉譯成空間，並且以簡潔的空間形式，突顯本身就具備優美造型的鋼琴以及大提琴之存在，成為與主人生活互伴的另外兩個主角。</p>
+                </div>
+              </div>
+              </div>
+            </div>
 
           </div>
-          <div className="w-[40%] h-full bg-purple-500"></div>
+          
+          {/* 右邊文字區塊 */}
+          <div className="w-[40%] h-full flex items-center justify-center">
+            <div className="w-[70%] h-full flex flex-col gap-y-[4rem]">
+              <div className="flex flex-col gap-y-5">
+                <div className='w-fit'>
+                  <span className='text-primary text-[1.375rem] tracking-[6.16px] leading-[29px] font-sans font-medium px-1'>搜尋</span>
+                  <div className="h-[1px] bg-primary w-full mt-1 " />
+                </div>
+                <div className="relative">
+                <input type="search" placeholder='請輸入關鍵字....' className='w-full p-4 border-[1px] border-[#D1D1D1] text-primary' />
+                <button className='absolute right-1 top-1/2 -translate-y-1/2 p-4'>
+                <SearchIcon className="text-[19px] bg-white text-[#3E3E3E]"/>
+                </button>
+                </div>
+                </div>
+                {/* cate content */}
+                <div className="flex flex-col gap-y-5">
+                <div className='w-fit'>
+                  <span className='text-primary text-[1.375rem] tracking-[6.16px] leading-[29px] font-sans font-medium px-1'>文章分類</span>
+                  <div className="h-[1px] bg-primary w-full mt-1 " />
+                </div>
+                <div className='flex flex-col w-full'>
+                  <div className='flex items-center gap-x-2 pb-1 border-b border-dashed border-[#3E3E3E]'>
+                    <CateItemIcon className="text-[19px] text-[#3E3E3E]"/>
+                    <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]">了解室內設計</span>
+                  </div>
+                </div>
+                
+                
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

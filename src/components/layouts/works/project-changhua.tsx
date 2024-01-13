@@ -13,6 +13,8 @@ import { CHPROJECTDETAIL } from '@/src/constants';
 import { useInView } from "react-intersection-observer";
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
+import RwdYoutube from '../../youtube';
+import YouTube from 'react-youtube';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -20,6 +22,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
+import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
+import Inline from "yet-another-react-lightbox/plugins/inline";
+import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
 export const PROJECRIMG01 = [
   { id: 1, src: '/images/project-detail/work-changhua/1-1.jpg' },
@@ -199,12 +206,11 @@ export default function Project() {
                 width: '100%', 
                 height: '690',
               }}
-              onReady={onPlayerReady}
             /> */}
-             {/* <RwdYoutube
+             <RwdYoutube
             src="https://www.youtube.com/embed/ikd3_3dsHS4?si=fOyGYuOeKDBk7Xm8"
-            /> */}
-            <LiteYouTubeEmbed id="ikd3_3dsHS4" title=""/>
+            />
+            {/* <LiteYouTubeEmbed id="ikd3_3dsHS4" title=""/> */}
             <div className='flex w-full items-end justify-end gap-x-[0.75rem] pt-[4rem] pb-[6rem] pr-1'>
             <span className="text-primary text-[1rem] tracking-[0.64px] font-normal font-sans">作品分享</span>
             <FacebookShareButton  url={currentUrl}>

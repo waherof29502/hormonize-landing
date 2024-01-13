@@ -25,7 +25,7 @@ export default function Nav({
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 100 }}
-            transition={{ delay: 2.8, duration: 1 }}
+            transition={{ delay: 2, duration: 1 }}
             className="flex justify-center items-center group gap-x-2"
           >
             <SubtractIcon
