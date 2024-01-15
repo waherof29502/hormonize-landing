@@ -26,7 +26,7 @@ export default function DesktopNav({ header }: { header: boolean }) {
           <motion.div
             initial={{ x: -35, y: -25, rotate: 0 }}
             animate={{ y: -25, rotate: -90 }}
-            transition={{ motion: easeInOut, delay: 1, duration: 0.2 }}
+            transition={{ motion: easeInOut, delay: 0.5, duration: 0.2 }}
             style={{ originX: 0.5, originY: 0.5 }}
             className="ml-auto -mr-8"
           >

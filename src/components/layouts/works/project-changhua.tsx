@@ -14,7 +14,6 @@ import { useInView } from "react-intersection-observer";
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
 import RwdYoutube from '../../youtube';
-import YouTube from 'react-youtube';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -22,12 +21,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
-import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
-import Inline from "yet-another-react-lightbox/plugins/inline";
-import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
-import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
-import Zoom from "yet-another-react-lightbox/plugins/zoom";
-
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 export const PROJECRIMG01 = [
   { id: 1, src: '/images/project-detail/work-changhua/1-1.jpg' },
   { id: 2, src: '/images/project-detail/work-changhua/1-2.jpg' },
@@ -49,7 +44,7 @@ export default function Project() {
   const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
   const screenSize = useScreenSize();
   const [threshold, setThreshold] = useState<number>(0.42);
-   const { ref, inView } = useInView({ threshold });
+  const { ref, inView } = useInView({ threshold });
   useEffect(() => {
     // Adjust the threshold based on screen size
     if (screenSize.width <= 1280) {
@@ -154,6 +149,7 @@ export default function Project() {
         <div className="mx-auto w-[90%] py-[4rem]">
            <Swiper
         slidesPerView={7.5}
+        loop
         onSlideChange={(swiper) => setCurr(swiper.activeIndex)}
         >
         {PROJECRIMG01.map((item,index)=>(

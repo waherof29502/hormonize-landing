@@ -23,7 +23,7 @@ export default function MobileNav({ header }: { header: boolean }) {
           <motion.div
             initial={{ x: -35, y: -25, rotate: 0 }}
             animate={{ y: -25, rotate: -90 }}
-            transition={{ motion: easeInOut, delay: 1, duration: 0.2 }}
+            transition={{ motion: easeInOut, delay: 0.5, duration: 0.2 }}
             style={{ originX: 0.5, originY: 0.5 }}
             className="ml-auto -mr-8"
           >
@@ -33,13 +33,13 @@ export default function MobileNav({ header }: { header: boolean }) {
           <motion.div
             initial={{ x: 1000, y: -36 }}
             animate={{ x: 0, y: -36 }}
-            transition={{ delay: 1, duration: 0.5 }}
+            transition={{ delay: 1, duration: 0.3 }}
             className="relative w-full h-[1.8px] bg-primary "
           ></motion.div>
           <motion.div
             initial={{ y: -1, opacity: 0 }}
             animate={{ y: -1, opacity: 1 }}
-            transition={{ delay: 1.7, duration: 0.4 }}
+            transition={{ delay: 1.7, duration: 0.2 }}
             className="absolute w-full h-[6px] bg-white"
           ></motion.div>
           <motion.div
