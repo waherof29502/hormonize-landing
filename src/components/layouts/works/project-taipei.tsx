@@ -18,7 +18,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
-
 export const PROJECRIMG01 = [
   { id: 1, src: '/images/project-detail/work-taipei/1-1.jpg' },
   { id: 2, src: '/images/project-detail/work-taipei/1-2.jpg' },
@@ -156,6 +155,7 @@ export default function Project() {
         <div className="mx-auto w-[90%] py-[4rem]">
         <Swiper
         slidesPerView={7.5}
+        loop
         onSlideChange={(swiper) => setCurr(swiper.activeIndex)}
         >
         {PROJECRIMG01.map((item,index)=>(

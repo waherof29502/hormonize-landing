@@ -67,7 +67,7 @@ export const CHPROJECTDETAIL =[
 export const HCPROJECTDETAIL =[
   {
   title:'共居 x 共鳴‧竹北',
-  iconImgSrc:['/images/project-detail/3-1.jpg'],
+  iconImgSrc:['/images/project-detail/3-1.png'],
   imgSrc:['/images/project-detail/work01/1-1.jpg','/images/project-detail/work01/1-2.jpg','/images/project-detail/work01/1-3.jpg','/images/project-detail/work01/1-4.jpg'],
   details: {
       '類型': '住宅及工作室',
@@ -81,7 +81,7 @@ export const HCPROJECTDETAIL =[
 export const TPPROJECTDETAIL =[
   {
   title:'雲之端‧台北內湖',
-  iconImgSrc:['/images/project-detail/2-1.jpeg'],
+  iconImgSrc:['/images/project-detail/2-1.png'],
   imgSrc:['/images/project-detail/work01/1-1.jpg','/images/project-detail/work01/1-2.jpg','/images/project-detail/work01/1-3.jpg','/images/project-detail/work01/1-4.jpg'],
   details: {
       '類型': '辦公室',
