@@ -3,6 +3,7 @@ import React,{useState, useEffect,ChangeEvent, FormEvent } from 'react';
 import Image from 'next/image';
 import Button from '../button';
 import ChargeImg01 from '@/public/images/service/2-2.png'
+import MobileAwardImage from '@/public/images/service/mobile/1-1.png';
 import Link from 'next/link';
 import { ServiceIcon1,ServiceIcon2,ServiceIcon3,ServiceIcon4, DateIcon,CateIcon,TagIcon,SearchIcon, CateItemIcon } from '@/public/svg';
 import { useListArticle,useListCate,useListLatestArticle,useListHotArticle,useListHashtag } from '@/src/hooks/useSwr';
@@ -17,14 +18,13 @@ export const HEROITEM = [
 {imgSrc:'/images/home/hero/1-7.png'},
 ] as const;
 
-export default function BlogForum() {
+export default function BlogContent() {
   const [searchTerm, setSearchTerm] = useState('');
   const [search, setSearch] = useState('');
   const [categories, setCategories] = useState(0);
   const [hashtag,setHashtag] = useState('')
   console.log('hashtag',hashtag)
   const PAGE_NUM=3
-
   const {data:ArticleList} = useListArticle(PAGE_NUM.toString(),categories,hashtag,search)
   const {data:CateList} = useListCate()
   const {data:LatestArticleList} = useListLatestArticle()
@@ -73,7 +73,7 @@ export default function BlogForum() {
           {/* 左邊文字區塊 */}
           <div className="w-[60%] h-full flex flex-col gap-y-20 items-center">
             {/* 動態layout */}
-            {ArticleList?.List.map((item) => (
+            {/* {ArticleList?.List.map((item) => (
   <div key={item.BlogID} className="w-[80%]">
     <div className="w-full border-solid border-[1px] border-[#D1D1D1] min-h-fit">
       <div className="w-full h-[50vh]">
@@ -102,9 +102,9 @@ export default function BlogForum() {
       </div>
     </div>
   </div>
-))}
+))} */}
             {/* 靜態layout */}
-         {/* <div className="w-[80%] ">
+          <div className="w-[80%] ">
               <div className="w-full border-solid border-[1px] border-[#D1D1D1] min-h-fit">
               <div className="w-full h-[50vh]">
               <Image src={ChargeImg01} alt="image.charge" className='w-full h-full object-cover'/>
@@ -132,7 +132,7 @@ export default function BlogForum() {
                 </div>
               </div>
               </div>
-            </div> */}
+            </div> 
 
           </div>
           

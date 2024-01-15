@@ -11,7 +11,7 @@ const PicAuthCode: FC<PicAuthCodeProps> = (props) => {
     backgroundColorMin: 180,
     backgroundColorMax: 240,
     fontSizeMin: 5,
-    fontSizeMax: 10,
+    fontSizeMax: 5,
     colorMin: 50,
     colorMax: 160,
     lineColorMin: 40,
@@ -46,10 +46,10 @@ const PicAuthCode: FC<PicAuthCodeProps> = (props) => {
 
   const drawText = (ctx: CanvasRenderingContext2D, txt: string, i: number): void => {
     ctx.fillStyle = randomColor(config.colorMin, config.colorMax);
-    ctx.font = `18px sans-serif`;
+    ctx.font = `20px sans-serif`;
     const x = (i + 1) * (config.contentWidth / (identifyCode.length + 1));
-    const y = randomNum(config.fontSizeMax, config.contentHeight - 12);
-    const deg = randomNum(-45, 45);
+    const y = config.contentHeight / 2 + randomNum(-10, 12);
+    const deg = randomNum(-40, 50);
 
     ctx.translate(x, y);
     ctx.rotate((deg * Math.PI) / 180);
@@ -94,7 +94,7 @@ const PicAuthCode: FC<PicAuthCodeProps> = (props) => {
         drawText(ctx, identifyCode[i], i);
       }
 
-      drawLine(ctx);
+      // drawLine(ctx);
       drawDot(ctx);
     }
   };

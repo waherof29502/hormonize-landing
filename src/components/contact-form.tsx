@@ -7,19 +7,30 @@ import {PickIcon, ClockIcon} from '@/public/svg'
 import Captcha from '@/public/images/captcha.png'
 import PicAuthCode from '@/src/components/pic-auth-code'
 import Image from 'next/image';
+import { useContactFormSubmit } from '@/src/hooks/useSwr';
+
 interface FormValues {
   name: string;
   phone: string;
   email: string;
-  line?: string;
+  line: string;
   picked:string;
   required: string;
   authCode?:string;
   captcha:string;
 }
+interface FormSubmitValues {
+  ContactName: string,
+  ContactPhone: string,
+  Email: string,
+  LineID: string,
+  ConsultItem:string,
+  Message: string,
+}
 
 export default function ContactForm() {
   const [ authCode, setAuthCode ] = useState('');
+  const {trigger}= useContactFormSubmit();
   // 設定生成隨機驗證碼的 logic
   const codeHandler = () => {
     const words = "QWERTYUIPASDFGHJKLZXCVBNM123456789";
@@ -48,22 +59,21 @@ export default function ContactForm() {
       name: Yup.string().max(5, '請輸入正確姓名格式').required('聯絡姓名為必填欄位。'),
       phone: Yup.string().max(10, '請輸入正確電話格式').required('聯絡電話為必填欄位。'),
       email: Yup.string().email('請輸入正確的Email格式').required('Email為必填欄位'),
-      line: Yup.string().max(10, '請輸入正確Line帳號格式'),
+      line: Yup.string().max(10, '請輸入正確Line帳號格式').required('Line為必填欄位'),
       picked: Yup.string().required('請選擇諮詢項目'),
       required:Yup.string(),
-      captcha: Yup.string().oneOf([authCode], "驗證碼不正確").required(''),
+      captcha: Yup.string().transform((value, originalValue) => originalValue ? originalValue.toUpperCase() : value).oneOf([authCode], "驗證碼不正確").required(''),
     }),
     onSubmit: async (values) => {
-       const queryParams: FormValues = {
-        name: values.name,
-        phone: values.phone,
-        email: values.email,
-        line: values.line,
-        picked:values.picked,
-        required: values.required,
-        captcha:values.captcha
+       const queryParams: FormSubmitValues = {
+        ContactName: values.name,
+        ContactPhone: values.phone,
+        Email: values.email,
+        LineID: values.line,
+        ConsultItem:values.picked,
+        Message: values.required,
       };
-    console.log("submit form",queryParams)
+      await trigger(queryParams)
     }
   });
   const OnSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
