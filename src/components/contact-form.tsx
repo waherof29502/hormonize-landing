@@ -74,6 +74,7 @@ export default function ContactForm() {
         Message: values.required,
       };
       await trigger(queryParams)
+      router.push('/success');
     }
   });
   const OnSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {

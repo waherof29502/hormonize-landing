@@ -107,6 +107,16 @@ interface IListHashTag {
   });
 }
 
+
+// 單筆role /blog/BlogData
+// Get with swr
+export function useSingleArticleInfo(id?: number |null ) {
+  return useSWR<any, Error, string | null>(id ? `/blog/BlogData?ID=${id}` : null, async (url) => {
+    const res = await client.get(url);
+    return res.data.data;
+  });
+}
+
 //部落格計點
 // https://cddev.creer-design.com/harmonize/api
 // POST blog/BlogRead

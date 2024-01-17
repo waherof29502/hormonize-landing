@@ -4,9 +4,9 @@ import { useRouter } from 'next/navigation';
 import * as Yup from 'yup';
 import { useFormik} from 'formik';
 import {PickIcon, ClockIcon} from '@/public/svg'
-import Captcha from '@/public/images/captcha.png'
 import PicAuthCode from '@/src/components/pic-auth-code'
-import Image from 'next/image';
+import { useContactFormSubmit } from '@/src/hooks/useSwr';
+
 interface FormValues {
   name: string;
   phone: string;
@@ -27,6 +27,8 @@ interface FormSubmitValues {
 }
 export default function MobileContactForm() {
   const [ authCode, setAuthCode ] = useState('');
+  const {trigger}= useContactFormSubmit();
+
   // 設定生成隨機驗證碼的 logic
   const codeHandler = () => {
     const words = "QWERTYUIPASDFGHJKLZXCVBNM123456789";
@@ -69,7 +71,8 @@ export default function MobileContactForm() {
         ConsultItem:values.picked,
         Message: values.required,
       };
-    console.log("123",queryParams)
+      await trigger(queryParams)
+      router.push('/success');
     }
   });
   const OnSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {

@@ -4,8 +4,9 @@ import Image from 'next/image';
 import Button from '../button';
 import ChargeImg01 from '@/public/images/service/2-2.png'
 import Link from 'next/link';
+import Blog from '@/src/components/layouts/blog'
 import { ServiceIcon1,ServiceIcon2,ServiceIcon3,ServiceIcon4, DateIcon,CateIcon,TagIcon,SearchIcon, CateItemIcon } from '@/public/svg';
-import { useListArticle,useListCate,useListLatestArticle,useListHotArticle,useListHashtag } from '@/src/hooks/useSwr';
+import { useListArticle,useListCate,useListLatestArticle,useListHotArticle,useListHashtag,useSingleArticleInfo} from '@/src/hooks/useSwr';
 // 首頁圖片及內容
 export const HEROITEM = [
 {imgSrc:'/images/home/hero/1-1.png'},
@@ -22,7 +23,7 @@ export default function BlogForum() {
   const [search, setSearch] = useState('');
   const [categories, setCategories] = useState(0);
   const [hashtag,setHashtag] = useState('')
-  console.log('hashtag',hashtag)
+  const [contentId,setContentId] = useState<null | number>(null)
   const PAGE_NUM=3
 
   const {data:ArticleList} = useListArticle(PAGE_NUM.toString(),categories,hashtag,search)
@@ -30,6 +31,7 @@ export default function BlogForum() {
   const {data:LatestArticleList} = useListLatestArticle()
   const {data:HotArticleList} = useListHotArticle()
   const {data:HashtagList} = useListHashtag()
+  const {data:SingleContent} = useSingleArticleInfo(contentId)
 
   const handleChange = (event:ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
@@ -74,35 +76,35 @@ export default function BlogForum() {
           <div className="w-[60%] h-full flex flex-col gap-y-20 items-center">
             {/* 動態layout */}
             {ArticleList?.List.map((item) => (
-  <div key={item.BlogID} className="w-[80%]">
-    <div className="w-full border-solid border-[1px] border-[#D1D1D1] min-h-fit">
-      <div className="w-full h-[50vh]">
-        <Image src={item.Image} width={1010.93} height={540} alt={item.ImageAlt} className='w-full h-full object-cover'/>
-      </div>
-      <div className="w-full min-h-fit py-2">
-        <div className='flex flex-col gap-y-2 p-5'>
-          <h2 className='text-primary text-[1.75rem] tracking-[0.56px] font-medium'>{item.Title}</h2>
-          <div className='flex flex-wrap items-center gap-x-4'>
-            <div className='flex items-center gap-x-1'>
-               {item.CategoryName.length >0 && <TagIcon className='text-[#929292] text-[1.625rem]'/>}
-              <p className='text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]'>{item.CategoryName}</p>
-            </div>
-            <div className='flex items-center gap-x-1'>
-               {item.PublishDate.length >0 && <DateIcon className='text-[#929292] text-[1.625rem]'/>}
-              <p className='text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]'>{item.PublishDate}</p>
-            </div>
-            <div className='flex items-center gap-x-1'>
-              {item.HashTags.length >0 && <CateIcon className='text-[#929292] text-[1.625rem]'/> }
-              <p className='text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]'>{item.HashTags}</p>
-            </div>
-          </div>
-          <p className='mt-2 text-[#3E3E3E] text-[1.25rem] tracking-[1px] leading-[29px] font-sans font-[350]'>{item.Content}</p>
-          <Button containerStyles='wide:w-1/3 font-brandonMed mt-2 ml-auto border-[1px] border-primary px-5 py-2 text-[1.5rem] text-primary hover:text-white hover:bg-primary' path="/">learn more</Button>
-        </div>
-      </div>
-    </div>
-  </div>
-))}
+              <div key={item.BlogID} className="w-[80%]">
+                <div className="w-full border-solid border-[1px] border-[#D1D1D1] min-h-fit">
+                  <div className="w-full h-[50vh]">
+                    <Image src={item.Image} width={1010.93} height={540} alt={item.ImageAlt} className='w-full h-full object-cover'/>
+                  </div>
+                  <div className="w-full min-h-fit py-2">
+                    <div className='flex flex-col gap-y-2 p-5'>
+                      <h2 className='text-primary text-[1.75rem] tracking-[0.56px] font-medium'>{item.Title}</h2>
+                      <div className='flex flex-wrap items-center gap-x-4'>
+                        <div className='flex items-center gap-x-1'>
+                          {item.CategoryName.length >0 && <TagIcon className='text-[#929292] text-[1.625rem]'/>}
+                          <p className='text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]'>{item.CategoryName}</p>
+                        </div>
+                        <div className='flex items-center gap-x-1'>
+                          {item.PublishDate.length >0 && <DateIcon className='text-[#929292] text-[1.625rem]'/>}
+                          <p className='text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]'>{item.PublishDate}</p>
+                        </div>
+                        <div className='flex items-center gap-x-1'>
+                          {item.HashTags.length >0 && <CateIcon className='text-[#929292] text-[1.625rem]'/> }
+                          <p className='text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]'>{item.HashTags}</p>
+                        </div>
+                      </div>
+                      <p className='mt-2 text-[#3E3E3E] text-[1.25rem] tracking-[1px] leading-[29px] font-sans font-[350]'>{item.Content}</p>
+                      <Button containerStyles='wide:w-1/3 font-brandonMed mt-2 ml-auto border-[1px] border-primary px-5 py-2 text-[1.5rem] text-primary hover:text-white hover:bg-primary' path="/">learn more</Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
             {/* 靜態layout */}
          {/* <div className="w-[80%] ">
               <div className="w-full border-solid border-[1px] border-[#D1D1D1] min-h-fit">
@@ -146,7 +148,7 @@ export default function BlogForum() {
                 </div>
                 <form className="flex items-center justify-center border-[1px] border-[#D1D1D1] " onSubmit={handleSearchClick}>
                 <input type="search" id="searchInput" value={searchTerm} onChange={handleChange} placeholder='請輸入關鍵字....' className='w-full p-4 text-primary focus:outline-none' />
-                <button className='pr-4'  onClick={handleSearchClick}>
+                <button className='px-4'  onClick={handleSearchClick}>
                 <SearchIcon className="text-[19px] text-[#3E3E3E]"/>
                 </button>
                 </form>
@@ -198,9 +200,9 @@ export default function BlogForum() {
                   <div className="flex items-center pb-4 border-b border-dashed border-[#D1D1D1]">
                   <div className="w-[80%]">
                   <div className='flex flex-col w-full gap-y-2'>
-                  <Link href={`/blog/${item.BlogID}`}>
-                  <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px] cursor-pointer hover:text-[#77A849]" onClick={()=>console.log("123",item.BlogID)}>{item.Title}</span>
-                  </Link>
+                  {/* <Link href={`/blog-content`}> */}
+                  <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px] cursor-pointer hover:text-[#77A849]" onClick={()=> setContentId(item.BlogID)}>{item.Title}</span>
+                  {/* </Link> */}
                   <div className='flex items-center gap-x-2'>
                     {item.PublishDate && <CateIcon className="text-[24px] text-[#3E3E3E]"/>}
                     <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]">{item.PublishDate}</span>
@@ -224,7 +226,7 @@ export default function BlogForum() {
                   <div className="h-[1px] bg-primary w-full mt-2 " />
                 </div>
                 {/* 動態layout */}
-                {HotArticleList?.List.map((item:any) => (
+                {HotArticleList?.List.map((item) => (
                   <>
                   <div className="flex items-center pb-4 border-b border-dashed border-[#D1D1D1]">
                   <div className="w-[80%]">
