@@ -475,7 +475,7 @@ export default function BlogForum() {
                   <span className='text-primary text-[1.25rem] tracking-[5.6px] leading-[29px] font-sans font-medium px-1'>熱門標籤</span>
                   <div className="h-[1px] bg-primary w-full mt-2 " />
                 </div>
-                {/* first */}
+                {/* 動態檔案 */}
                  <div className='flex flex-wrap gap-x-4 gap-y-4 '>
                 {HashtagList?.List.map((item) =>(
                   <>
@@ -487,6 +487,7 @@ export default function BlogForum() {
                   </>
                   ))}
                   </div>
+                {/* 靜態檔案 */}
                 {/* <div className='flex w-full'>
                   <div className='flex w-fit px-[14px] py-[15px] items-center gap-x-2  border-[1px] border-[#D1D1D1]'>
                     <span className='text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]'># 展示空間</span>
