@@ -24,7 +24,7 @@ export {default as OopsIcon} from './icon-oops.svg';
 
 
 export {default as MailIcon} from './icon-mail.svg';
-export {default as PhoneIcon} from './icon-phoen.svg';
+export {default as PhoneIcon} from './icon-phone.svg';
 export {default as TaxIcon} from './icon-tax.svg';
 export {default as LocationIcon} from './icon-location.svg';
 

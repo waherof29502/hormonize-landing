@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="/tailwind.config.js" />
   </head>
   <body>
-    <header class="fixed inset-0 w-full z-30 transition-all">
-      <div class="w-full bg-white mx-auto py-6 px-10">
+    <header class="fixed inset-0 w-full z-30 transition-all h-[15vh]">
+      <div class="w-full bg-white mx-auto py-4 px-10">
         <div class="flex items-center">
           <div class="flex pr-4">
             <a href="/">
@@ -29,26 +29,27 @@
               </svg>
             </a>
           </div>
-
-          <div class="hidden xl:flex flex-col group overflow-hidden h-[3.625rem] mt-auto">
-            <span
-              class="group-hover:-translate-y-16 ease-linear duration-300 font-brandonMed text-[1.75rem] tracking-[1.12px] leading-[1.875rem]"
-            >
-              HARM<span class="text-[#77A849] font-brandonBld font-bold">O</span>NIZE
-              <br />
-              DESIGN
-            </span>
-            <span
-              class="font-sans group-hover:-translate-y-[3.25rem] ease-linear duration-300 text-[1.25rem] 3xl:text-[1.75rem] tracking-[2.24px]"
-            >
-              寬堂空間設計
-            </span>
-          </div>
+          <a href="/" class="mt-5">
+            <div class="hidden xl:flex flex-col group overflow-hidden h-[3.625rem] mt-auto">
+              <span
+                class="group-hover:-translate-y-16 ease-linear duration-300 font-brandonMed text-[1.75rem] tracking-[1.12px] leading-[1.875rem]"
+              >
+                HARM<span class="text-[#77A849] font-brandonBld font-bold">O</span>NIZE
+                <br />
+                DESIGN
+              </span>
+              <span
+                class="font-sans group-hover:-translate-y-[3.25rem] ease-linear duration-300 text-[1.25rem] 3xl:text-[1.75rem] tracking-[2.24px]"
+              >
+                寬堂空間設計
+              </span>
+            </div>
+          </a>
           <div class="hidden lg:flex items-center gap-x-6 hover:cursor-pointer">
-            <DesktopNav header="{header}" />
+            <!-- <DesktopNav header="{header}" /> -->
           </div>
           <div class="lg:hidden hover:cursor-pointer">
-            <MobileNav header="{header}" />
+            <!-- <MobileNav header="{header}" /> -->
           </div>
         </div>
       </div>
@@ -80,33 +81,220 @@
             <div class="w-[60%] h-full flex flex-col gap-y-20 items-center">
               <!-- {/* 靜態layout */} -->
               <div class="w-[80%]">
-                <div class="w-full border-solid border-[1px] border-[#D1D1D1] min-h-fit">
-                  <div class="w-full h-[50vh]">
-                    <!-- <Image src={ChargeImg01} alt="image.charge" class='w-full h-full object-cover'/> -->
-                  </div>
+                <div class="w-full min-h-fit">
                   <div class="w-full min-h-fit py-2">
                     <div class="flex flex-col gap-y-2 p-5">
-                      <h2 class="text-primary text-[1.75rem] tracking-[0.56px] font-medium">個人工作室V.S住家</h2>
+                      <h2 class="text-primary text-[2rem] tracking-[0.56px] font-medium">個人工作室V.S住家</h2>
                       <div class="flex flex-wrap items-center gap-x-4">
                         <div class="flex items-center gap-x-1">
                           <!-- <TagIcon class='text-[#929292] text-[1.625rem]'/> -->
-                          <p class="text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]">
-                            室內設計,房間裝修,台北市
-                          </p>
+                          <svg
+                            width="26"
+                            height="26"
+                            viewBox="0 0 60 59"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M48.0749 21.3957L37.6171 11.3631C35.424 9.25908 32.3998 8.12958 29.3063 8.28461L17.7635 8.81614C13.1464 9.01547 9.47577 12.5369 9.24491 16.9441L8.69086 28.0177C8.55234 30.9854 9.70662 33.8867 11.8998 35.9907L22.3575 46.0233C26.6514 50.1427 33.6233 50.1427 37.9403 46.0233L48.0749 36.3008C52.3919 32.2035 52.3919 25.5151 48.0749 21.3957ZM24.2275 29.5459C20.5799 29.5459 17.5788 26.6889 17.5788 23.1675C17.5788 19.6461 20.5799 16.7891 24.2275 16.7891C27.875 16.7891 30.8761 19.6461 30.8761 23.1675C30.8761 26.6889 27.875 29.5459 24.2275 29.5459ZM42.7652 32.0928L33.5309 40.9517C33.1847 41.2839 32.746 41.4389 32.3074 41.4389C31.8688 41.4389 31.4302 41.2839 31.0839 40.9517C30.4144 40.3094 30.4144 39.2463 31.0839 38.6041L40.3181 29.7452C40.9876 29.1029 42.0957 29.1029 42.7652 29.7452C43.4347 30.3875 43.4347 31.4505 42.7652 32.0928Z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                          <a href="/">
+                            <p
+                              class="text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350] hover:text-[#77A849]"
+                            >
+                              室內設計,房間裝修,台北市
+                            </p>
+                          </a>
                         </div>
                         <div class="flex items-center gap-x-1">
                           <!-- <DateIcon class='text-[#929292] text-[1.625rem]'/> -->
-                          <p class="text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]">2020/8/21</p>
+                          <svg
+                            width="26"
+                            height="26"
+                            viewBox="0 0 60 59"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M22.2715 15.3442C21.3965 15.3442 20.709 14.6477 20.709 13.8077V8.09212C20.709 7.25219 21.3965 6.55566 22.2715 6.55566C23.1465 6.55566 23.834 7.25219 23.834 8.09212V13.7873C23.834 14.6477 23.1465 15.3442 22.2715 15.3442Z"
+                              fill="currentColor"
+                            />
+                            <path
+                              d="M37.7285 15.3442C36.8535 15.3442 36.166 14.6477 36.166 13.8077V8.09212C36.166 7.23171 36.8743 6.55566 37.7285 6.55566C38.6035 6.55566 39.291 7.25219 39.291 8.09212V13.7873C39.291 14.6477 38.6035 15.3442 37.7285 15.3442Z"
+                              fill="currentColor"
+                            />
+                            <path
+                              d="M45.7715 11.6775C44.3965 10.6737 42.4173 11.6365 42.4173 13.3369V13.5418C42.4173 15.9386 40.6673 18.1511 38.2298 18.397C35.4173 18.6838 33.0423 16.5122 33.0423 13.8081V11.6775C33.0423 10.5508 32.1048 9.62891 30.959 9.62891H29.0423C27.8965 9.62891 26.959 10.5508 26.959 11.6775V13.8081C26.959 15.4265 26.1048 16.8605 24.8131 17.6595C24.6256 17.7824 24.4173 17.8848 24.209 17.9872C24.0215 18.0897 23.8131 18.1716 23.584 18.2331C23.334 18.315 23.0631 18.3765 22.7715 18.397C22.4381 18.4379 22.1048 18.4379 21.7715 18.397C21.4798 18.3765 21.209 18.315 20.959 18.2331C20.7506 18.1716 20.5423 18.0897 20.334 17.9872C20.1256 17.8848 19.9173 17.7824 19.7298 17.6595C18.4173 16.7581 17.584 15.2011 17.584 13.5418V13.3369C17.584 11.7595 15.8757 10.8171 14.5215 11.4931C14.5007 11.5136 14.4798 11.5136 14.459 11.5341C14.3757 11.5751 14.3132 11.6161 14.2298 11.6775C14.1673 11.739 14.084 11.7799 14.0215 11.8414C13.4382 12.2921 12.9173 12.8043 12.4798 13.3574C12.2507 13.6032 12.0632 13.8695 11.8965 14.1359C11.8757 14.1563 11.8548 14.1768 11.834 14.2178C11.6465 14.4841 11.4798 14.7914 11.334 15.0782C11.2923 15.1192 11.2715 15.1397 11.2715 15.1806C11.1465 15.4265 11.0215 15.6723 10.9382 15.9386C10.8757 16.0411 10.8548 16.123 10.8132 16.2254C10.6882 16.5327 10.6048 16.84 10.5215 17.1473C10.4382 17.4341 10.3757 17.7414 10.334 18.0487C10.2923 18.274 10.2715 18.4994 10.2507 18.7452C10.2298 19.032 10.209 19.3188 10.209 19.6056V37.5515C10.209 43.0622 14.7506 47.5282 20.3548 47.5282H39.6465C45.2506 47.5282 49.7923 43.0622 49.7923 37.5515V19.6056C49.7923 16.3484 48.209 13.5008 45.7715 11.6775ZM30.0006 35.7487H26.4798V39.3338C26.4798 40.1737 25.7715 40.8702 24.9173 40.8702C24.0423 40.8702 23.3548 40.1737 23.3548 39.3338V35.7487H19.584C18.7298 35.7487 18.0215 35.0522 18.0215 34.2122C18.0215 33.3723 18.7298 32.6758 19.584 32.6758H23.3548V29.0907C23.3548 28.2508 24.0423 27.5543 24.9173 27.5543C25.7715 27.5543 26.4798 28.2508 26.4798 29.0907V32.6758H30.0006C30.8548 32.6758 31.5631 33.3723 31.5631 34.2122C31.5631 35.0522 30.8548 35.7487 30.0006 35.7487Z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                          <a href="/">
+                            <p
+                              class="text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350] hover:text-[#77A849]"
+                            >
+                              2020/8/21
+                            </p>
+                          </a>
                         </div>
                         <div class="flex items-center gap-x-1">
                           <!-- <CateIcon class='text-[#929292] text-[1.625rem]'/> -->
-                          <p class="text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]">室內設計</p>
+                          <svg
+                            width="26"
+                            height="26"
+                            viewBox="0 0 60 59"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M19.9577 9.01465H40.041C44.4785 9.01465 48.0827 12.5792 48.1035 16.9223V45.7872C48.1035 49.4952 45.416 51.0521 42.1244 49.2494L31.9577 43.6976C30.8952 43.1035 29.1452 43.1035 28.0618 43.6976L17.8952 49.2494C14.6035 51.0317 11.916 49.4747 11.916 45.7872V16.9223C11.916 12.5792 15.5202 9.01465 19.9577 9.01465Z"
+                              fill="currentColor"
+                            />
+                          </svg>
+                          <a href="/">
+                            <p
+                              class="text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350] hover:text-[#77A849]"
+                            >
+                              室內設計
+                            </p>
+                          </a>
                         </div>
+                      </div>
+                      <div class="w-full h-[50vh] mt-10 mb-5">
+                        <img
+                          src="./public/images/home/hero/1-1.png"
+                          alt="image.charge"
+                          class="w-full h-full object-cover"
+                        />
                       </div>
                       <p class="mt-2 text-[#3E3E3E] text-[1.25rem] tracking-[1px] leading-[29px] font-sans font-[350]">
                         住宅的主人，是專業的大提琴以及鋼琴演奏者，對於自然有著一樣的愛好，因此，本設計思考的重點在於如何將主人的音樂性與生活態度轉譯成空間，並且以簡潔的空間形式，突顯本身就具備優美造型的鋼琴以及大提琴之存在，成為與主人生活互伴的另外兩個主角。
                       </p>
-                      <!-- <Button containerStyles='wide:w-1/3 font-brandonMed mt-2 ml-auto border-[1px] border-primary px-5 py-2 text-[1.5rem] text-primary hover:text-white hover:bg-primary' path="/">learn more</Button> -->
+                      <div class="flex flex-col gap-y-20 mt-16">
+                        <div class="h-[1px] bg-[#EEEEEE] w-full"></div>
+
+                        <a href="/">
+                          <div class="flex items-center gap-x-2 group">
+                            <svg
+                              width="16"
+                              height="16"
+                              viewBox="0 0 49 49"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <mask
+                                id="mask0_2217_731"
+                                style="mask-type: alpha"
+                                maskUnits="userSpaceOnUse"
+                                x="0"
+                                y="0"
+                                width="49"
+                                height="49"
+                              >
+                                <rect
+                                  width="48"
+                                  height="48"
+                                  transform="matrix(-1 0 0 1 48.9395 0.121094)"
+                                  fill="#D9D9D9"
+                                />
+                              </mask>
+                              <g mask="url(#mask0_2217_731)">
+                                <path
+                                  d="M33.5282 43.3477L35.8281 41.0362L18.832 24.0401L35.8281 7.06312L33.5282 4.73242L14.2205 24.0401L33.5282 43.3477Z"
+                                  fill="currentColor"
+                                />
+                              </g>
+                            </svg>
+                            <p
+                              class="text-[#3E3E3E] text-[1rem] tracking-[1px] leading-[29px] font-sans font-[350] group-hover:text-[#77A849]"
+                            >
+                              電控玻璃/調光玻璃/調光薄膜的應用來由
+                            </p>
+                          </div>
+                        </a>
+                        <div class="h-[1px] bg-[#EEEEEE] w-full"></div>
+                      </div>
+                      <!-- 文章下半段相關文章 -->
+                      <div class="flex flex-col w-full items-center justify-center mt-10 gap-y-8">
+                        <div class="w-fit">
+                          <span
+                            class="text-primary text-[1.375rem] tracking-[6.16px] leading-[29px] font-sans font-medium px-1"
+                            >相關文章</span
+                          >
+                          <div class="h-[1px] bg-[#000000] w-full mt-2"></div>
+                        </div>
+                        <!-- 第一篇示意文章 -->
+                        <div class="flex flex-wrap w-full min-h-fit">
+                          <div class="w-1/2 h-fit px-5">
+                            <div class="flex items-center pb-4">
+                              <div div class="w-[80%]">
+                                <div class="flex flex-col w-full gap-y-2">
+                                  <a href="/">
+                                    <span
+                                      class="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px] cursor-pointer hover:text-[#77A849]"
+                                      >個人工作室V.S住家</span
+                                    >
+                                  </a>
+                                  <div class="flex items-center gap-x-2">
+                                    <span class="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]"
+                                      >2020.08.21</span
+                                    >
+                                    <span
+                                      class="ml-2 text-[1rem] 3xl:text-[1.125rem] rounded-full px-2 text-white bg-[#77A849]"
+                                      >室內設計</span
+                                    >
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="w-[20%]">
+                                <img
+                                  src="./public/images/home/hero/1-1.png"
+                                  width="{60}"
+                                  height="{40}"
+                                  alt="{item.ImageAlt}"
+                                  class="object-cover"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <!-- 第二篇示意文章 -->
+                          <div class="w-1/2 h-fit px-5">
+                            <div class="flex items-center pb-4">
+                              <div div class="w-[80%]">
+                                <div class="flex flex-col w-full gap-y-2">
+                                  <a href="/">
+                                    <span
+                                      class="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px] cursor-pointer hover:text-[#77A849]"
+                                      >個人工作室V.S住家</span
+                                    >
+                                  </a>
+                                  <div class="flex items-center gap-x-2">
+                                    <span class="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]"
+                                      >2020.08.21</span
+                                    >
+                                    <span
+                                      class="ml-2 text-[1rem] 3xl:text-[1.125rem] rounded-full px-2 text-white bg-[#77A849]"
+                                      >室內設計</span
+                                    >
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="w-[20%]">
+                                <img
+                                  src="./public/images/home/hero/1-1.png"
+                                  width="{60}"
+                                  height="{40}"
+                                  alt="{item.ImageAlt}"
+                                  class="object-cover"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -122,7 +310,7 @@
                       class="text-primary text-[1.375rem] tracking-[6.16px] leading-[29px] font-sans font-medium px-1"
                       >搜尋</span
                     >
-                    <div class="h-[1px] bg-primary w-full mt-2" />
+                    <div class="h-[1px] bg-[#000000] w-full mt-2"></div>
                   </div>
                   <form class="flex items-center justify-center border-[1px] border-[#D1D1D1]">
                     <input
@@ -131,7 +319,13 @@
                       placeholder="請輸入關鍵字...."
                       class="w-full p-4 text-primary focus:outline-none"
                     />
-                    <button class="px-4" onClick="{handleSearchClick}">
+                    <button class="px-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+                        <path
+                          d="M18.6871 17.1945L14.5147 13.0204C15.7657 11.3902 16.3498 9.34523 16.1484 7.30025C15.9471 5.25526 14.9753 3.36344 13.4303 2.00854C11.8854 0.653636 9.88281 -0.0628803 7.82894 0.00433497C5.77507 0.0715503 3.82367 0.917464 2.37059 2.37048C0.917507 3.82349 0.0715536 5.77481 0.00433517 7.82858C-0.0628832 9.88235 0.653667 11.8848 2.00863 13.4297C3.36359 14.9746 5.25551 15.9463 7.30058 16.1477C9.34566 16.349 11.3908 15.765 13.021 14.514L17.197 18.6907C17.2951 18.7887 17.4115 18.8665 17.5397 18.9196C17.6678 18.9727 17.8052 19 17.9438 19C18.0825 19 18.2199 18.9727 18.348 18.9196C18.4762 18.8665 18.5926 18.7887 18.6907 18.6907C18.7887 18.5926 18.8665 18.4762 18.9196 18.3481C18.9727 18.2199 19 18.0826 19 17.9439C19 17.8052 18.9727 17.6679 18.9196 17.5397C18.8665 17.4116 18.7887 17.2952 18.6907 17.1971L18.6871 17.1945ZM2.12637 8.10049C2.12637 6.9189 2.47677 5.76385 3.13326 4.78139C3.78974 3.79894 4.72283 3.03321 5.81453 2.58103C6.90622 2.12886 8.1075 2.01055 9.26643 2.24107C10.4254 2.47158 11.4899 3.04057 12.3255 3.87608C13.161 4.71159 13.73 5.7761 13.9606 6.93498C14.1911 8.09387 14.0728 9.29508 13.6206 10.3867C13.1684 11.4784 12.4026 12.4114 11.4201 13.0679C10.4376 13.7243 9.28251 14.0747 8.10087 14.0747C6.51683 14.0731 4.99814 13.4431 3.87806 12.3231C2.75798 11.2031 2.128 9.68445 2.12637 8.10049Z"
+                          fill="currentColor"
+                        />
+                      </svg>
                       <!-- <SearchIcon class="text-[19px] text-[#3E3E3E]"/> -->
                     </button>
                   </form>
@@ -144,14 +338,17 @@
                       class="text-primary text-[1.375rem] tracking-[6.16px] leading-[29px] font-sans font-medium px-1"
                       >文章分類</span
                     >
-                    <div class="h-[1px] bg-primary w-full mt-2"></div>
+                    <div class="h-[1px] bg-[#000000] w-full mt-2"></div>
                   </div>
                   <div class="flex flex-col w-full gap-y-2">
                     <div class="flex items-center gap-x-2 pb-1 border-b border-dashed border-[#3E3E3E]">
                       <!-- <CateItemIcon class="text-[19px] text-[#3E3E3E]"/> -->
-                      <span class="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]"
-                        >了解室內設計</span
-                      >
+                      <a href="/">
+                        <span
+                          class="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px] hover:text-[#77A849]"
+                          >了解室內設計</span
+                        >
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -162,7 +359,7 @@
                       class="text-primary text-[1.375rem] tracking-[6.16px] leading-[29px] font-sans font-medium px-1"
                       >最新文章</span
                     >
-                    <div class="h-[1px] bg-primary w-full mt-2" />
+                    <div class="h-[1px] bg-[#000000] w-full mt-2"></div>
                   </div>
                   <!-- {/* first */} -->
                   <div class="flex items-center pb-4 border-b border-dashed border-[#D1D1D1]">
@@ -179,7 +376,9 @@
                           <span class="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]"
                             >2020.08.21</span
                           >
-                          <!-- <span class={`ml-2 mt-[2px] text-[1rem] 3xl:text-[1.125rem] rounded-full px-2`} style={{backgroundColor:`${item.CategoryColor}`}}>{item.CategoryName}</span> -->
+                          <span class="ml-2 text-[1rem] 3xl:text-[1.125rem] text-white rounded-full px-2 bg-[#77A849]"
+                            >室內設計</span
+                          >
                         </div>
                       </div>
                     </div>
@@ -202,13 +401,13 @@
                       class="text-primary text-[1.375rem] tracking-[6.16px] leading-[29px] font-sans font-medium px-1"
                       >熱門文章</span
                     >
-                    <div class="h-[1px] bg-primary w-full mt-2" />
+                    <div class="h-[1px] bg-[#000000] w-full mt-2"></div>
                   </div>
                   <!-- {/* first */} -->
                   <div class="flex items-center pb-4 border-b border-dashed border-[#D1D1D1]">
                     <div class="w-[80%]">
                       <div class="flex flex-col w-full gap-y-2">
-                        <a href="/">
+                        <a href="/123">
                           <span
                             class="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px] cursor-pointer hover:text-[#77A849]"
                             >個人工作室V.S住家</span
@@ -219,7 +418,7 @@
                           <span class="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]"
                             >2020.08.21</span
                           >
-                          <span class="ml-2 text-[1rem] 3xl:text-[1.125rem] rounded-full px-2 bg-[#77A849]"
+                          <span class="ml-2 text-[1rem] 3xl:text-[1.125rem] text-white rounded-full px-2 bg-[#77A849]"
                             >室內設計</span
                           >
                           <!-- <span class={`ml-2 mt-[2px] text-[1rem] 3xl:text-[1.125rem] rounded-full px-2`} style={{backgroundColor:`${item.CategoryColor}`}}>{item.CategoryName}</span> -->
@@ -245,7 +444,7 @@
                       class="text-primary text-[1.375rem] tracking-[6.16px] leading-[29px] font-sans font-medium px-1"
                       >熱門標籤</span
                     >
-                    <div class="h-[1px] bg-primary w-full mt-2" />
+                    <div class="h-[1px] bg-[#000000] w-full mt-2"></div>
                   </div>
                   <!-- {/* first */} -->
                   <div class="flex flex-wrap gap-x-4 gap-y-4">
@@ -253,7 +452,8 @@
                       <div
                         class="flex w-fit px-[14px] py-[15px] items-center gap-x-2 border-[1px] border-[#D1D1D1] group-hover:border-[#77A849]"
                       >
-                        <span class="text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]"
+                        <span
+                          class="text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350] group-hover:text-[#77A849]"
                           ># 展示空間</span
                         >
                       </div>
@@ -268,7 +468,7 @@
     </main>
     <footer>
       <div
-        class="relative w-full min-h-[90vh] lg:min-h-[58vh] bg-right"
+        class="hidden lg:relative w-full min-h-[90vh] lg:min-h-[58vh] bg-right"
         style="background-image: url('./public/images/home/bg-contact.png')"
       >
         <!-- {/* desktop contact us */} -->
@@ -282,12 +482,11 @@
             了解如何用設計為你的生活開拓嶄新視野歡迎與我們聯繫。
           </span>
 
-          <a
-            href="/contact-us"
+          <button
             class="ml-auto w-[50%] md:w-[30%] lg:w-[50%] py-2 lg:py-4 border-black border-[1px] hover:bg-black cursor-pointer group text-primary text-[1rem] 3xl:text-[1.5rem] font-brandonMed"
           >
-            <span class="group-hover:text-white">leave a message</span>
-          </a>
+            <a href="/contact-us" class="group-hover:text-white">leave a message </a>
+          </button>
         </div>
       </div>
 
@@ -316,14 +515,28 @@
               class="flex justify-center items-center text-primary hover:text-[#515151]"
               aria-label="IG"
             >
-              <IgCircleIcon class="text-[2.5rem]" />
+              <!-- <IgCircleIcon class="text-[2.5rem]" /> -->
+              <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M23.7471 17.9506C20.5617 17.9506 17.9924 20.5204 17.9924 23.7065C17.9924 26.8925 20.5617 29.4624 23.7471 29.4624C26.9324 29.4624 29.5017 26.8925 29.5017 23.7065C29.5017 20.5204 26.9324 17.9506 23.7471 17.9506ZM23.7471 27.4486C21.6886 27.4486 20.0058 25.7704 20.0058 23.7065C20.0058 21.6426 21.6836 19.9644 23.7471 19.9644C25.8105 19.9644 27.4883 21.6426 27.4883 23.7065C27.4883 25.7704 25.8055 27.4486 23.7471 27.4486ZM31.0793 17.7151C31.0793 18.4615 30.4783 19.0577 29.7371 19.0577C28.9908 19.0577 28.3948 18.4565 28.3948 17.7151C28.3948 16.9737 28.9959 16.3726 29.7371 16.3726C30.4783 16.3726 31.0793 16.9737 31.0793 17.7151ZM34.8907 19.0777C34.8056 17.2793 34.3949 15.6863 33.0777 14.3738C31.7655 13.0613 30.1728 12.6505 28.3748 12.5603C26.5217 12.4551 20.9674 12.4551 19.1143 12.5603C17.3213 12.6455 15.7287 13.0563 14.4114 14.3688C13.0942 15.6813 12.6886 17.2743 12.5984 19.0727C12.4932 20.9262 12.4932 26.4817 12.5984 28.3353C12.6836 30.1337 13.0942 31.7267 14.4114 33.0392C15.7287 34.3517 17.3163 34.7624 19.1143 34.8526C20.9674 34.9578 26.5217 34.9578 28.3748 34.8526C30.1728 34.7675 31.7655 34.3567 33.0777 33.0392C34.3899 31.7267 34.8006 30.1337 34.8907 28.3353C34.9959 26.4817 34.9959 20.9312 34.8907 19.0777ZM32.4967 30.324C32.1061 31.3059 31.3498 32.0623 30.3631 32.4581C28.8857 33.0442 25.3798 32.9089 23.7471 32.9089C22.1143 32.9089 18.6035 33.0392 17.131 32.4581C16.1494 32.0673 15.3931 31.3109 14.9974 30.324C14.4114 28.8462 14.5467 25.3396 14.5467 23.7065C14.5467 22.0734 14.4165 18.5617 14.9974 17.0889C15.3881 16.1071 16.1443 15.3506 17.131 14.9549C18.6085 14.3688 22.1143 14.504 23.7471 14.504C25.3798 14.504 28.8907 14.3738 30.3631 14.9549C31.3448 15.3456 32.1011 16.1021 32.4967 17.0889C33.0827 18.5667 32.9475 22.0734 32.9475 23.7065C32.9475 25.3396 33.0827 28.8512 32.4967 30.324Z"
+                  fill="currentColor"
+                />
+                <circle cx="23.7449" cy="23.7058" r="22.8855" stroke="currentColor" />
+              </svg>
             </a>
             <a
               href="https://www.facebook.com/savvyhd"
               class="flex justify-center items-center ml-2 text-primary hover:text-[#515151]"
               aria-label="Fb"
             >
-              <FbCircleIcon class="text-[2.5rem]" />
+              <!-- <FbCircleIcon class="text-[2.5rem]" /> -->
+              <svg width="40" height="40" viewBox="0 0 47 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M29.472 25.1096L30.1123 21.0467H26.1089V18.4101C26.1089 17.2986 26.6681 16.2151 28.4611 16.2151H30.2811V12.7559C30.2811 12.7559 28.6295 12.4814 27.0504 12.4814C23.7534 12.4814 21.5984 14.4274 21.5984 17.9501V21.0467H17.9336V25.1096H21.5984V34.9315H26.1089V25.1096H29.472Z"
+                  fill="currentColor"
+                />
+                <circle cx="23.5476" cy="23.7058" r="22.8855" stroke="currentColor" />
+              </svg>
             </a>
           </div>
           <!-- {/* Copyrights note */} -->

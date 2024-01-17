@@ -135,7 +135,6 @@ export default function AboutUs() {
       </div>
       </div>
         <div className="h-[1.5px] bg-[#929292] w-[100%] ml-auto mr-[10%] mt-5 mb-14"/>
-
       </div>
       </div>
         </div>
