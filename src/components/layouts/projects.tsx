@@ -84,9 +84,12 @@ export default function Projects() {
           </div>
           </div>  
           <div className="w-[90%] h-[50vh]">
+          <Link href={item.path} className='cursor-pointer'>
           <Image src={item.imgProjectSrc} alt="123" width={303} height={352} className='object-cover bg-center rounded-[15px] w-full h-full'/>
+          </Link>
           </div>
           <div className="w-full h-full flex flex-col justify-center px-8 mx-auto">
+            <Link href={item.path} className='cursor-pointer'>
             <p className="mt-6 font-sans text-[1.25rem] 3md:text-[1.5rem] text-primary font-medium tracking-[0.8px] lg:tracking-[0.96px]">
                 {item.title}
               </p>
@@ -94,6 +97,7 @@ export default function Projects() {
                 <span className="text-[1.25rem] 3md:text-[1rem] text-primary">{item.icon}</span>
               <span className="font-sans text-[#3E3E3E] font-syne text-[16px] tracking-[0.64px] font-light">{item.tag}</span>
               </div>
+              </Link>
             <Button containerStyles='w-1/3 md:w-1/4 font-brandonMed mt-2 ml-auto border-[1px] border-primary p-2 text-primary text-[18px] hover:text-white hover:bg-primary' path={item.path}>learn more</Button>
           </div>
           </div>

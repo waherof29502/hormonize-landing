@@ -57,7 +57,7 @@ export default function MobileContactForm() {
       name: Yup.string().max(5, '請輸入正確姓名格式').required('聯絡姓名為必填欄位。'),
       phone: Yup.string().max(10, '請輸入正確電話格式').required('聯絡電話為必填欄位。'),
       email: Yup.string().email('請輸入正確的Email格式').required('Email為必填欄位'),
-      line: Yup.string().max(10, '請輸入正確Line帳號格式').required('Line為必填欄位'),
+      line: Yup.string().required('Line為必填欄位'),
       picked: Yup.string().required('請選擇諮詢項目'),
       required:Yup.string(),
       captcha: Yup.string().oneOf([authCode], "驗證碼不正確").required(''),
@@ -144,6 +144,14 @@ export default function MobileContactForm() {
                 value={formik.values.line}
                 onBlur={formik.handleBlur}
               />
+               <span
+                className={` font-sans text-[1rem] tracking-wide ${
+                  formik.touched.line && formik.errors.line ? 'text-red-400' : ''
+                } `}
+              >
+                {' '}
+                {formik.touched.line && formik.errors.line ? formik.errors.line : ''}
+              </span>
             </div>
              {/* Email input field */}
             <div className="flex flex-col w-full gap-y-1">
@@ -262,6 +270,14 @@ export default function MobileContactForm() {
                 value={formik.values.required}
                 onBlur={formik.handleBlur}
               />
+               <span
+                className={` font-sans text-[1rem] tracking-wide ${
+                  formik.touched.required && formik.errors.required ? 'text-red-400' : ''
+                } `}
+              >
+                {' '}
+                {formik.touched.required && formik.errors.required ? formik.errors.required : ''}
+              </span>
             </div>
              {/* 驗證碼 input field */}
             <div className="flex flex-col w-full my-4 gap-y-4">         

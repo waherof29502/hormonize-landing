@@ -59,7 +59,7 @@ export default function ContactForm() {
       name: Yup.string().max(5, '請輸入正確姓名格式').required('聯絡姓名為必填欄位。'),
       phone: Yup.string().max(10, '請輸入正確電話格式').required('聯絡電話為必填欄位。'),
       email: Yup.string().email('請輸入正確的Email格式').required('Email為必填欄位'),
-      line: Yup.string().max(10, '請輸入正確Line帳號格式').required('Line為必填欄位'),
+      line: Yup.string().required('Line為必填欄位'),
       picked: Yup.string().required('請選擇諮詢項目'),
       required:Yup.string().required('需求為必填欄位'),
       captcha: Yup.string().transform((value, originalValue) => originalValue ? originalValue.toUpperCase() : value).oneOf([authCode], "驗證碼不正確").required(''),
