@@ -6,7 +6,7 @@ import AwardImage from '@/public/images/about/2-1.png';
 import GrayBg from '@/public/images/about/2-2.png'
 import Signature from '@/public/images/about/3-1.png'
 
-export default function AboutUs() {
+export default function PrivacyPolicy() {
   return (
     <section className="relative overflow-hidden">
       {/* hero desktop layout */}
@@ -17,7 +17,7 @@ export default function AboutUs() {
               <span className='text-primary text-[1.875rem] md:text-[2.75rem] 3xl:text-[3.875rem] font-brandonLight text-shadow'>PRIVACY</span>
               <span className='-mt-4 text-primary text-[1.875rem] md:text-[2.75rem] 3xl:text-[3.875rem] font-brandonBld text-shadow'>POLICY</span>
             </div>
-            <div className="w-3/4 h-full bg-serviceHero bg-cover bg-no-repeat"></div>
+            <div className="w-3/4 h-full bg-privacyHero bg-cover bg-no-repeat"></div>
           </div>
         </div>
       </div>
@@ -29,7 +29,7 @@ export default function AboutUs() {
               <span className='text-primary text-[1.875rem] sm:text-[3rem] font-brandonBld text-shadow'>POLICY</span>
             </div>
           </div>
-        <div className="w-full h-[58vh] bg-mobileServiceHero bg-cover bg-no-repeat" /> 
+        <div className="w-full h-[58vh] bg-mobilePrivacyHero bg-cover bg-no-repeat" /> 
       </div>
 
       {/* project detail*/}

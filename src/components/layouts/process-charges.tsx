@@ -59,7 +59,7 @@ export default function ProcessCharges() {
           </div> 
           <div className="w-[40%] h-full flex flex-col justify-center px-[50px] 3xl:px-12 gap-y-[16px] 3xl:gap-y-[37px] bg-[#292929]/90 backdrop-blur-[7.5px]">
             <div className="flex items-center gap-x-10">
-                <ServiceIcon1 className="lg:text-[6.75rem] xl:text-[4.75rem]"/>
+                <ServiceIcon1 className="lg:text-[5.75rem] xl:text-[4.75rem]"/>
                 <div className='flex flex-col gap-y-5'>
                     <span className='text-white text-[1.25rem] xl:text-[1.5rem] font-sans font-medium tracking-[0.96px]'>概念探討</span>
                     <span className='text-white text-[1rem] xl:text-[1.25rem] font-sans font-[350]'>為了能契合客戶的特殊須求與功能，透過意象的模擬與初步平面的規劃，以作為共同默契與討論基礎。</span>
@@ -82,7 +82,7 @@ export default function ProcessCharges() {
                 
             </div>
             <div className="flex items-center gap-x-10">
-                <ServiceIcon4 className="lg:text-[6.75rem] xl:text-[5.75rem]"/>
+                <ServiceIcon4 className="lg:text-[5.75rem] xl:text-[4.75rem]"/>
                 <div className='flex flex-col gap-y-5'>
                     <span className='text-white text-[1.25rem] xl:text-[1.5rem] font-sans font-medium tracking-[0.96px]'>更多價值</span>
                     <span className='text-white text-[1rem] xl:text-[1.25rem] font-sans font-[350]'>有效率的提案，執著於創造更貼切的使用經驗。一次到位的方案選擇，反應實際的須求，享受專案服務的過程才是優先考量。</span>

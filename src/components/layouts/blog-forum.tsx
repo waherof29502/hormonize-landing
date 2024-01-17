@@ -55,7 +55,7 @@ export default function BlogForum() {
               <span className='text-primary text-[1.875rem] md:text-[2.75rem] 3xl:text-[3.875rem] font-brandonLight text-shadow'>BLOG &</span>
               <span className='-mt-4 text-primary text-[1.875rem] md:text-[2.75rem] 3xl:text-[3.875rem] font-brandonBld text-shadow'>FORUM</span>
             </div>
-            <div className="w-3/4 h-full bg-[#A8A8A8]"></div>
+            <div className="w-3/4 h-full bg-blogHero bg-cover bg-no-repeat"></div>
           </div>
         </div>
       </div>
@@ -67,7 +67,7 @@ export default function BlogForum() {
               <span className='text-primary text-[1.875rem] sm:text-[3rem] font-brandonBld text-shadow'>FORUM</span>
             </div>
           </div>
-        <div className="w-full h-[58vh] bg-[#A8A8A8]" /> 
+        <div className="w-full h-[58vh] bg-blogHero bg-cover bg-no-repeat" /> 
       </div>
 
       {/* project detail*/}
@@ -103,7 +103,7 @@ export default function BlogForum() {
                         </div>
                       </div>
                       <p className='mt-2 text-[#3E3E3E] text-[1.25rem] tracking-[1px] leading-[29px] font-sans font-[350]'>{item.Content}</p>
-                      <Button containerStyles='wide:w-1/3 font-brandonMed mt-2 ml-auto border-[1px] border-primary px-5 py-2 text-[1.5rem] text-primary hover:text-white hover:bg-primary' path={`/blog/${item.BlogID}`}>learn more</Button>
+                      <Button containerStyles='wide:w-1/5 font-brandonMed mt-2 ml-auto border-[1px] border-primary px-5 py-2 text-[1.5rem] text-primary hover:text-white hover:bg-primary' path={`/blog/${item.BlogID}`}>learn more</Button>
                     </div>
                   </div>
                 </div>
@@ -207,7 +207,7 @@ export default function BlogForum() {
                   <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px] cursor-pointer hover:text-[#77A849]" onClick={()=> setContentId(item.BlogID)}>{item.Title}</span>
                   </Link>
                   <div className='flex items-center gap-x-2'>
-                    {item.PublishDate && <CateIcon className="text-[24px] text-[#3E3E3E]"/>}
+                    {item.PublishDate.length>0 && <DateIcon className="text-[24px] text-[#3E3E3E]"/>}
                     <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]">{item.PublishDate}</span>
                     <span className={`ml-2 mt-[2px] text-[1rem] 3xl:text-[1.125rem] rounded-full px-2`} style={{backgroundColor:`${item.CategoryColor}`}}>{item.CategoryName}</span>
                   </div>
@@ -238,7 +238,7 @@ export default function BlogForum() {
                   <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px] cursor-pointer hover:text-[#77A849]" onClick={()=> setContentId(item.BlogID)}>{item.Title}</span>
                   </Link>
                   <div className='flex items-center gap-x-2 '>
-                    <CateIcon className="text-[24px] text-[#3E3E3E]"/>
+                    {item.PublishDate.length>0 &&<DateIcon className="text-[24px] text-[#3E3E3E]"/>}
                     <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]">{item.PublishDate}</span>
                     <span className={`ml-2 text-[1rem] 3xl:text-[1.125rem] rounded-full px-2`} style={{backgroundColor:`${item.CategoryColor}`}}>{item.CategoryName}</span>
                   </div>
@@ -389,7 +389,7 @@ export default function BlogForum() {
                   <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]" onClick={()=> setContentId(item.BlogID)}>{item.Title}</span>
                   </Link>
                   <div className='flex items-center gap-x-2'>
-                     {item.PublishDate && <CateIcon className="text-[24px] text-[#3E3E3E]"/>}
+                     {item.PublishDate.length>0 && <DateIcon className="text-[24px] text-[#3E3E3E]"/>}
                     <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]">{item.PublishDate}</span>
                     <span className={`ml-2 text-[1rem] 3xl:text-[1.125rem] rounded-full px-2`} style={{backgroundColor:`${item.CategoryColor}`}}>{item.CategoryName}</span>
                     {/* <div className='ml-auto w-[60px] h-[40px] bg-cover' style={{ backgroundImage: `url('/images/home/hero/1-1.png')` }}>
@@ -443,7 +443,7 @@ export default function BlogForum() {
                   <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]" onClick={()=> setContentId(item.BlogID)}>{item.Title}</span>
                   </Link>
                   <div className='flex items-center gap-x-2'>
-                     {item.PublishDate && <CateIcon className="text-[24px] text-[#3E3E3E]"/>}
+                     {item.PublishDate.length>0 && <DateIcon className="text-[24px] text-[#3E3E3E]"/>}
                     <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]">{item.PublishDate}</span>
                     <span className={`ml-2 text-[1rem] 3xl:text-[1.125rem] rounded-full px-2`} style={{backgroundColor:`${item.CategoryColor}`}}>{item.CategoryName}</span>
                   </div>

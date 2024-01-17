@@ -73,7 +73,7 @@ export default function Projects() {
        <div className="3md:hidden flex flex-col w-full min-h-screen pb-[60px] pt-6 gap-y-[5rem] -mt-[22rem] md:-mt-[16.75rem] ">
           {PROJECTITEM.map((item)=>(
           <>
-          <div  className="w-full flex flex-col justify-center items-center md:px-6 ">
+          <div  className="w-full flex flex-col justify-center items-center md:px-6 group">
           <div className="w-full h-[14vh] flex flex-col justify-center items-center text-primary">
           <div className="w-full h-1/2 flex flex-col justify-center items-center group overflow-hidden">
           <div className='flex gap-x-2 justify-center items-center'>

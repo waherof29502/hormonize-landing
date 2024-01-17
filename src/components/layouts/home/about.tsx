@@ -20,7 +20,7 @@ export default function About() {
               在規劃時，我們不採用任何置入性的風格；極力地將室內空間打開，提高通透度；引入適合的自然光，並營造均質的光線；強調簡單的線條，以降低視覺上的雜亂度；運用表面材料質感及紋路的變化，提高視覺的豐富感。如此，物件與空間的形體能更加顯著，並呈現安靜、簡單及低承載的空間組合，使各個生活機能之間，能更緊密的連結。<br/>
               針對不同的室內設計，必須一開始就選擇與其風格相互搭配的傢俱及燈飾，同時須考慮其置放的位置，使他們如同藝術品般的被陳列出來，而成為空間的一部份。最後，必須有適度的裝飾，以提高住宅的親切感。
             </span>
-            <Button containerStyles='font-brandonMed ml-auto border-[1px] border-primary bg-white px-5 py-2 text-primary text-[1.25rem] 3xl:text-[1.5rem] hover:text-white hover:bg-primary' path="/projects">learn more</Button>
+            <Button containerStyles='font-brandonMed ml-auto border-[1px] border-primary bg-white px-5 py-2 text-primary text-[1.25rem] 3xl:text-[1.5rem] hover:text-white hover:bg-primary' path="/about-us">learn more</Button>
 
           </div>
           <div className="w-1/4 h-full bg-about bg-cover bg-no-repeat"></div>
@@ -45,7 +45,7 @@ export default function About() {
               在規劃時，我們不採用任何置入性的風格；極力地將室內空間打開，提高通透度；引入適合的自然光，並營造均質的光線；強調簡單的線條，以降低視覺上的雜亂度；運用表面材料質感及紋路的變化，提高視覺的豐富感。如此，物件與空間的形體能更加顯著，並呈現安靜、簡單及低承載的空間組合，使各個生活機能之間，能更緊密的連結。<br/>
               針對不同的室內設計，必須一開始就選擇與其風格相互搭配的傢俱及燈飾，同時須考慮其置放的位置，使他們如同藝術品般的被陳列出來，而成為空間的一部份。最後，必須有適度的裝飾，以提高住宅的親切感。
             </span>
-            <Button containerStyles='font-brandonMed ml-auto border-[1px] border-primary bg-white text-[18px] px-5 py-2 text-primary hover:text-white hover:bg-primary' path="/projects">learn more</Button>
+            <Button containerStyles='font-brandonMed ml-auto border-[1px] border-primary bg-white text-[18px] px-5 py-2 text-primary hover:text-white hover:bg-primary' path="/about-us">learn more</Button>
           </div>
         </div>
       </div>

@@ -61,7 +61,7 @@ export default function ContactForm() {
       email: Yup.string().email('請輸入正確的Email格式').required('Email為必填欄位'),
       line: Yup.string().max(10, '請輸入正確Line帳號格式').required('Line為必填欄位'),
       picked: Yup.string().required('請選擇諮詢項目'),
-      required:Yup.string(),
+      required:Yup.string().required('需求為必填欄位'),
       captcha: Yup.string().transform((value, originalValue) => originalValue ? originalValue.toUpperCase() : value).oneOf([authCode], "驗證碼不正確").required(''),
     }),
     onSubmit: async (values) => {
@@ -149,6 +149,14 @@ export default function ContactForm() {
                 value={formik.values.line}
                 onBlur={formik.handleBlur}
               />
+              <span
+                className={` font-sans text-[1rem] tracking-wide ${
+                  formik.touched.line && formik.errors.line ? 'text-red-400' : ''
+                } `}
+              >
+                {' '}
+                {formik.touched.line && formik.errors.line ? formik.errors.line : ''}
+              </span>
             </div>
              {/* Email input field */}
             <div className="flex flex-col w-full gap-y-1">
@@ -268,6 +276,14 @@ export default function ContactForm() {
                 value={formik.values.required}
                 onBlur={formik.handleBlur}
               />
+               <span
+                className={` font-sans text-[1rem] tracking-wide ${
+                  formik.touched.required && formik.errors.required ? 'text-red-400' : ''
+                } `}
+              >
+                {' '}
+                {formik.touched.required && formik.errors.required ? formik.errors.required : ''}
+              </span>
             </div>
              {/* 驗證碼 input field */}
             <div className="flex flex-col w-1/2 my-4">         
