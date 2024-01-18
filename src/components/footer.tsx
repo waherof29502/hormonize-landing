@@ -4,10 +4,7 @@ import Link from 'next/link';
 import Button from './button';
 import { usePathname } from 'next/navigation';
 import { FbCircleIcon, IgCircleIcon } from '@/public/svg';
-const FOOTERITEMS = [
-  { path: '/privacy-policy', name: '隱私權政策' },
-  { path: '/cookie-policy', name: 'Cookies 政策' }
-] as const;
+import {FOOTERITEMS} from '@/src/constants'
 export default function Footer() {
   const pathname = usePathname();
   return (

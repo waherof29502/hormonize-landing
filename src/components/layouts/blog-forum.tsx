@@ -5,7 +5,7 @@ import Button from '../button';
 import Link from 'next/link';
 import ChargeImg01 from '@/public/images/service/2-2.png'
 import { DateIcon,CateIcon,TagIcon,SearchIcon, CateItemIcon } from '@/public/svg';
-import { useListArticle,useListCate,useListLatestArticle,useListHotArticle,useListHashtag,useSingleArticleInfo} from '@/src/hooks/useSwr';
+import { useListArticle,useListCate,useListLatestArticle,useListHotArticle,useListHashtag} from '@/src/hooks/useSwr';
 // 首頁圖片及內容
 export const HEROITEM = [
 {imgSrc:'/images/home/hero/1-1.png'},
@@ -23,13 +23,20 @@ export default function BlogForum() {
   const [categories, setCategories] = useState(0);
   const [hashtag,setHashtag] = useState('')
   const [contentId,setContentId] = useState<null | number>(null)
-  const PAGE_NUM=3
-  const {data:ArticleList,isValidating} = useListArticle(PAGE_NUM.toString(),categories,hashtag,search)  
+  const [page,setPage] = useState(3)
+  // const PAGE_NUM=3
+  const {data:ArticleList,isValidating} = useListArticle(page.toString(),categories,hashtag,search)  
   const {data:CateList} = useListCate()
   const {data:LatestArticleList} = useListLatestArticle()
   const {data:HotArticleList} = useListHotArticle()
   const {data:HashtagList} = useListHashtag()
-  const {data:SingleContent} = useSingleArticleInfo(contentId)
+  const  shortenText = (text:string, maxLength:number) => {
+    if (text?.length <= maxLength) {
+      return text;
+    }
+
+    return text?.substring(0, maxLength - 3) + '...';
+  }
   const handleChange = (event:ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
@@ -102,7 +109,7 @@ export default function BlogForum() {
                           <p className='text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]'>{item.HashTags}</p>
                         </div>
                       </div>
-                      <p className='mt-2 text-[#3E3E3E] text-[1.25rem] tracking-[1px] leading-[29px] font-sans font-[350]'>{item.Content}</p>
+                      <p className='mt-2 text-[#3E3E3E] text-[1.25rem] tracking-[1px] leading-[29px] font-sans font-[350]'>{shortenText(item.Content,80)}</p>
                       <Button containerStyles='wide:w-1/5 font-brandonMed mt-2 ml-auto border-[1px] border-primary px-5 py-2 text-[1.5rem] text-primary hover:text-white hover:bg-primary' path={`/blog/${item.BlogID}`}>learn more</Button>
                     </div>
                   </div>
@@ -206,10 +213,10 @@ export default function BlogForum() {
                   <Link href={`/blog/${item.BlogID}`}>
                   <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px] cursor-pointer hover:text-[#77A849]" onClick={()=> setContentId(item.BlogID)}>{item.Title}</span>
                   </Link>
-                  <div className='flex items-center gap-x-2'>
+                  <div className='flex flex-wrap items-center gap-x-2'>
                     {item.PublishDate.length>0 && <DateIcon className="text-[24px] text-[#3E3E3E]"/>}
                     <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]">{item.PublishDate}</span>
-                    <span className={`ml-2 mt-[2px] text-[1rem] 3xl:text-[1.125rem] rounded-full px-2`} style={{backgroundColor:`${item.CategoryColor}`}}>{item.CategoryName}</span>
+                    <span className={`ml-2 mt-[2px] text-[0.75rem] xl:text-[1rem] 3xl:text-[1.125rem] rounded-full px-2`} style={{backgroundColor:`${item.CategoryColor}`}}>{item.CategoryName}</span>
                   </div>
                 </div>
                 </div>
@@ -237,10 +244,10 @@ export default function BlogForum() {
                   <Link href={`/blog/${item.BlogID}`}>
                   <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px] cursor-pointer hover:text-[#77A849]" onClick={()=> setContentId(item.BlogID)}>{item.Title}</span>
                   </Link>
-                  <div className='flex items-center gap-x-2 '>
+                  <div className='flex flex-wrap items-center gap-x-2 '>
                     {item.PublishDate.length>0 &&<DateIcon className="text-[24px] text-[#3E3E3E]"/>}
                     <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]">{item.PublishDate}</span>
-                    <span className={`ml-2 text-[1rem] 3xl:text-[1.125rem] rounded-full px-2`} style={{backgroundColor:`${item.CategoryColor}`}}>{item.CategoryName}</span>
+                    <span className={`ml-2 text-[0.75rem] xl:text-[1rem] 3xl:text-[1.125rem] rounded-full px-2`} style={{backgroundColor:`${item.CategoryColor}`}}>{item.CategoryName}</span>
                   </div>
                 </div>
                 </div>
@@ -323,7 +330,7 @@ export default function BlogForum() {
                     <p className='text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]'>{item.HashTags}</p>
                     </div>
                   </div>
-                  <p className='mt-2 text-[#3E3E3E] text-[1rem] tracking-[0.8px] leading-[38px] font-sans font-[350]'>{item.Content}</p>
+                  <p className='mt-2 text-[#3E3E3E] text-[1rem] tracking-[0.8px] leading-[38px] font-sans font-[350]'>{shortenText(item.Content,80)}</p>
                   <Button containerStyles='wide:w-1/3 font-brandonMed mt-2 ml-auto border-[1px] border-primary px-5 py-2 text-[1.5rem] text-primary hover:text-white hover:bg-primary' path={`/blog/${item.BlogID}`}>learn more</Button>
               </div>
               </div>

@@ -6,7 +6,7 @@ import ChargeImg01 from '@/public/images/service/2-2.png'
 import MobileAwardImage from '@/public/images/service/mobile/1-1.png';
 import Link from 'next/link';
 import { ServiceIcon1,ServiceIcon2,ServiceIcon3,ServiceIcon4, DateIcon,CateIcon,TagIcon,SearchIcon, CateItemIcon } from '@/public/svg';
-import { useListArticle,useListCate,useListLatestArticle,useListHotArticle,useListHashtag,useSingleArticleInfo } from '@/src/hooks/useSwr';
+import { useListArticle,useListCate,useListLatestArticle,useListHotArticle,useListHashtag} from '@/src/hooks/useSwr';
 // 首頁圖片及內容
 export const HEROITEM = [
 {imgSrc:'/images/home/hero/1-1.png'},
@@ -31,8 +31,6 @@ export default function BlogContent() {
   const {data:LatestArticleList} = useListLatestArticle()
   const {data:HotArticleList} = useListHotArticle()
   const {data:HashtagList} = useListHashtag()
-  const {data:SingleContent,error,isValidating} = useSingleArticleInfo(contentId)
-  console.log('data',SingleContent)
 
   const handleChange = (event:ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);

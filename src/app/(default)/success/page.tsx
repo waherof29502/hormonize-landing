@@ -1,4 +1,7 @@
-
+export const metadata = {
+  title: '寬堂設計 | 感謝頁面',
+  description: '住宅空間 | 辦公空間 '
+};
 import {MailIcon,PhoneIcon,TaxIcon,LocationIcon,ThanksIcon,MobileThanksIcon} from '@/public/svg/index'
 export default function Success() {
   return (

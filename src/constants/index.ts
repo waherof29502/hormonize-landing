@@ -91,3 +91,9 @@ export const TPPROJECTDETAIL =[
       '格局': '開放辦公區',
   }}
 ]
+
+// footer
+export const FOOTERITEMS = [
+  { path: '/privacy-policy', name: '隱私權政策' },
+  { path: '/cookie-policy', name: 'Cookies 政策' }
+] as const;

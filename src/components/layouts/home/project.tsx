@@ -4,6 +4,8 @@ import ProjectCard from '../../project-card'
 import { PROJECTITEM,DESIGNSTORY,PROJECTMOBILEITEM, DESIGNMOBILESTORY} from '@/src/constants'
 import StoryCard from '../../story-card'
 import Link from 'next/link';
+import { useListLatestArticle} from '@/src/hooks/useSwr';
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -11,6 +13,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
 export default function Project() {
+   const {data:LatestArticle} = useListLatestArticle()
    const spaceBetween = () => {
    if (typeof window !== 'undefined') {
     const screenWidth = window.innerWidth;
@@ -66,10 +69,10 @@ export default function Project() {
         {/* desktop layout */}
         <div className="hidden 3md:flex 3md:w-3/4 px-10 h-full">
          <Swiper  slidesPerView={3} initialSlide={1} centeredSlides={true} spaceBetween={spaceBetween()}>
-       {DESIGNSTORY.slice(0,3).map((item,index)=>(
+       {LatestArticle?.List.map((item,index)=>(
             <>
             <SwiperSlide key={index}>
-            <StoryCard imgSrc={item.imgSrc} title={item.title} link={item.link}/>
+            <StoryCard imgSrc={item.Image} title={item.Title} link={`/blog/${item.BlogID.toString()}`}/>
             </SwiperSlide>
             </>
             ))}
@@ -78,10 +81,10 @@ export default function Project() {
         {/* mobile layout */}
         <div className="3md:hidden w-[140vh] sm:w-[180vh] flex px-10 h-full">
          <Swiper  slidesPerView={3} initialSlide={1} centeredSlides={true} spaceBetween={spaceBetween()}>
-       {DESIGNMOBILESTORY.slice(0,3).map((item,index)=>(
+       {LatestArticle?.List.map((item,index)=>(
             <>
             <SwiperSlide key={index}>
-            <StoryCard imgSrc={item.imgSrc} title={item.title} link={item.link}/>
+            <StoryCard imgSrc={item.Image} title={item.Title} link={`/blog/${item.BlogID.toString()}`}/>
             </SwiperSlide>
             </>
             ))}

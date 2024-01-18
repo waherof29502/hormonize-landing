@@ -10,7 +10,7 @@
     <header class="fixed inset-0 w-full z-30 transition-all h-[15vh]">
       <div class="w-full bg-white mx-auto py-4 px-10">
         <div class="flex items-center">
-          <div class="flex pr-4 scale-[.8] lg:scale-100">
+          <div class="flex pr-4 scale-[0.7] lg:scale-100">
             <a href="/">
               <svg width="35" height="80" viewBox="0 0 35 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="_?&#238;&#161;&#188;&#230;&#131;&#156;_1" clip-path="url(#clip0_1672_4053)">
@@ -46,7 +46,7 @@
             </div>
           </a>
           <a href="/" class="mt-5">
-            <div class="lg:hidden flex flex-col group overflow-hidden h-[3.625rem] mt-auto">
+            <div class="lg:hidden flex flex-col group overflow-hidden h-[3.625rem] mt-auto scale-75 -ml-5">
               <span
                 class="group-hover:-translate-y-16 ease-linear duration-300 font-brandonMed text-[1.5rem] tracking-[1.12px] leading-[1.875rem]"
               >
@@ -61,7 +61,7 @@
               </span>
             </div>
           </a>
-          <div class="flex items-center ml-auto gap-x-6 hover:cursor-pointer">
+          <div class="hidden lg:flex items-center ml-auto gap-x-6 hover:cursor-pointer">
             <!-- <DesktopNav header="{header}" /> -->
             <button id="menuToggle" class="focus:outline-none">
               <span class="text-[#000] text-[2rem] tracking-[1.28px] font-brandonLight">MENU</span>
@@ -69,7 +69,7 @@
             <!-- Menu Items -->
             <div
               id="menu"
-              class="absolute left-full top-0 w-full md:w-[25rem] h-screen bg-white transform translate-x-full transition-transform duration-300 ease-in-out"
+              class="absolute left-full top-0 w-full md:w-[25rem] h-screen bg-white transform transition-transform duration-300 ease-in-out"
             >
               <button id="closeMenu" class="absolute top-10 right-10 focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
@@ -175,8 +175,122 @@
             </div>
           </div>
 
-          <div class="lg:hidden hover:cursor-pointer">
+          <div class="lg:hidden items-center ml-auto gap-x-6 hover:cursor-pointer">
             <!-- <MobileNav header="{header}" /> -->
+            <button id="menuMobileToggle" class="focus:outline-none">
+              <svg xmlns="http://www.w3.org/2000/svg" width="38" height="14" viewBox="0 0 38 14" fill="none">
+                <rect width="38" height="2" fill="black" />
+                <rect y="12" width="38" height="2" fill="black" />
+              </svg>
+            </button>
+
+            <!-- Menu Items -->
+            <div
+              id="menuMobile"
+              class="absolute left-full top-0 w-full md:w-[25rem] h-screen bg-white transform transition-transform duration-300 ease-in-out"
+            >
+              <button id="closeMobileMenu" class="absolute top-10 right-10 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                  <mask
+                    id="mask0_3363_669"
+                    style="mask-type: alpha"
+                    maskUnits="userSpaceOnUse"
+                    x="0"
+                    y="0"
+                    width="25"
+                    height="25"
+                  >
+                    <rect x="0.75" y="0.209961" width="24" height="24" fill="#D9D9D9" />
+                  </mask>
+                  <g mask="url(#mask0_3363_669)">
+                    <path
+                      d="M7.15 19.21L5.75 17.81L11.35 12.21L5.75 6.60996L7.15 5.20996L12.75 10.81L18.35 5.20996L19.75 6.60996L14.15 12.21L19.75 17.81L18.35 19.21L12.75 13.61L7.15 19.21Z"
+                      fill="#1C1B1F"
+                    />
+                  </g>
+                </svg>
+              </button>
+
+              <ul class="flex flex-col space-y-8 mt-[12rem] pl-[3rem]">
+                <li class="flex items-center gap-x-2 group">
+                  <div class="text-[1rem] lg:text-[1.25rem] 3xl:text-[1.5rem] opacity-0 group-hover:opacity-100">
+                    <svg width="24" height="24" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M22.0352 43.5996C33.9093 43.5996 43.5352 33.9737 43.5352 22.0996C43.5352 10.2255 33.9093 0.599609 22.0352 0.599609C10.161 0.599609 0.535156 10.2255 0.535156 22.0996C0.535156 33.9737 10.161 43.5996 22.0352 43.5996ZM22.0345 31.0583C26.9821 31.0583 30.9928 27.0475 30.9928 22.0999C30.9928 17.1524 26.9821 13.1416 22.0345 13.1416C17.087 13.1416 13.0762 17.1524 13.0762 22.0999C13.0762 27.0475 17.087 31.0583 22.0345 31.0583Z"
+                        fill="#77A849"
+                      />
+                    </svg>
+                  </div>
+                  <a href="/about-us" class="font-light text-[1.5rem] text-[#000] group-hover:text-[#77A849]"
+                    >ABOUT US</a
+                  >
+                </li>
+                <li class="flex items-center gap-x-2 group">
+                  <div class="text-[1rem] lg:text-[1.25rem] 3xl:text-[1.5rem] opacity-0 group-hover:opacity-100">
+                    <svg width="24" height="24" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M22.0352 43.5996C33.9093 43.5996 43.5352 33.9737 43.5352 22.0996C43.5352 10.2255 33.9093 0.599609 22.0352 0.599609C10.161 0.599609 0.535156 10.2255 0.535156 22.0996C0.535156 33.9737 10.161 43.5996 22.0352 43.5996ZM22.0345 31.0583C26.9821 31.0583 30.9928 27.0475 30.9928 22.0999C30.9928 17.1524 26.9821 13.1416 22.0345 13.1416C17.087 13.1416 13.0762 17.1524 13.0762 22.0999C13.0762 27.0475 17.087 31.0583 22.0345 31.0583Z"
+                        fill="#77A849"
+                      />
+                    </svg>
+                  </div>
+                  <a href="/projects" class="font-light text-[1.5rem] text-[#000] group-hover:text-[#77A849]"
+                    >PROJECTS REVIEW</a
+                  >
+                </li>
+                <li class="flex items-center gap-x-2 group">
+                  <div class="text-[1rem] lg:text-[1.25rem] 3xl:text-[1.5rem] opacity-0 group-hover:opacity-100">
+                    <svg width="24" height="24" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M22.0352 43.5996C33.9093 43.5996 43.5352 33.9737 43.5352 22.0996C43.5352 10.2255 33.9093 0.599609 22.0352 0.599609C10.161 0.599609 0.535156 10.2255 0.535156 22.0996C0.535156 33.9737 10.161 43.5996 22.0352 43.5996ZM22.0345 31.0583C26.9821 31.0583 30.9928 27.0475 30.9928 22.0999C30.9928 17.1524 26.9821 13.1416 22.0345 13.1416C17.087 13.1416 13.0762 17.1524 13.0762 22.0999C13.0762 27.0475 17.087 31.0583 22.0345 31.0583Z"
+                        fill="#77A849"
+                      />
+                    </svg>
+                  </div>
+                  <a href="/process-charges" class="font-light text-[1.5rem] text-[#000] group-hover:text-[#77A849]"
+                    >PROCESS & CHARGES</a
+                  >
+                </li>
+
+                <li class="flex items-center gap-x-2 group">
+                  <div class="text-[1rem] lg:text-[1.25rem] 3xl:text-[1.5rem] opacity-0 group-hover:opacity-100">
+                    <svg width="24" height="24" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M22.0352 43.5996C33.9093 43.5996 43.5352 33.9737 43.5352 22.0996C43.5352 10.2255 33.9093 0.599609 22.0352 0.599609C10.161 0.599609 0.535156 10.2255 0.535156 22.0996C0.535156 33.9737 10.161 43.5996 22.0352 43.5996ZM22.0345 31.0583C26.9821 31.0583 30.9928 27.0475 30.9928 22.0999C30.9928 17.1524 26.9821 13.1416 22.0345 13.1416C17.087 13.1416 13.0762 17.1524 13.0762 22.0999C13.0762 27.0475 17.087 31.0583 22.0345 31.0583Z"
+                        fill="#77A849"
+                      />
+                    </svg>
+                  </div>
+                  <a href="/blog-forum" class="font-light text-[1.5rem] text-[#000] group-hover:text-[#77A849]"
+                    >BLOG & FORUM</a
+                  >
+                </li>
+
+                <li class="flex items-center gap-x-2 group">
+                  <div class="text-[1rem] lg:text-[1.25rem] 3xl:text-[1.5rem] opacity-0 group-hover:opacity-100">
+                    <svg width="24" height="24" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M22.0352 43.5996C33.9093 43.5996 43.5352 33.9737 43.5352 22.0996C43.5352 10.2255 33.9093 0.599609 22.0352 0.599609C10.161 0.599609 0.535156 10.2255 0.535156 22.0996C0.535156 33.9737 10.161 43.5996 22.0352 43.5996ZM22.0345 31.0583C26.9821 31.0583 30.9928 27.0475 30.9928 22.0999C30.9928 17.1524 26.9821 13.1416 22.0345 13.1416C17.087 13.1416 13.0762 17.1524 13.0762 22.0999C13.0762 27.0475 17.087 31.0583 22.0345 31.0583Z"
+                        fill="#77A849"
+                      />
+                    </svg>
+                  </div>
+                  <a href="/contact-us" class="font-light text-[1.5rem] text-[#000] group-hover:text-[#77A849]"
+                    >CONTACT US</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -195,7 +309,10 @@
                 >FORUM</span
               >
             </div>
-            <div class="w-3/4 h-full bg-[#A8A8A8]"></div>
+            <div
+              class="w-3/4 h-full bg-cover bg-no-repeat"
+              style="background-image: url('./public/images/blog/bg-hero.png')"
+            ></div>
           </div>
         </div>
       </div>
@@ -718,7 +835,10 @@
           <span class="text-primary text-[1.875rem] md:text-[3rem] font-brandonBld text-shadow">FORUM</span>
         </div>
       </div>
-      <div class="w-full h-[58vh] bg-[#A8A8A8]"></div>
+      <div
+        class="w-full h-[58vh] bg-cover bg-no-repeat"
+        style="background-image: url('./public/images/blog/bg-hero.png')"
+      ></div>
     </div>
     <div class="lg:hidden flex flex-col w-full min-h-fit -mt-4">
       <div class="w-full h-full flex flex-col justify-center gap-y-[2rem] px-8">
@@ -1101,13 +1221,22 @@
     </div>
     <script>
       const menuToggle = document.getElementById('menuToggle');
+      const menuMobileToggle = document.getElementById('menuMobileToggle');
+      const menuMobile = document.getElementById('menuMobile');
       const menu = document.getElementById('menu');
+      const closeMobileMenu = document.getElementById('closeMobileMenu');
       const closeMenu = document.getElementById('closeMenu');
       menuToggle.addEventListener('click', () => {
         menu.classList.toggle('-translate-x-full');
       });
+      menuMobileToggle.addEventListener('click', () => {
+        menuMobile.classList.toggle('-translate-x-full');
+      });
       closeMenu.addEventListener('click', () => {
         menu.classList.remove('-translate-x-full');
+      });
+      closeMobileMenu.addEventListener('click', () => {
+        menuMobile.classList.remove('-translate-x-full');
       });
     </script>
   </body>

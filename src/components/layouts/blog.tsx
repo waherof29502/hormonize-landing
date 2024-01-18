@@ -5,7 +5,7 @@ import Button from '../button';
 import ChargeImg01 from '@/public/images/service/2-2.png'
 import Link from 'next/link';
 import { ServiceIcon1,ServiceIcon2,ServiceIcon3,ServiceIcon4, DateIcon,CateIcon,TagIcon,SearchIcon, CateItemIcon } from '@/public/svg';
-import { useListArticle,useListCate,useListLatestArticle,useListHotArticle,useListHashtag,useSingleArticleInfo} from '@/src/hooks/useSwr';
+import { useListArticle,useListCate,useListLatestArticle,useListHotArticle,useListHashtag} from '@/src/hooks/useSwr';
 // 首頁圖片及內容
 export const HEROITEM = [
 {imgSrc:'/images/home/hero/1-1.png'},
@@ -30,8 +30,6 @@ export default function Blog({id}:any) {
   const {data:LatestArticleList} = useListLatestArticle()
   const {data:HotArticleList} = useListHotArticle()
   const {data:HashtagList} = useListHashtag()
-  const {data:SingleContent,error} = useSingleArticleInfo(id)
-  console.log('single',SingleContent)
 
   const handleChange = (event:ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
@@ -75,7 +73,7 @@ export default function Blog({id}:any) {
           {/* 左邊文字區塊 */}
           <div className="w-[60%] h-full flex flex-col gap-y-20 items-center">
             {/* 動態layout */}
-            {SingleContent?.List.map((item:any) => (
+            {ArticleList?.List.map((item:any) => (
   <div key={item.BlogID} className="w-[80%]">
     <div className="w-full border-solid border-[1px] border-[#D1D1D1] min-h-fit">
       <div className="w-full h-[50vh]">

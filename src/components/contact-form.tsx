@@ -268,7 +268,7 @@ export default function ContactForm() {
                 <span className="text-[1.25rem] tracking-[0.72px] font-medium font-sans">需求說明</span>             
               </label>
               <input
-                className="border-primary border-b-[1px] border-t-0 border-r-0 border-l-0 py-4 w-full focus:border-b-1 focus:border-t-0 focus:border-r-0 focus:border-l-0 focus:border-b-[#1b1b1b] focus:ring-transparent"
+                className="border-primary border-b-[1px] border-t-0 border-r-0 border-l-0 px-4 py-4 w-full focus:border-b-1 focus:border-t-0 focus:border-r-0 focus:border-l-0 focus:border-b-[#1b1b1b] focus:ring-transparent"
                 type="text"
                 name="required"
                 placeholder='Write your message..'

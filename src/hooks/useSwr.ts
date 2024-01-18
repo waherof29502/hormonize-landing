@@ -108,14 +108,7 @@ interface IListHashTag {
 }
 
 
-// 單筆role /blog/BlogData
-// Get with swr
-export function useSingleArticleInfo(id?: number |null ) {
-  return useSWR<any, Error, string | null>(id ? `/blog/BlogData?ID=${id}` : null, async (url) => {
-    const res = await client.get(url);
-    return res.data.data;
-  });
-}
+
 
 //部落格計點
 // https://cddev.creer-design.com/harmonize/api
@@ -126,8 +119,16 @@ export function useSingleArticleInfo(id?: number |null ) {
 // 聯絡我們表單資料區塊
 // https://cddev.creer-design.com/harmonize/api
 // POST contact/ContactUs
+interface IContactFormSubmit {
+  ContactName: string,
+  ContactPhone: string,
+  LineID: string,
+  Email: string,
+  ConsultItem:string
+  Message: number,
+}
 export function useContactFormSubmit() {
-  return useSWRMutation<any, Error, string, any>(`/contact/ContactUs`, async (url, { arg }) => {
+  return useSWRMutation<IContactFormSubmit, Error, string, any>(`/contact/ContactUs`, async (url, { arg }) => {
     const res = await client.patch(url, arg);
     return res.data;
   });
