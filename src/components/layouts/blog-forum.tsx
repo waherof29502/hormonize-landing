@@ -3,7 +3,7 @@ import React,{useState, useEffect,ChangeEvent, FormEvent } from 'react';
 import Image from 'next/image';
 import Button from '../button';
 import Link from 'next/link';
-import ChargeImg01 from '@/public/images/service/2-2.png'
+import ChargeImg01 from '@/public/images/service/2-2.png';
 import { DateIcon,CateIcon,TagIcon,SearchIcon, CateItemIcon } from '@/public/svg';
 import { useListArticle,useListCate,useListLatestArticle,useListHotArticle,useListHashtag} from '@/src/hooks/useSwr';
 // 首頁圖片及內容
@@ -23,9 +23,9 @@ export default function BlogForum() {
   const [categories, setCategories] = useState(0);
   const [hashtag,setHashtag] = useState('')
   const [contentId,setContentId] = useState<null | number>(null)
-  const [page,setPage] = useState(3)
+  const [page,setPage] = useState(1)
   // const PAGE_NUM=3
-  const {data:ArticleList,isValidating} = useListArticle(page.toString(),categories,hashtag,search)  
+  const {data:ArticleList,isValidating} = useListArticle(page.toString(),categories,hashtag,search) 
   const {data:CateList} = useListCate()
   const {data:LatestArticleList} = useListLatestArticle()
   const {data:HotArticleList} = useListHotArticle()
@@ -109,13 +109,14 @@ export default function BlogForum() {
                           <p className='text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]'>{item.HashTags}</p>
                         </div>
                       </div>
-                      <p className='mt-2 text-[#3E3E3E] text-[1.25rem] tracking-[1px] leading-[29px] font-sans font-[350]'>{shortenText(item.Content,80)}</p>
+                      <p className='mt-2 text-[#3E3E3E] text-[1.25rem] tracking-[1px] leading-[29px] font-sans font-[350]'>{shortenText(item.Content,20)}</p>
                       <Button containerStyles='wide:w-1/5 font-brandonMed mt-2 ml-auto border-[1px] border-primary px-5 py-2 text-[1.5rem] text-primary hover:text-white hover:bg-primary' path={`/blog/${item.BlogID}`}>learn more</Button>
                     </div>
                   </div>
                 </div>
               </div>
             ))}
+           
             {/* 靜態layout */}
          {/* <div className="w-[80%] ">
               <div className="w-full border-solid border-[1px] border-[#D1D1D1] min-h-fit">

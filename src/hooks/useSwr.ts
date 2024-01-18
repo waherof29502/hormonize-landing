@@ -9,6 +9,7 @@ import { client, Error } from '@/src/lib/utils';
 // GET blog/BlogList
 
 interface IListArticle {
+  TotalPage:number,
   List:{
   Title:string;
   BlogID: number;

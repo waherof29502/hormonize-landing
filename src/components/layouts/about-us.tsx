@@ -53,11 +53,11 @@ export default function AboutUs() {
         <h3 className='text-primary text-[2rem] 3xl:text-[3rem] font-brandonBld text-shadow py-2'>EVENTS</h3>
         <h4 className='text-primary text-[1rem] 3xl:text-[1.5rem] font-medium'>獲獎紀錄</h4>
       <div className="flex flex-col gap-y-4">
-        <span className='text-[#3E3E3E] text-[1rem] 3xl:text-[1.25rem] font-[350] font-sans'>2019｜ A’ DESIGN AWARDS: House 4x4x4,Iron Winner</span>
-        <span className='text-[#3E3E3E] text-[1rem] 3xl:text-[1.25rem] font-[350] font-sans'>2021｜ IF DESIGN AWARDS: House 4x4x4,Final Jury</span>   
-        <span className='text-[#3E3E3E] text-[1rem] 3xl:text-[1.25rem] font-[350] font-sans wide:whitespace-pre'>2022 ｜ ARCHITECTURE & DESIGN COLLECTION (ADC): House 4x4x4,Gold Winner</span>
-        <span className='text-[#3E3E3E] text-[1rem] 3xl:text-[1.25rem] font-[350] font-sans'>2023 ｜ MUSE DESIGN AWARDS: CELLIST IN THE LOFT,Silver Winner</span> 
-        <span className='text-[#3E3E3E] text-[1rem] 3xl:text-[1.25rem] font-[350] font-sans'>2023｜  LONDON DESIGN AWARDS: IN THE CLOUDS,Silver Winner</span>   
+        <span className='text-[#3E3E3E] text-[1rem] 3xl:text-[1.25rem] font-[350] font-sans'>2019 ｜ A’ DESIGN AWARDS: House 4x4x4,Iron Winner</span>
+        <span className='text-[#3E3E3E] text-[1rem] 3xl:text-[1.25rem] font-[350] font-sans'>2021 ｜ IF DESIGN AWARDS: House 4x4x4,Final Jury</span>   
+        <span className='text-[#3E3E3E] text-[1rem] 3xl:text-[1.25rem] font-[350] font-sans wide:whitespace-pre'>2022  ｜ ARCHITECTURE & DESIGN COLLECTION (ADC): House 4x4x4,Gold Winner</span>
+        <span className='text-[#3E3E3E] text-[1rem] 3xl:text-[1.25rem] font-[350] font-sans'>2023  ｜ MUSE DESIGN AWARDS: CELLIST IN THE LOFT,Silver Winner</span> 
+        <span className='text-[#3E3E3E] text-[1rem] 3xl:text-[1.25rem] font-[350] font-sans'>2023 ｜  LONDON DESIGN AWARDS: IN THE CLOUDS,Silver Winner</span>   
       </div>
       </div>
       </div>
