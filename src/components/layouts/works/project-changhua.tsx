@@ -21,8 +21,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
+import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+
 export const PROJECRIMG01 = [
   { id: 1, src: '/images/project-detail/work-changhua/1-1.jpg' },
   { id: 2, src: '/images/project-detail/work-changhua/1-2.jpg' },
@@ -34,7 +36,15 @@ export const PROJECRIMG01 = [
   { id: 8, src: '/images/project-detail/work-changhua/1-8.jpg' },
 ];
 
-
+const settings = {
+      className: "slider variable-width",
+      dots: false,
+      infinite: true,
+      centerMode: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      variableWidth: true
+    };
 
 export default function Project() {
   const [curr, setCurr] = useState(0);
@@ -203,10 +213,10 @@ export default function Project() {
                 height: '690',
               }}
             /> */}
-             <RwdYoutube
+             {/* <RwdYoutube
             src="https://www.youtube.com/embed/ikd3_3dsHS4?si=fOyGYuOeKDBk7Xm8"
-            />
-            {/* <LiteYouTubeEmbed id="ikd3_3dsHS4" title=""/> */}
+            /> */}
+            <LiteYouTubeEmbed id="ikd3_3dsHS4" title=""/>
             <div className='flex w-full items-end justify-end gap-x-[0.75rem] pt-[4rem] pb-[6rem] pr-1'>
             <span className="text-primary text-[1rem] tracking-[0.64px] font-normal font-sans">作品分享</span>
             <FacebookShareButton  url={currentUrl}>

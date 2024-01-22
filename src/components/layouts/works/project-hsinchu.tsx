@@ -11,10 +11,9 @@ import useScreenSize from '@/src/hooks/useScreenSize'
 import Link from 'next/link';
 import { HCPROJECTDETAIL} from '@/src/constants';
 import { useInView } from "react-intersection-observer";
-import RwdYoutube from '../../youtube';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css'
-import AwardImage from '@/public/images/about/2-1.png';
+
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -175,11 +174,7 @@ export default function Project() {
           </SwiperSlide>
         ))} 
           </Swiper>
-          {/* <div className="flex overflow-x-auto gap-x-2 no-scrollbar w-auto max-w-none">
-            {PROJECRIMG01.map((item,index) => (
-              <ScrollCard key={item.id} dataIndex={index} src={item.src} setCurr={setCurr}/>
-            ))}
-          </div> */}
+         
           </div>
           {/* desktop project detail */}
           <div className="mx-auto w-[90%] flex flex-col gap-y-4 pt-1 pb-[6rem]">

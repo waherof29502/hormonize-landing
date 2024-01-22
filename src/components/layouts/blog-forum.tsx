@@ -14,7 +14,7 @@ export const HEROITEM = [
 {imgSrc:'/images/home/hero/1-4.jpg'},
 {imgSrc:'/images/home/hero/1-5.png'},
 {imgSrc:'/images/home/hero/1-6.png'},
-{imgSrc:'/images/home/hero/1-7.png'},
+{imgSrc:'/images/home/hero/1-7.png'}, 
 ] as const;
 
 export default function BlogForum() {
