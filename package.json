@@ -34,6 +34,7 @@
     "react-share": "^5.0.3",
     "react-slick": "^0.29.0",
     "react-youtube": "^10.1.0",
+    "sharp": "^0.33.2",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.0.5",
     "swr": "^2.2.4",

@@ -1,11 +1,14 @@
 'use client'
 import React,{useState, useEffect,ChangeEvent, FormEvent } from 'react';
 import Image from 'next/image';
-import Button from '../button';
+import CustomButton from '../button';
 import Link from 'next/link';
 import ChargeImg01 from '@/public/images/service/2-2.png';
 import { DateIcon,CateIcon,TagIcon,SearchIcon, CateItemIcon } from '@/public/svg';
 import { useListArticle,useListCate,useListLatestArticle,useListHotArticle,useListHashtag} from '@/src/hooks/useSwr';
+import { Button } from "@/src/components/ui/button"
+import { Input } from "@/src/components/ui/input"
+
 // 首頁圖片及內容
 export const HEROITEM = [
 {imgSrc:'/images/home/hero/1-1.png'},
@@ -24,6 +27,7 @@ export default function BlogForum() {
   const [hashtag,setHashtag] = useState('')
   const [contentId,setContentId] = useState<null | number>(null)
   const [page,setPage] = useState(1)
+  
   // const PAGE_NUM=3
   const {data:ArticleList,isValidating} = useListArticle(page.toString(),categories,hashtag,search) 
   const {data:CateList} = useListCate()
@@ -40,10 +44,16 @@ export default function BlogForum() {
   const handleChange = (event:ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
-  const handleSearchClick =(event: FormEvent) => {
+  const handleSearchClick =(event: any) => {
     event.preventDefault();
     setSearch(searchTerm)
     setSearchTerm('')
+  };
+   const handleSubmit = (event:any) => {
+    event.preventDefault();
+    console.log('Searching for:', searchTerm);
+    setSearch(searchTerm)
+
   };
   useEffect(()=>{
     if(isValidating && ArticleList){
@@ -110,7 +120,7 @@ export default function BlogForum() {
                         </div>
                       </div>
                       <p className='mt-2 text-[#3E3E3E] text-[1.25rem] tracking-[1px] leading-[29px] font-sans font-[350]'>{shortenText(item.Content,20)}</p>
-                      <Button containerStyles='wide:w-1/5 font-brandonMed mt-2 ml-auto border-[1px] border-primary px-5 py-2 text-[1.5rem] text-primary hover:text-white hover:bg-primary' path={`/blog/${item.BlogID}`}>learn more</Button>
+                      <CustomButton containerStyles='wide:w-1/5 font-brandonMed mt-2 ml-auto border-[1px] border-primary px-5 py-2 text-[1.5rem] text-primary hover:text-white hover:bg-primary' path={`/blog/${item.BlogID}`}>learn more</CustomButton>
                     </div>
                   </div>
                 </div>
@@ -157,11 +167,17 @@ export default function BlogForum() {
                   <span className='text-primary text-[1.375rem] tracking-[6.16px] leading-[29px] font-sans font-medium px-1'>搜尋</span>
                   <div className="h-[1px] bg-primary w-full mt-2 " />
                 </div>
-                <form className="flex items-center justify-center border-[1px] border-[#D1D1D1] " onSubmit={handleSearchClick}>
+                {/* <form className="flex items-center justify-center border-[1px] border-[#D1D1D1] " onSubmit={handleSearchClick}>
                 <input type="search" id="searchInput" value={searchTerm} onChange={handleChange} placeholder='請輸入關鍵字....' className='w-full p-4 text-primary focus:outline-none' />
                 <button className='px-4'  onClick={handleSearchClick}>
                 <SearchIcon className="text-[19px] text-[#3E3E3E]"/>
                 </button>
+                </form> */}
+                <form className="flex items-center justify-center " onSubmit={handleSubmit}>
+                <Input type="search" id="searchInput" value={searchTerm} onChange={handleChange} placeholder='請輸入關鍵字....' className='w-[90%] p-4 mx-2 text-primary focus:outline-none' />
+                <Button className='p-4' variant="outline" type='submit'>
+                <SearchIcon className="text-[19px] text-[#3E3E3E] "/>
+                </Button>
                 </form>
                 </div>
                 {/* cate content */}
@@ -332,7 +348,7 @@ export default function BlogForum() {
                     </div>
                   </div>
                   <p className='mt-2 text-[#3E3E3E] text-[1rem] tracking-[0.8px] leading-[38px] font-sans font-[350]'>{shortenText(item.Content,80)}</p>
-                  <Button containerStyles='wide:w-1/3 font-brandonMed mt-2 ml-auto border-[1px] border-primary px-5 py-2 text-[1.5rem] text-primary hover:text-white hover:bg-primary' path={`/blog/${item.BlogID}`}>learn more</Button>
+                  <CustomButton containerStyles='wide:w-1/3 font-brandonMed mt-2 ml-auto border-[1px] border-primary px-5 py-2 text-[1.5rem] text-primary hover:text-white hover:bg-primary' path={`/blog/${item.BlogID}`}>learn more</CustomButton>
               </div>
               </div>
                </div></>
