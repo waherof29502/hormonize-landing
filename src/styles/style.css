@@ -1,3 +1,4 @@
+@import '@/node_modules/locomotive-scroll/dist/locomotive-scroll';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -54,9 +55,33 @@
   }
   body {
     @apply bg-background text-foreground;
+    cursor: none;
   }
 }
-
+.custom-cursor {
+width: 18px;
+height: 18px;
+border: 4.5px solid #76a849;
+border-radius: 50%;
+z-index: 9999;
+position: absolute;
+pointer-events: none; 
+}
+@keyframes cursorAnim {
+0% {
+transform: scale(1);
+}
+50% {
+transform: scale(2);
+}
+100% {
+transform: scale(1.5);
+opacity: 0;
+}
+}
+.expand {
+animation: cursorAnim .5s forwards;
+}
 @layer components {
   .zoom-image [data-rmiz-modal-overlay='visible'] {
     @apply bg-background/10 backdrop-blur;

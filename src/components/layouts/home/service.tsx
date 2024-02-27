@@ -1,16 +1,68 @@
-import React from 'react';
+'use client'
+import React,{ useLayoutEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 export default function Service() {
+  const text = useRef(null);
+  const img = useRef(null);
+
+
+    useLayoutEffect( () => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from(text.current, {
+            scrollTrigger: {
+                trigger: text.current,
+                scrub: true,
+                start: "0px bottom",
+                end: "bottom+=180px bottom",
+            },
+            left: "-100px",
+            ease: "power3.In"
+        })
+        gsap.to(text.current, {
+            scrollTrigger: {
+                trigger: text.current,
+                scrub: true,
+                start: "0px bottom",
+                end: "bottom+=180px bottom",
+            },
+            left: "0px",
+            ease: "power3.Out"
+        })
+         gsap.from(img.current, {
+            scrollTrigger: {
+                trigger: img.current,
+                scrub: true,
+                start: "0px bottom",
+                end: "bottom+=180px bottom",
+            },
+            left: "200px",
+            ease: "power3.Out"
+        })
+         gsap.to(img.current, {
+            scrollTrigger: {
+                trigger: img.current,
+                scrub: true,
+                start: "0px bottom",
+                end: "bottom+=180px bottom",
+            },
+            left: "0px",
+            ease: "power3.Out"
+        })
+    }, [])
+
   return (
     <section className="relative overflow-hidden">
       {/* desktop layout */}
       <div className="hidden 3md:flex w-full min-h-screen">
         <div className="flex flex-col">
           <div className="w-full h-3/4 flex justify-center items-center">
-            <div className="w-1/4 h-full flex flex-col justify-center items-center bg-[#D1D1D1] border-r-[2px] border-primary">
-              <span className='text-[1.875rem] md:text-[2.75rem] 3xl:text-[3.875rem] font-brandonLight text-shadow'>SERVICE</span>
+            <div ref={text} className="relative w-1/4 h-full flex flex-col justify-center items-center bg-[#D1D1D1] border-r-[2px] border-primary">
+              <span  className='relative text-[1.875rem] md:text-[2.75rem] 3xl:text-[3.875rem] font-brandonLight text-shadow'>SERVICE</span>
               <span className='text-[1.875rem] md:text-[2.75rem] 3xl:text-[3.875rem] font-brandonBld text-shadow'>VALUE</span>
             </div>
-            <div className="w-1/2 h-full flex flex-col bg-white justify-center px-[3.125rem] 3xl:px-[5.625rem] gap-y-[1rem] 3xl:gap-y-[37px]">
+            <div data-scroll data-scroll-speed="0.5" className="w-1/2 h-full flex flex-col bg-white justify-center px-[3.125rem] 3xl:px-[5.625rem] gap-y-[1rem] 3xl:gap-y-[37px]">
               <h2 className="text-primary text-[1.5rem] 3xl:text-[1.875rem] tracking-[1.8px] leading-[3rem] font-medium">
                 朱慶煌<span className="text-primary text-[1rem] 3xl:text-[1.5rem] pl-2 font-medium text-shadow">主持設計師</span>
               </h2>
@@ -24,7 +76,7 @@ export default function Service() {
                 如此的專業執行，才是唯一重要的事，亦是消費者認同的服務價值。
               </span>
             </div>
-            <div className="w-1/4 h-full bg-service bg-cover bg-no-repeat"></div>
+            <div ref={img} className="relative w-1/4 h-full bg-service bg-cover bg-no-repeat"></div>
           </div>
           <div className="w-full h-1/4 relative -mt-[0.4px] bg-[#D1D1D1]">
             <div className="absolute inset-0 bg-primary clip-path-polygon " />

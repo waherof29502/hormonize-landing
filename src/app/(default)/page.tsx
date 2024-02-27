@@ -7,7 +7,6 @@ import About from '@/src/components/layouts/home/about';
 import Feature from '@/src/components/layouts/home/feature';
 import Service from '@/src/components/layouts/home/service';
 import Project from '@/src/components/layouts/home/project';
-
 export default function Home() {
   return (
     <>

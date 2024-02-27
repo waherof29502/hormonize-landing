@@ -1,17 +1,67 @@
-import React from 'react';
+'use client'
+import React,{ useLayoutEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Button from '../../button';
 export default function About() {
+   const text = useRef(null);
+   const img = useRef(null);
+
+
+    useLayoutEffect( () => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from(text.current, {
+            scrollTrigger: {
+                trigger: text.current,
+                scrub: true,
+                start: "0px bottom",
+                end: "bottom+=180px bottom",
+            },
+            left: "-100px",
+            ease: "power3.In"
+        })
+        gsap.to(text.current, {
+            scrollTrigger: {
+                trigger: text.current,
+                scrub: true,
+                start: "0px bottom",
+                end: "bottom+=180px bottom",
+            },
+            left: "0px",
+            ease: "power3.Out"
+        })
+         gsap.from(img.current, {
+            scrollTrigger: {
+                trigger: img.current,
+                scrub: true,
+                start: "0px bottom",
+                end: "bottom+=180px bottom",
+            },
+            left: "200px",
+            ease: "power3.Out"
+        })
+         gsap.to(img.current, {
+            scrollTrigger: {
+                trigger: img.current,
+                scrub: true,
+                start: "0px bottom",
+                end: "bottom+=180px bottom",
+            },
+            left: "0px",
+            ease: "power3.Out"
+        })
+    }, [])
   return (
     <section className="relative overflow-hidden">
       {/* desktop layout */}
       <div className="hidden 3md:flex w-full min-h-[90vh]">
         <div className="w-full flex justify-center items-center">
-          <div className="w-1/4 h-full flex justify-center items-center text-primary border-solid border-r-[2px] border-primary gap-x-2">
+          <div ref={text} className="relative w-1/4 h-full flex justify-center items-center text-primary border-solid border-r-[2px] border-primary gap-x-2">
             <span className='text-[1.875rem] md:text-[2.75rem] 3xl:text-[3.875rem] font-brandonLight text-shadow'>ABOUT</span>
             <span className='text-[1.875rem] md:text-[2.75rem] 3xl:text-[3.875rem] font-brandonBld text-shadow'>US</span>
           </div>
-          <div className="w-1/2 h-full flex flex-col bg-white justify-center px-[50px] 3xl:px-[90px] gap-y-[16px] 3xl:gap-y-[37px]">
-            <h2 className="font-sans text-primary text-[20px] 3xl:text-[30px] tracking-[1.8px] 3xl:leading-[48px] font-medium">
+          <div data-scroll data-scroll-speed="0.4" className="w-1/2 h-full flex flex-col bg-white justify-center px-[50px] 3xl:px-[90px] gap-y-[16px] 3xl:gap-y-[37px]">
+            <h2  className="font-sans text-primary text-[20px] 3xl:text-[30px] tracking-[1.8px] 3xl:leading-[48px] font-medium">
               延續建築的殼，針對不同的客戶，我們將客製並展現其各自的獨特性。
             </h2>
             <span className="font-sans text-[#3E3E3E] text-[0.875rem] 3xl:text-[1.25rem] leading-[1.875rem] 3xl:leading-[2.25rem] font-normal">
@@ -23,7 +73,7 @@ export default function About() {
             <Button containerStyles='font-brandonMed ml-auto border-[1px] border-primary bg-white px-5 py-2 text-primary text-[1.25rem] 3xl:text-[1.5rem] hover:text-white hover:bg-primary' path="/about-us">learn more</Button>
 
           </div>
-          <div className="w-1/4 h-full bg-about bg-cover bg-no-repeat"></div>
+          <div ref={img} className="relative w-1/4 h-full bg-about bg-cover bg-no-repeat"></div>
         </div>
       </div>
       {/* mobile layout */}
