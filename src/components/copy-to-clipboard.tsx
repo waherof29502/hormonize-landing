@@ -1,9 +1,9 @@
-'use client'
-import React,{useState} from 'react'
+'use client';
+import React, { useState } from 'react';
 
-export default function CopyToClipboard({text}:any) {
-const [copied,setCopied] = useState(false)
-const copyToClipboard = () => {
+export default function CopyToClipboard({ text }: any) {
+  const [copied, setCopied] = useState(false);
+  const copyToClipboard = () => {
     setCopied(true);
 
     navigator.clipboard.writeText(text).then(
@@ -19,7 +19,5 @@ const copyToClipboard = () => {
       setCopied(false);
     }, 500);
   };
-  return (
-    <div>copy-to-clipboard</div>
-  )
+  return <div>copy-to-clipboard</div>;
 }

@@ -36,16 +36,24 @@ const sans = Noto_Sans_TC({
   display: 'swap'
 });
 
-
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-Hans-TW">
-      <body className={cn('antialiased bg-white text-white tracking-tight',sans.variable ,brandonMed.variable,brandonReg.variable,brandonBld.variable,brandonThin.variable,brandonLight.variable)}>
+      <body
+        className={cn(
+          'antialiased bg-white text-white tracking-tight',
+          sans.variable,
+          brandonMed.variable,
+          brandonReg.variable,
+          brandonBld.variable,
+          brandonThin.variable,
+          brandonLight.variable
+        )}
+      >
         <div className="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
-          <Header/>
+          <Header />
           {children}
-          <Footer/>
+          <Footer />
         </div>
       </body>
     </html>

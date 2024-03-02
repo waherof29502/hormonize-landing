@@ -6,7 +6,9 @@ import React from 'react';
 import CookiePolicy from '@/src/components/layouts/cookie-policy';
 
 export default function ProcessChargePage() {
-  return <div>
-    <CookiePolicy/>
-  </div>;
+  return (
+    <div>
+      <CookiePolicy />
+    </div>
+  );
 }

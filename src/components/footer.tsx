@@ -1,57 +1,61 @@
-'use client'
+'use client';
 import React from 'react';
 import Link from 'next/link';
 import Button from './button';
 import { usePathname } from 'next/navigation';
 import { FbCircleIcon, IgCircleIcon } from '@/public/svg';
-import {FOOTERITEMS} from '@/src/constants'
+import { FOOTERITEMS } from '@/src/constants';
 export default function Footer() {
   const pathname = usePathname();
   return (
     <footer>
-      {pathname === '/success' || pathname === '/contact-us' ? null :<div className="relative bg-cover bg-mobileFooter 3md:bg-footer bg-center 3md:bg-right w-full min-h-[90vh] 3md:min-h-[58vh]">
-        {/* desktop contact us */}
-        <div className="hidden 3md:flex flex-col min-h-[58vh] md:justify-center items-center 3md:items-start 3md:w-[45%] 2lg:w-[36%]  wide:w-1/3 lg:pl-2 xl:pl-0 3md:pr-[100px] xl:pr-[120px] 2xl:pr-[180px] ml-auto gap-y-[30px] lg:gap-y-[15px] ">
-          <h2 className="text-[1.875rem] xl:text-[3rem] 3xl:text-[3.875rem] text-primary font-brandonLight">
-            CONTACT <span className="font-brandonBld">US</span>
-          </h2>
-          <span className="text-primary text-[1.25rem] xl:text-[1.25rem] 3xl:text-[1.5rem] wider:text-[2.125rem] pb-4">
-            了解如何用設計為你的生活開拓嶄新視野歡迎與我們聯繫。
-          </span>
-          <Button
-            containerStyles="ml-auto w-[50%] md:w-[30%] 3md:w-[50%] py-2 lg:py-4 border-primary border-[1px] hover:bg-primary group"
-            path="/contact-us"
-          >
-            <span className="text-primary text-[1rem] 3xl:text-[1.5rem] font-brandonMed group-hover:text-white">leave a message</span>
-          </Button>
+      {pathname === '/success' || pathname === '/contact-us' ? null : (
+        <div className="relative bg-cover bg-mobileFooter 3md:bg-footer bg-center 3md:bg-right w-full min-h-[90vh] 3md:min-h-[58vh]">
+          {/* desktop contact us */}
+          <div className="hidden 3md:flex flex-col min-h-[58vh] md:justify-center items-center 3md:items-start 3md:w-[45%] 2lg:w-[36%]  wide:w-1/3 lg:pl-2 xl:pl-0 3md:pr-[100px] xl:pr-[120px] 2xl:pr-[180px] ml-auto gap-y-[30px] lg:gap-y-[15px] ">
+            <h2 className="text-[1.875rem] xl:text-[3rem] 3xl:text-[3.875rem] text-primary font-brandonLight">
+              CONTACT <span className="font-brandonBld">US</span>
+            </h2>
+            <span className="text-primary text-[1.25rem] xl:text-[1.25rem] 3xl:text-[1.5rem] wider:text-[2.125rem] pb-4">
+              了解如何用設計為你的生活開拓嶄新視野歡迎與我們聯繫。
+            </span>
+            <Button
+              containerStyles="ml-auto w-[50%] md:w-[30%] 3md:w-[50%] py-2 lg:py-4 border-primary border-[1px] hover:bg-primary group"
+              path="/contact-us"
+            >
+              <span className="text-primary text-[1rem] 3xl:text-[1.5rem] font-brandonMed group-hover:text-white">
+                leave a message
+              </span>
+            </Button>
+          </div>
+          {/* mobile contact us*/}
+          <div className="3md:hidden flex flex-col min-h-[60vh] md:justify-center items-center ml-auto gap-y-[30px] py-10 px-10">
+            <h2 className="text-[1.875rem] sm:text-[2.75rem] text-primary font-brandonLight">
+              CONTACT <span className="font-brandonBld">US</span>
+            </h2>
+            <span className="text-primary font-medium 3md:font-normal text-[1.25rem] pb-4">
+              了解如何用設計為你的生活開拓嶄新視野歡迎與我們聯繫。
+            </span>
+            <Button
+              containerStyles="ml-auto w-[45%] md:w-[30%] 3md:w-[50%] py-4 lg:py-4 border-primary border-[1px] text-primary hover:text-white hover:bg-primary"
+              path="/contact-us"
+            >
+              <span className=" text-[1.125rem] 3xl:text-[1.5rem] font-brandonMed ">leave a message</span>
+            </Button>
+          </div>
         </div>
-        {/* mobile contact us*/}
-        <div className="3md:hidden flex flex-col min-h-[60vh] md:justify-center items-center ml-auto gap-y-[30px] py-10 px-10">
-          <h2 className="text-[1.875rem] sm:text-[2.75rem] text-primary font-brandonLight">
-            CONTACT <span className="font-brandonBld">US</span>
-          </h2>
-          <span className="text-primary font-medium 3md:font-normal text-[1.25rem] pb-4">
-            了解如何用設計為你的生活開拓嶄新視野歡迎與我們聯繫。
-          </span>
-          <Button
-            containerStyles="ml-auto w-[45%] md:w-[30%] 3md:w-[50%] py-4 lg:py-4 border-primary border-[1px] text-primary hover:text-white hover:bg-primary"
-            path="/contact-us"
-          >
-            <span className=" text-[1.125rem] 3xl:text-[1.5rem] font-brandonMed ">leave a message</span>
-          </Button>
-        </div>
-      </div> }
-      
+      )}
+
       <div className="md:w-[78%] w-[85%] 3xl:w-[85%] min-h-max mx-auto pt-[3rem] pb-8 3md:pb-[5.5rem]">
         {/* desktop footer */}
         <div className="hidden 3md:flex items-center justify-between py-10">
           {/* Logo */}
           <Link href="/">
-          <div className="flex flex-col text-primary gap-y-3"> 
-            <span className="text-[2rem] tracking-[1.28px] leading-[1.875rem] font-brandonMed">HARMONIZE DESIGN</span>
-            <span className="text-[1.875rem] tracking-[1.2px] text-primary font-normal">寬堂空間設計</span>
-          </div>
-           </Link>
+            <div className="flex flex-col text-primary gap-y-3">
+              <span className="text-[2rem] tracking-[1.28px] leading-[1.875rem] font-brandonMed">HARMONIZE DESIGN</span>
+              <span className="text-[1.875rem] tracking-[1.2px] text-primary font-normal">寬堂空間設計</span>
+            </div>
+          </Link>
           {/* Service Nav as */}
           <div className="flex flex-col items-end gap-y-[0.75rem]">
             {FOOTERITEMS.map((item, index) => (

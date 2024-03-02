@@ -7,16 +7,9 @@ type CarouselProps = {
   curr: number;
   setCurr: React.Dispatch<React.SetStateAction<number>>;
   setOpenLightBox: React.Dispatch<React.SetStateAction<boolean>>;
-
 };
 
-
-const Carousel = ({
-  children,
-  curr,
-  setCurr,
-  setOpenLightBox,
-}: CarouselProps) => {
+const Carousel = ({ children, curr, setCurr, setOpenLightBox }: CarouselProps) => {
   // const [curr, setCurr] = useState(0)
 
   // 輪播功能
@@ -24,12 +17,11 @@ const Carousel = ({
 
   const next = () => setCurr((curr: number) => (curr === React.Children.count(children) - 1 ? 0 : curr + 1));
 
-
   return (
     <div className="overflow-x-hidden overflow-y-hidden relative">
       <div
         className="flex 3md:items-center transition-transform ease-out duration-500 md:h-[80vh] 3md:h-[85vh] "
-        style={{ transform: `translateX(-${curr * 100}%)`}}
+        style={{ transform: `translateX(-${curr * 100}%)` }}
       >
         {children}
       </div>

@@ -6,7 +6,9 @@ import React from 'react';
 import Projects from '@/src/components/layouts/projects';
 
 export default function ProjectPage() {
-  return <div>
-    <Projects/>
-  </div>;
+  return (
+    <div>
+      <Projects />
+    </div>
+  );
 }

@@ -6,7 +6,9 @@ import React from 'react';
 import PrivacyPolicy from '@/src/components/layouts/privacy-policy';
 
 export default function ProcessChargePage() {
-  return <div>
-    <PrivacyPolicy/>
-  </div>;
+  return (
+    <div>
+      <PrivacyPolicy />
+    </div>
+  );
 }

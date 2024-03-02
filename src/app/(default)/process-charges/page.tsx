@@ -6,7 +6,9 @@ import React from 'react';
 import ProcessCharges from '@/src/components/layouts/process-charges';
 
 export default function ProcessChargePage() {
-  return <div>
-    <ProcessCharges/>
-  </div>;
+  return (
+    <div>
+      <ProcessCharges />
+    </div>
+  );
 }

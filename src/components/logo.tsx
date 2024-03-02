@@ -9,7 +9,9 @@ export default function Logo({ header }: any) {
     <Link href="/">
       <div className="hidden 3md:flex justify-center items-center">
         <LogoWhite
-          className={`text-[4rem] 3xl:text-[5rem] md:ml-2 mb-1 ${!header && pathName === '/' ? 'text-white' : 'text-primary'}`}
+          className={`text-[4rem] 3xl:text-[5rem] md:ml-2 mb-1 ${
+            !header && pathName === '/' ? 'text-white' : 'text-primary'
+          }`}
         />
         <div
           className={`hidden 3xl:flex flex-col group overflow-hidden h-[3.625rem] mt-auto ${

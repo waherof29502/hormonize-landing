@@ -1,5 +1,5 @@
 'use client';
-import React , { useEffect,useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import useScrollProcess from '../hooks/useScrollProcess';
 import { TopIcon, TopSmallIcon } from '@/public/svg';
@@ -15,14 +15,12 @@ export default function Template({ children }: { children: React.ReactNode }) {
     // Scroll to the top of the page smoothly
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-    useEffect( () => {
-    (
-      async () => {
-          const LocomotiveScroll = (await import('locomotive-scroll')).default
-          const locomotiveScroll = new LocomotiveScroll();
-      }
-    )()
-  }, [])
+  useEffect(() => {
+    (async () => {
+      const LocomotiveScroll = (await import('locomotive-scroll')).default;
+      const locomotiveScroll = new LocomotiveScroll();
+    })();
+  }, []);
   return (
     <>
       <motion.main
@@ -31,14 +29,15 @@ export default function Template({ children }: { children: React.ReactNode }) {
         animate="enter"
         transition={{ type: 'linear', delay: 0.2, duration: 0.4 }}
       >
-         <Cursor/>
+        <Cursor />
         {children}
       </motion.main>
-      { completions !== 0 ? <button onClick={scrollToTop} className="fixed z-50 -right-8 3md:right-3 bottom-5 transition-all duration-700 ">
-        <TopIcon className="hidden 3md:block text-[163px] text-primary hover:text-secondary" />
-        <TopSmallIcon className="3md:hidden text-[99px] text-primary hover:text-secondary" />
-      </button> :null}
-     
+      {completions !== 0 ? (
+        <button onClick={scrollToTop} className="fixed z-50 -right-8 3md:right-3 bottom-5 transition-all duration-700 ">
+          <TopIcon className="hidden 3md:block text-[163px] text-primary hover:text-secondary" />
+          <TopSmallIcon className="3md:hidden text-[99px] text-primary hover:text-secondary" />
+        </button>
+      ) : null}
     </>
   );
 }

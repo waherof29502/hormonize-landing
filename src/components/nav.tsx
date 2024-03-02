@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { SubtractIcon } from '@/public/svg';
 import { SheetClose } from '@/src/components/ui/sheet';
-import {LINKS} from '@/src/constants/index'
+import { LINKS } from '@/src/constants/index';
 import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 
@@ -33,8 +33,8 @@ export default function Nav({
                 path === link.path ? 'opacity-100' : ''
               }`}
             />
-            <SheetClose className='focus:outline-none focus:ring-0 transition-opacity'>
-            <span className='text-[1.5rem] 3md:text-[1.5rem] 3xl:text-[2rem] whitespace-pre'>{link.name}</span>
+            <SheetClose className="focus:outline-none focus:ring-0 transition-opacity">
+              <span className="text-[1.5rem] 3md:text-[1.5rem] 3xl:text-[2rem] whitespace-pre">{link.name}</span>
             </SheetClose>
           </motion.div>
         </Link>

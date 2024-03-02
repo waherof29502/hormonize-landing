@@ -63,7 +63,7 @@ const SheetContent = React.forwardRef<React.ElementRef<typeof SheetPrimitive.Con
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay:2, duration: 0.2 }}
+            transition={{ delay: 2, duration: 0.2 }}
             className="bg-white "
           >
             <X className="h-5 w-5 text-primary " />

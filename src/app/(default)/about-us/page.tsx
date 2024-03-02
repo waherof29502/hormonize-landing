@@ -6,7 +6,9 @@ import React from 'react';
 import AboutUs from '@/src/components/layouts/about-us';
 
 export default function AboutUsPage() {
-  return <div>
-    <AboutUs/>
-  </div>;
+  return (
+    <div>
+      <AboutUs />
+    </div>
+  );
 }
