@@ -194,3 +194,14 @@
 .embla__slide:nth-child(8) {
   flex: 0 0 50%;
 }
+
+/* swiper pagination tip */
+/* .NAME .swiper-wrapper{
+  @apply !h-[500px]
+} */
+
+/* .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet
+{
+  @apply bg-slate-500
+} */

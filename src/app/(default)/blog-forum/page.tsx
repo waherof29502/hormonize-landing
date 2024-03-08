@@ -3,7 +3,7 @@ export const metadata = {
   description: '住宅空間 | 辦公空間 '
 };
 import BlogContent from '@/src/components/layouts/blog-content';
-export default function ContactUsPage() {
+export default async function BlogForumPage() {
   return (
     <>
       <BlogContent />

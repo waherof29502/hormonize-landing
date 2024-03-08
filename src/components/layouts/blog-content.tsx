@@ -1,12 +1,12 @@
-'use client';
-import React, { useState, useEffect, ChangeEvent, FormEventHandler } from 'react';
+import React  from 'react';
 import Image from 'next/image';
 import CustomButton from '../button';
 import ChargeImg01 from '@/public/images/service/2-2.png';
 import { Button } from '@/src/components/ui/button';
 import { Input } from '@/src/components/ui/input';
 import { DateIcon, CateIcon, TagIcon, SearchIcon, CateItemIcon } from '@/public/svg';
-
+import Link from 'next/link'
+import {client, urlFor} from '@/src/lib/sanity'
 // 首頁圖片及內容
 export const HEROITEM = [
   { imgSrc: '/images/home/hero/1-1.png' },
@@ -17,16 +17,50 @@ export const HEROITEM = [
   { imgSrc: '/images/home/hero/1-6.png' },
   { imgSrc: '/images/home/hero/1-7.png' }
 ] as const;
+type Blog ={
+   _id: string;
+  name: string;
+  description: string;
+  images: string[]; // Replace with the actual type for images
+  releaseDate:string;
+  slug: string;
+  tags:{
+    name:string
+  }[];
+  categories:{
+    name:string
+  }[];
+}
+export const revalidate = 30;  
 
-export default function BlogContent() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(event.target.value);
-  };
-  const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
-    event.preventDefault();
-    setSearchTerm(searchTerm);
-  };
+const getData = async()=>{
+  const query:string = `*[_type == 'blog' && references(*[_type == 'category' ]._id,categories)]{
+  _id,
+    name,
+    description,
+    images,
+    releaseDate,
+    'slug':coalesce(slug.current, null),
+    'tags': tags[]->{
+      name
+    },
+    'categories':categories[]->{
+    name
+    }
+}`;
+  const data:Blog[] = await client.fetch(query);
+  return data;
+}
+export default async function BlogContent() {
+  const blog = await getData(); 
+  // const [searchTerm, setSearchTerm] = useState('');
+  // const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+  //   setSearchTerm(event.target.value);
+  // };
+  // const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
+  //   event.preventDefault();
+  //   setSearchTerm(searchTerm);
+  // };
   return (
     <section className="relative overflow-hidden">
       {/* hero desktop layout */}
@@ -65,38 +99,49 @@ export default function BlogContent() {
             {/* 左邊文字區塊 */}
             <div className="w-[60%] h-full flex flex-col gap-y-20 items-center">
               {/* 動態layout */}
-              {/* {ArticleList?.List.map((item) => (
-  <div key={item.BlogID} className="w-[80%]">
+              {blog.map((item) => (
+  <div key={item._id} className="w-[80%]">
     <div className="w-full border-solid border-[1px] border-[#D1D1D1] min-h-fit">
+      <Link href={`/blog-forum/${item.slug}`}>
       <div className="w-full h-[50vh]">
-        <Image src={item.Image} width={1010.93} height={540} alt={item.ImageAlt} className='w-full h-full object-cover'/>
+        <Image src={urlFor(item.images[0]).url()} width={1010.93} height={540} alt='' className='w-full h-full object-cover'/>
       </div>
       <div className="w-full min-h-fit py-2">
         <div className='flex flex-col gap-y-2 p-5'>
-          <h2 className='text-primary text-[1.75rem] tracking-[0.56px] font-medium'>{item.Title}</h2>
+          <h2 className='text-primary text-[1.75rem] tracking-[0.56px] font-medium'>{item.name}</h2>
           <div className='flex flex-wrap items-center gap-x-4'>
             <div className='flex items-center gap-x-1'>
-               {item.CategoryName.length >0 && <TagIcon className='text-[#929292] text-[1.625rem]'/>}
-              <p className='text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]'>{item.CategoryName}</p>
+               {item.categories.length >0 && <TagIcon className='text-[#929292] text-[1.625rem]'/>}
+              <p className='flex gap-x-1 text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]'>
+                {item.categories.map((category,index) => (
+              <span key={index}> {index > 0 && ", "} {category.name}</span>
+              ))}
+              </p>
             </div>
             <div className='flex items-center gap-x-1'>
-               {item.PublishDate.length >0 && <DateIcon className='text-[#929292] text-[1.625rem]'/>}
-              <p className='text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]'>{item.PublishDate}</p>
+               {item.releaseDate.length >0 && <DateIcon className='text-[#929292] text-[1.625rem]'/>}
+              <p className='text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]'>{item.releaseDate}</p>
             </div>
             <div className='flex items-center gap-x-1'>
-              {item.HashTags.length >0 && <CateIcon className='text-[#929292] text-[1.625rem]'/> }
-              <p className='text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]'>{item.HashTags}</p>
+              {item.tags.length >0 && <CateIcon className='text-[#929292] text-[1.625rem]'/> }
+              <p className='text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]'>
+                {item.tags.map((tag,index) => (
+              <span key={index}> {index > 0 && ", "} {tag.name}</span>
+              ))}
+              </p>
             </div>
           </div>
-          <p className='mt-2 text-[#3E3E3E] text-[1.25rem] tracking-[1px] leading-[29px] font-sans font-[350]'>{item.Content}</p>
-          <Button containerStyles='wide:w-1/3 font-brandonMed mt-2 ml-auto border-[1px] border-primary px-5 py-2 text-[1.5rem] text-primary hover:text-white hover:bg-primary' path="/">learn more</Button>
+          <p className='mt-2 text-[#3E3E3E] text-[1.25rem] tracking-[1px] leading-[29px] font-sans font-[350]'>{item.description}</p>
+          <Button className='wide:w-1/3 font-brandonMed mt-2 ml-auto border-[1px] border-primary px-5 py-2 text-[1.5rem] text-white hover:text-white hover:bg-primary'>learn more</Button>
         </div>
       </div>
+      </Link>
     </div>
   </div>
-))} */}
+))}
+
               {/* 靜態layout */}
-              <div className="w-[80%] ">
+              {/* <div className="w-[80%] ">
                 <div className="w-full border-solid border-[1px] border-[#D1D1D1] min-h-fit">
                   <div className="w-full h-[50vh]">
                     <Image src={ChargeImg01} alt="image.charge" className="w-full h-full object-cover" />
@@ -132,7 +177,7 @@ export default function BlogContent() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* 右邊文字區塊 */}
@@ -145,7 +190,7 @@ export default function BlogContent() {
                     </span>
                     <div className="h-[1px] bg-primary w-full mt-2 " />
                   </div>
-                  <form className="flex items-center justify-center " onSubmit={handleSubmit}>
+                  {/* <form className="flex items-center justify-center " onSubmit={handleSubmit}>
                     <Input
                       type="search"
                       id="searchInput"
@@ -157,7 +202,7 @@ export default function BlogContent() {
                     <Button className="p-4" variant="outline" type="submit">
                       <SearchIcon className="text-[19px] text-[#3E3E3E] " />
                     </Button>
-                  </form>
+                  </form> */}
                 </div>
                 {/* cate content */}
                 {/* 動態layout */}
@@ -188,7 +233,6 @@ export default function BlogContent() {
                   <div className="flex flex-col w-full gap-y-2">
                     <div
                       className="flex items-center gap-x-2 pb-2 border-b border-dashed border-[#929292]"
-                      onClick={() => console.log('Clicked on "了解室內設計"')}
                     >
                       <CateItemIcon className="text-[19px] text-[#3E3E3E]" />
                       <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]">
@@ -348,7 +392,7 @@ export default function BlogContent() {
               </span>
               <div className="h-[1px] bg-primary w-full mt-1 " />
             </div>
-            <form className="flex items-center justify-center " onSubmit={handleSubmit}>
+            {/* <form className="flex items-center justify-center " onSubmit={handleSubmit}>
               <Input
                 type="search"
                 id="searchInput"
@@ -360,7 +404,7 @@ export default function BlogContent() {
               <Button className="p-4" variant="outline" type="submit">
                 <SearchIcon className="text-[19px] text-[#3E3E3E] " />
               </Button>
-            </form>
+            </form> */}
           </div>
           {/* cate content */}
           <div className="flex flex-col gap-y-5">
@@ -373,7 +417,6 @@ export default function BlogContent() {
             <div className="flex flex-col w-full gap-y-2">
               <div
                 className="flex items-center gap-x-2 pb-2 border-b border-dashed border-[#929292]"
-                onClick={() => console.log('Clicked on "了解室內設計"')}
               >
                 <CateItemIcon className="text-[19px] text-[#3E3E3E]" />
                 <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]">了解室內設計</span>
