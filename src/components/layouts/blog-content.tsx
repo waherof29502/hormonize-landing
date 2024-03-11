@@ -31,28 +31,8 @@ type Blog ={
     name:string
   }[];
 }
-export const revalidate = 30;  
 
-const getData = async()=>{
-  const query:string = `*[_type == 'blog' && references(*[_type == 'category' ]._id,categories)]{
-  _id,
-    name,
-    description,
-    images,
-    releaseDate,
-    'slug':coalesce(slug.current, null),
-    'tags': tags[]->{
-      name
-    },
-    'categories':categories[]->{
-    name
-    }
-}`;
-  const data:Blog[] = await client.fetch(query);
-  return data;
-}
-export default async function BlogContent() {
-  const blog = await getData(); 
+export default async function BlogContent({blog}:{blog:Blog[]}) {
   // const [searchTerm, setSearchTerm] = useState('');
   // const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
   //   setSearchTerm(event.target.value);
