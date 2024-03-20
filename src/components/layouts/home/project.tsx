@@ -77,10 +77,10 @@ export default function Project() {
           {/* desktop layout */}
           <div className="hidden 3md:flex 3md:w-3/4 px-10 h-full">
             <Swiper slidesPerView={3} initialSlide={1} centeredSlides={true} spaceBetween={spaceBetween()}>
-              {DESIGNSTORY.map((item, index) => (
+              {LatestArticle?.List.map((item, index) => (
                 <>
                   <SwiperSlide key={index}>
-                    <StoryCard imgSrc={item.imgSrc} title={item.title} link={`/blog-forum`} />
+                    <StoryCard imgSrc={item.Image} title={item.Title} link={`/blog/${item.BlogID}`} />
                   </SwiperSlide>
                 </>
               ))}
@@ -89,10 +89,10 @@ export default function Project() {
           {/* mobile layout */}
           <div className="3md:hidden w-[140vh] sm:w-[180vh] flex px-10 h-full">
             <Swiper slidesPerView={3} initialSlide={1} centeredSlides={true} spaceBetween={spaceBetween()}>
-              {DESIGNMOBILESTORY.map((item, index) => (
+              {LatestArticle?.List.map((item, index) => (
                 <>
                   <SwiperSlide key={index}>
-                    <StoryCard imgSrc={item.imgSrc} title={item.title} link={`/blog-forum`} />
+                    <StoryCard imgSrc={item.Image} title={item.Title} link={`/blog/${item.BlogID}`} />
                   </SwiperSlide>
                 </>
               ))}

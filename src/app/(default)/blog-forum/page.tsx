@@ -1,49 +1,21 @@
-export const metadata = {
-  title: '寬堂設計 | 部落格',
-  description: '住宅空間 | 辦公空間 '
-};
-import BlogContent from '@/src/components/layouts/blog-content';
-import {client, urlFor} from '@/src/lib/sanity'
-
-type Blog ={
-   _id: string;
-  name: string;
-  description: string;
-  images: string[]; // Replace with the actual type for images
-  releaseDate:string;
-  slug: string;
-  tags:{
-    name:string
-  }[];
-  categories:{
-    name:string
-  }[];
+import React from 'react'
+import BlogForum from '@/src/components/layouts/blog-forum-client';
+export async function generateStaticParams() {
+  const response = await fetch("https://cddev.creer-design.com/harmonize/api/blog/BlogList")
+  const data = await response.json();
+  return data.List.map(({ BlogID }: { BlogID: number }) => ({
+    slug: String(BlogID)
+  }))
 }
-export const revalidate = 30;  
-
-const getData = async()=>{
-  const query:string = `*[_type == 'blog' && references(*[_type == 'category' ]._id,categories)]{
-  _id,
-    name,
-    description,
-    images,
-    releaseDate,
-    'slug':coalesce(slug.current, null),
-    'tags': tags[]->{
-      name
-    },
-    'categories':categories[]->{
-    name
-    }
-}`;
-  const data:Blog[] = await client.fetch(query);
-  return data;
+type PageProps = {
+  params: {
+    slug: string;
+  };
 }
-export default async function BlogForumPage() {
-  const blog = await getData(); 
+export default function Page({ params }: PageProps) {
+  const { slug } = params
+
   return (
-    <>
-      <BlogContent blog={blog}/>
-    </>
-  );
+    <BlogForum />
+  )
 }

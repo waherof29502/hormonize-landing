@@ -1,7 +1,7 @@
 'use client';
-import React, { ReactElement } from 'react';
+import React, { useState } from 'react';
 import Button from './button';
-
+import fallbackImage from '@/public/images/project/1-1.png'
 import Image from 'next/image';
 
 interface StoryCardProps {
@@ -10,10 +10,12 @@ interface StoryCardProps {
   link: string;
 }
 const StoryCard = ({ imgSrc, title, link }: StoryCardProps) => {
+  const [imageSrc, setImageSrc] = useState(imgSrc);
+  const fallbackImageSrc = fallbackImage.src;
   return (
     <div className="flex flex-col gap-y-2">
       <div className="w-full object-contain overflow-hidden">
-        <Image src={imgSrc} alt={title} width={445} height={490} className="aspect-[14/16]" />
+        <Image src={imageSrc} onError={() => setImageSrc(fallbackImageSrc)} alt={title} width={445} height={490} className="aspect-[14/16] object-cover" />
       </div>
       <div className="absolute inset-0 bg-white/20 opacity-0 hover:opacity-100 ease-in duration-200 group">
         <div className="absolute bg-primary/70 inset-0 h-[45%] mt-auto opacity-0 group-hover:opacity-100 ease-in duration-200">

@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import CustomButton from '../button';
 import Link from 'next/link';
@@ -14,6 +14,7 @@ import {
 } from '@/src/hooks/useSwr';
 import { Button } from '@/src/components/ui/button';
 import { Input } from '@/src/components/ui/input';
+import useDebounce from '@/src/hooks/useDebounce';
 
 // 首頁圖片及內容
 export const HEROITEM = [
@@ -26,16 +27,23 @@ export const HEROITEM = [
   { imgSrc: '/images/home/hero/1-7.png' }
 ] as const;
 
-export default function BlogForum() {
-  const [searchTerm, setSearchTerm] = useState('');
+export default function BlogForumClient() {
   const [search, setSearch] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
   const [categories, setCategories] = useState(0);
   const [hashtag, setHashtag] = useState('');
   const [contentId, setContentId] = useState<null | number>(null);
   const [page, setPage] = useState(1);
-
+  const inputRef = useRef<HTMLInputElement | null>(null)
+  const debouncedSearch = useDebounce(search, 500)
+  const handleSubmit = () => {
+    const value = inputRef.current?.value;
+    if (value !== undefined) {
+      setSearchTerm(value)
+    }
+  }
   // const PAGE_NUM=3
-  const { data: ArticleList, isValidating } = useListArticle(page.toString(), categories, hashtag, search);
+  const { data: ArticleList, isValidating } = useListArticle(page.toString(), categories, hashtag, debouncedSearch);
   const { data: CateList } = useListCate();
   const { data: LatestArticleList } = useListLatestArticle();
   const { data: HotArticleList } = useListHotArticle();
@@ -47,19 +55,7 @@ export default function BlogForum() {
 
     return text?.substring(0, maxLength - 3) + '...';
   };
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(event.target.value);
-  };
-  const handleSearchClick = (event: any) => {
-    event.preventDefault();
-    setSearch(searchTerm);
-    setSearchTerm('');
-  };
-  const handleSubmit = (event: any) => {
-    event.preventDefault();
-    console.log('Searching for:', searchTerm);
-    setSearch(searchTerm);
-  };
+
   useEffect(() => {
     if (isValidating && ArticleList) {
       setSearch('');
@@ -103,7 +99,7 @@ export default function BlogForum() {
         <div className="flex w-full min-h-screen ">
           <div className="w-full flex justify-center items-center pb-[7rem]">
             {/* 左邊文字區塊 */}
-            <div className="w-[60%] h-full flex flex-col gap-y-20 items-center">
+            <article className="w-[60%] h-full flex flex-col gap-y-20 items-center">
               {/* 動態layout */}
               {ArticleList?.List.map((item) => (
                 <div key={item.BlogID} className="w-[80%]">
@@ -184,10 +180,13 @@ export default function BlogForum() {
               </div>
               </div>
             </div> */}
-            </div>
+            </article>
 
             {/* 右邊文字區塊 */}
-            <div className="w-[40%] h-full flex items-center justify-center">
+            {/* <aside className="w-[40%] h-full flex items-center justify-center">
+              <BlogSidebarClient />
+            </aside> */}
+            <aside className="w-[40%] h-full flex items-center justify-center">
               <div className="w-[70%] h-full flex flex-col gap-y-[4rem]">
                 <div className="flex flex-col gap-y-5">
                   <div className="w-fit">
@@ -196,25 +195,39 @@ export default function BlogForum() {
                     </span>
                     <div className="h-[1px] bg-primary w-full mt-2 " />
                   </div>
-                  {/* <form className="flex items-center justify-center border-[1px] border-[#D1D1D1] " onSubmit={handleSearchClick}>
-                <input type="search" id="searchInput" value={searchTerm} onChange={handleChange} placeholder='請輸入關鍵字....' className='w-full p-4 text-primary focus:outline-none' />
-                <button className='px-4'  onClick={handleSearchClick}>
-                <SearchIcon className="text-[19px] text-[#3E3E3E]"/>
-                </button>
-                </form> */}
-                  <form className="flex items-center justify-center " onSubmit={handleSubmit}>
+                  {/* v1 search bar */}
+                  {/* <div className="flex items-center justify-center ">
+                    <Input
+                      id="searchInput"
+                      name="searchInput"
+                      ref={inputRef}
+                      placeholder="請輸入關鍵字...."
+                      className="w-[90%] p-4 mx-2 text-primary focus:outline-none"
+                    />
+                    <Button className="p-4" variant="outline" onClick={handleSubmit}>
+                      <SearchIcon className="text-[19px] text-[#3E3E3E] " />
+                    </Button>
+                  </div> */}
+                  <div className="flex items-center justify-center relative">
+                    <SearchIcon className="text-[16px] text-[#3E3E3E] absolute top-3 left-5 " />
+                    <Input
+                      type="search"
+                      placeholder="請輸入關鍵字...."
+                      className="w-full pl-10 mx-2 text-primary focus:outline-none"
+                      onChange={(e) => setSearch(e.target.value)}
+                    />
+                  </div>
+                  {/* <form className="flex items-center justify-center " >
                     <Input
                       type="search"
                       id="searchInput"
-                      value={searchTerm}
-                      onChange={handleChange}
                       placeholder="請輸入關鍵字...."
                       className="w-[90%] p-4 mx-2 text-primary focus:outline-none"
                     />
                     <Button className="p-4" variant="outline" type="submit">
                       <SearchIcon className="text-[19px] text-[#3E3E3E] " />
                     </Button>
-                  </form>
+                  </form> */}
                 </div>
                 {/* cate content */}
                 {/* 動態layout */}
@@ -243,21 +256,21 @@ export default function BlogForum() {
                 </div>
                 {/* 靜態layout */}
                 {/* <div className="flex flex-col gap-y-5">
-                <div className='w-fit'>
-                  <span className='text-primary text-[1.375rem] tracking-[6.16px] leading-[29px] font-sans font-medium px-1'>文章分類</span>
-                  <div className="h-[1px] bg-primary w-full mt-2 " />
-                </div>
-                <div className='flex flex-col w-full gap-y-2'>
-                  <div className='flex items-center gap-x-2 pb-2 border-b border-dashed border-[#929292]' onClick={() => console.log('Clicked on "了解室內設計"')}>
-                    <CateItemIcon className="text-[19px] text-[#3E3E3E]"/>
-                    <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]">了解室內設計</span>
-                  </div>
-                  <div className='flex items-center gap-x-2 pb-1 border-b border-dashed border-[#3E3E3E]'>
-                    <CateItemIcon className="text-[19px] text-[#3E3E3E]"/>
-                    <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]">了解室內設計</span>
-                  </div>
-                </div>
-                </div> */}
+                    <div className='w-fit'>
+                        <span className='text-primary text-[1.375rem] tracking-[6.16px] leading-[29px] font-sans font-medium px-1'>文章分類</span>
+                        <div className="h-[1px] bg-primary w-full mt-2 " />
+                    </div>
+                    <div className='flex flex-col w-full gap-y-2'>
+                        <div className='flex items-center gap-x-2 pb-2 border-b border-dashed border-[#929292]'>
+                            <CateItemIcon className="text-[19px] text-[#3E3E3E]" />
+                            <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]">了解室內設計</span>
+                        </div>
+                        <div className='flex items-center gap-x-2 pb-1 border-b border-dashed border-[#3E3E3E]'>
+                            <CateItemIcon className="text-[19px] text-[#3E3E3E]" />
+                            <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]">了解室內設計</span>
+                        </div>
+                    </div> 
+            </div>*/}
                 {/* 最新文章 content */}
                 <div className="flex flex-col gap-y-5">
                   <div className="w-fit">
@@ -275,7 +288,6 @@ export default function BlogForum() {
                             <Link href={`/blog/${item.BlogID}`}>
                               <span
                                 className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px] cursor-pointer hover:text-[#77A849]"
-                                onClick={() => setContentId(item.BlogID)}
                               >
                                 {item.Title}
                               </span>
@@ -311,53 +323,38 @@ export default function BlogForum() {
                     <div className="h-[1px] bg-primary w-full mt-2 " />
                   </div>
                   {/* 動態layout */}
-                  {HotArticleList?.List.map((item) => (
-                    <>
-                      <div className="flex items-center pb-4 border-b border-dashed border-[#D1D1D1]">
-                        <div className="w-[80%]">
-                          <div className="flex flex-col w-full gap-y-2 ">
-                            <Link href={`/blog/${item.BlogID}`}>
-                              <span
-                                className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px] cursor-pointer hover:text-[#77A849]"
-                                onClick={() => setContentId(item.BlogID)}
-                              >
-                                {item.Title}
-                              </span>
-                            </Link>
-                            <div className="flex flex-wrap items-center gap-x-2 ">
-                              {item.PublishDate.length > 0 && <DateIcon className="text-[24px] text-[#3E3E3E]" />}
-                              <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]">
-                                {item.PublishDate}
-                              </span>
-                              <span
-                                className={`ml-2 text-[0.75rem] xl:text-[1rem] 3xl:text-[1.125rem] rounded-full px-2`}
-                                style={{ backgroundColor: `${item.CategoryColor}` }}
-                              >
-                                {item.CategoryName}
-                              </span>
+                  <div className='flex flex-col w-full gap-y-2 pb-4 border-b border-dashed border-[#D1D1D1]'>
+                    {
+                      HotArticleList?.List.map((item) => (
+                        <>
+                          <Link href={`/blog/${item.BlogID}`}>
+                            <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]">{item.Title}</span>
+                            <div className='flex items-center gap-x-2 '>
+                              <CateIcon className="text-[24px] text-[#3E3E3E]" />
+                              <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]">{item.PublishDate}</span>
+                              <span className={`ml-2 text-[1rem] 3xl:text-[1.125rem] rounded-full px-2 bg-[#77A849]`}>{item.CategoryName}</span>
+                              <div className='ml-auto w-[60px] h-[40px] bg-cover' style={{ backgroundImage: `url('${item.Image}')` }}>
+                              </div>
                             </div>
-                          </div>
-                        </div>
-                        <div className="w-[20%]">
-                          <Image src={item.Image} width={60} height={40} alt={item.ImageAlt} className="object-cover" />
-                          {/* <div className='ml-auto w-[60px] h-[40px] bg-cover' style={{ backgroundImage: `url(${item.Image})` }}>
-                    </div> */}
-                        </div>
+                          </Link>
+                        </>
+                      ))
+                    }
+
+                  </div >
+                </div>
+                {/* 靜態layout */}
+                {/* <div className='flex flex-col w-full gap-y-2 pb-4 border-b border-dashed border-[#D1D1D1]'>
+                    <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]">個人工作室V.S住家</span>
+                    <div className='flex items-center gap-x-2 '>
+                      <CateIcon className="text-[24px] text-[#3E3E3E]" />
+                      <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]">2020.08.21</span>
+                      <span className={`ml-2 text-[1rem] 3xl:text-[1.125rem] rounded-full px-2 bg-[#77A849]`}>室內設計</span>
+                      <div className='ml-auto w-[60px] h-[40px] bg-cover' style={{ backgroundImage: `url('/images/home/hero/1-1.png')` }}>
                       </div>
-                    </>
-                  ))}
-                  {/* 靜態layout */}
-                  {/* <div className='flex flex-col w-full gap-y-2 pb-4 border-b border-dashed border-[#D1D1D1]'>
-                  <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]">個人工作室V.S住家</span>
-                  <div className='flex items-center gap-x-2 '>
-                    <CateIcon className="text-[24px] text-[#3E3E3E]"/>
-                    <span className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px]">2020.08.21</span>
-                    <span className={`ml-2 text-[1rem] 3xl:text-[1.125rem] rounded-full px-2 bg-[#77A849]`}>室內設計</span>
-                    <div className='ml-auto w-[60px] h-[40px] bg-cover' style={{ backgroundImage: `url('/images/home/hero/1-1.png')` }}>
                     </div>
                   </div>
                 </div> */}
-                </div>
 
                 {/* 熱門標籤 */}
                 <div className="flex flex-col gap-y-5">
@@ -368,10 +365,10 @@ export default function BlogForum() {
                     <div className="h-[1px] bg-primary w-full mt-2" />
                   </div>
                   {/* first */}
-                  <div className="flex flex-wrap gap-x-4 gap-y-4 ">
+                  <div className="flex flex-wrap gap-x-4 gap-y-4 " >
                     {HashtagList?.List.map((item) => (
                       <>
-                        <div className="group" onClick={() => setHashtag(`${item}`)}>
+                        <div className="group" onClick={() => setHashtag(item)} >
                           <div className="flex w-fit px-[14px] py-[15px] items-center gap-x-2  border-[1px] border-[#D1D1D1]  group-hover:border-[#77A849]">
                             <span className="text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350] group-hover:text-[#77A849]">{`# ${item}`}</span>
                           </div>
@@ -380,16 +377,16 @@ export default function BlogForum() {
                     ))}
                   </div>
                   {/* <div className='flex w-full'>
-                  <div className='flex w-fit px-[14px] py-[15px] items-center gap-x-2  border-[1px] border-[#D1D1D1]'>
-                    <span className='text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]'># 展示空間</span>
-                </div>
-                </div>   */}
+                        <div className='flex w-fit px-[14px] py-[15px] items-center gap-x-2  border-[1px] border-[#D1D1D1]'>
+                            <span className='text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350]'># 展示空間</span>
+                        </div>
+                    </div> */}
                 </div>
               </div>
-            </div>
+            </aside>
           </div>
         </div>
-      </div>
+      </div >
       {/* project detail*/}
       {/* mobile layout */}
       <div className="3md:hidden flex flex-col w-full min-h-screen">
@@ -452,19 +449,15 @@ export default function BlogForum() {
               </span>
               <div className="h-[1px] bg-primary w-full mt-1 " />
             </div>
-            <form className="relative" onSubmit={handleSearchClick}>
-              <input
+            <div className="flex items-center justify-center relative">
+              <SearchIcon className="text-[16px] text-[#3E3E3E] absolute top-3 left-5 " />
+              <Input
                 type="search"
-                id="searchInput"
-                value={searchTerm}
-                onChange={handleChange}
                 placeholder="請輸入關鍵字...."
-                className="w-full p-4 border-[1px] border-[#D1D1D1] text-primary"
+                className="w-full pl-10 mx-2 text-primary focus:outline-none"
+                onChange={(e) => setSearch(e.target.value)}
               />
-              <button className="absolute right-1 top-1/2 -translate-y-1/2 p-4" onClick={handleSearchClick}>
-                <SearchIcon className="text-[19px] bg-white text-[#3E3E3E]" />
-              </button>
-            </form>
+            </div>
           </div>
           {/* cate content */}
           <div className="flex flex-col gap-y-5">
@@ -655,6 +648,6 @@ export default function BlogForum() {
           </div>
         </div>
       </div>
-    </section>
+    </section >
   );
 }

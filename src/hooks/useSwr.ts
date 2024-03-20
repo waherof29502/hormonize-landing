@@ -38,7 +38,39 @@ export function useListArticle(Page: string, Cate: number, Hashtag: string, Sear
     }
   );
 }
+// export function useSingleParkingSpaceStatus(id?: IParkingSpaceStatus['id'] | string) {
+//   return useSWR<IParkingSpaceStatus, Error, string | null>(id ? `/api/parking-space/${id}` : null, async (url) => {
+//     const res = await client.get(url);
+//     return res.data.data;
+//   });
+// }
 
+export function useSingleArticle(id?: string) {
+  return useSWR<any, Error, string | null>(id ? `/blog/BlogData?ID=${id}` : null, async (url) => {
+    const res = await client.get(url);
+    return res.data;
+  });
+}
+
+export function usePrevArticle(id?: string) {
+  return useSWR<any, Error, string | null>(id ? `/blog/BlogPrev?ID=${id}` : null, async (url) => {
+    const res = await client.get(url);
+    return res.data;
+  });
+}
+export function useNextArticle(id?: string) {
+  return useSWR<any, Error, string | null>(id ? `/blog/BlogNext?ID=${id}` : null, async (url) => {
+    const res = await client.get(url);
+    return res.data;
+  });
+}
+
+export function useRelatedArticle(tag?: string) {
+  return useSWR<any, Error, string | null>(tag ? `/blog/BlogRelated?Hashtag=${tag}` : null, async (url) => {
+    const res = await client.get(url);
+    return res.data;
+  });
+}
 // https://cddev.creer-design.com/harmonize/api
 // GET blog/BlogCategory
 

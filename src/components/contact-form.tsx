@@ -8,6 +8,7 @@ import Captcha from '@/public/images/captcha.png';
 import PicAuthCode from '@/src/components/pic-auth-code';
 import Image from 'next/image';
 import { useContactFormSubmit } from '@/src/hooks/useSwr';
+import { CustomSelect } from './ui/custom-selector';
 
 interface FormValues {
   name: string;
@@ -104,9 +105,8 @@ export default function ContactForm() {
                 onBlur={formik.handleBlur}
               />
               <span
-                className={` font-sans text-[1rem] tracking-wide ${
-                  formik.touched.name && formik.errors.name ? 'text-red-400' : ''
-                } `}
+                className={` font-sans text-[1rem] tracking-wide ${formik.touched.name && formik.errors.name ? 'text-red-400' : ''
+                  } `}
               >
                 {' '}
                 {formik.touched.name && formik.errors.name ? formik.errors.name : ''}
@@ -126,9 +126,8 @@ export default function ContactForm() {
                 onBlur={formik.handleBlur}
               />
               <span
-                className={`font-sans text-[1rem] tracking-wide ${
-                  formik.touched.phone && formik.errors.phone ? 'text-red-400' : ''
-                } `}
+                className={`font-sans text-[1rem] tracking-wide ${formik.touched.phone && formik.errors.phone ? 'text-red-400' : ''
+                  } `}
               >
                 {' '}
                 {formik.touched.phone && formik.errors.phone ? formik.errors.phone : ''}
@@ -150,9 +149,8 @@ export default function ContactForm() {
                 onBlur={formik.handleBlur}
               />
               <span
-                className={` font-sans text-[1rem] tracking-wide ${
-                  formik.touched.line && formik.errors.line ? 'text-red-400' : ''
-                } `}
+                className={` font-sans text-[1rem] tracking-wide ${formik.touched.line && formik.errors.line ? 'text-red-400' : ''
+                  } `}
               >
                 {' '}
                 {formik.touched.line && formik.errors.line ? formik.errors.line : ''}
@@ -172,9 +170,8 @@ export default function ContactForm() {
                 onBlur={formik.handleBlur}
               />
               <span
-                className={` font-sans text-[1rem] tracking-wide ${
-                  formik.touched.email && formik.errors.email ? 'text-red-400' : ''
-                } `}
+                className={` font-sans text-[1rem] tracking-wide ${formik.touched.email && formik.errors.email ? 'text-red-400' : ''
+                  } `}
               >
                 {' '}
                 {formik.touched.email && formik.errors.email ? formik.errors.email : ''}
@@ -187,6 +184,10 @@ export default function ContactForm() {
             <label htmlFor="picked" className="block pb-2">
               <span className="text-[1.25rem] tracking-[0.72px] font-medium font-sans">諮詢項目</span>
             </label>
+            <CustomSelect id="" name="" defaultValue="">
+              <option value="設計委託">設計委託</option>
+              <option value="統包服務">統包服務</option>
+            </CustomSelect>
             <div role="group" aria-labelledby="my-radio-group" className="flex gap-x-10 xl:gap-x-20">
               <label className="custom-radio">
                 <input
@@ -255,9 +256,8 @@ export default function ContactForm() {
               </label>
             </div>
             <span
-              className={` font-sans text-[1rem] tracking-wide ${
-                formik.touched.picked && formik.errors.picked ? 'text-red-400' : ''
-              } `}
+              className={` font-sans text-[1rem] tracking-wide ${formik.touched.picked && formik.errors.picked ? 'text-red-400' : ''
+                } `}
             >
               {' '}
               {formik.touched.picked && formik.errors.picked ? formik.errors.picked : ''}
@@ -277,9 +277,8 @@ export default function ContactForm() {
                 onBlur={formik.handleBlur}
               />
               <span
-                className={` font-sans text-[1rem] tracking-wide ${
-                  formik.touched.required && formik.errors.required ? 'text-red-400' : ''
-                } `}
+                className={` font-sans text-[1rem] tracking-wide ${formik.touched.required && formik.errors.required ? 'text-red-400' : ''
+                  } `}
               >
                 {' '}
                 {formik.touched.required && formik.errors.required ? formik.errors.required : ''}
@@ -304,9 +303,8 @@ export default function ContactForm() {
                 </div>
               </div>
               <span
-                className={`font-sans text-[1rem] tracking-wide ${
-                  formik.touched.captcha && formik.errors.captcha ? 'text-red-400' : ''
-                } `}
+                className={`font-sans text-[1rem] tracking-wide ${formik.touched.captcha && formik.errors.captcha ? 'text-red-400' : ''
+                  } `}
               >
                 {' '}
                 {formik.touched.captcha && formik.errors.captcha ? formik.errors.captcha : ''}
