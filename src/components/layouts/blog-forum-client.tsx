@@ -141,7 +141,7 @@ export default function BlogForumClient() {
                         </p>
                         <CustomButton
                           containerStyles="wide:w-1/5 font-brandonMed mt-2 ml-auto border-[1px] border-primary px-5 py-2 text-[1.5rem] text-primary hover:text-white hover:bg-primary"
-                          path={`/blog/${item.BlogID}`}
+                          path={`/blog-forum/${item.BlogID}`}
                         >
                           learn more
                         </CustomButton>
@@ -285,7 +285,7 @@ export default function BlogForumClient() {
                       <div className="flex items-center pb-4 border-b border-dashed border-[#D1D1D1]">
                         <div className="w-[80%]">
                           <div className="flex flex-col w-full gap-y-2">
-                            <Link href={`/blog/${item.BlogID}`}>
+                            <Link href={`/blog-forum/${item.BlogID}`}>
                               <span
                                 className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px] cursor-pointer hover:text-[#77A849]"
                               >

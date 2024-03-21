@@ -54,7 +54,6 @@ const BlogDetailClient = ({ slug }: { slug: string }) => {
     const fallbackImageSrc = fallbackImage.src;
     const { data: RelatedArticle } = useRelatedArticle("室內設計")
 
-    console.log('related', RelatedArticle?.List[0].CategoryColor)
     return (
         <section className="relative overflow-hidden mt-[10rem]">
             {/* project detail*/}
@@ -74,7 +73,7 @@ const BlogDetailClient = ({ slug }: { slug: string }) => {
                                             <div className="flex flex-wrap items-center gap-x-4">
                                                 <div className="flex items-center gap-x-1">
                                                     {SingleArticle?.CategoryName !== null && <TagIcon className='text-[#929292] text-[1.625rem]' />}
-                                                    <a href="/">
+                                                    <Link href="/">
                                                         <p
                                                             className="text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350] hover:text-[#77A849]"
                                                         >
@@ -83,22 +82,22 @@ const BlogDetailClient = ({ slug }: { slug: string }) => {
                                                                 <span key={index}> {index > 0 && ", "} {category.name}</span>
                                                             ))} */}
                                                         </p>
-                                                    </a>
+                                                    </Link>
                                                 </div>
                                                 <div className="flex items-center gap-x-1">
                                                     <DateIcon className='text-[#929292] text-[1.625rem]' />
 
-                                                    <a href="/">
+                                                    <Link href="/">
                                                         <p
                                                             className="text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350] hover:text-[#77A849]"
                                                         >
                                                             {SingleArticle?.Date}
                                                         </p>
-                                                    </a>
+                                                    </Link>
                                                 </div>
                                                 <div className="flex items-center gap-x-1">
                                                     {SingleArticle?.HashtagList.length !== 0 && <CateIcon className='text-[#929292] text-[1.625rem]' />}
-                                                    <a href="/">
+                                                    <Link href="/">
                                                         <p
                                                             className="text-[1rem] text-[#3E3E3E] tracking-[0.48px] font-sans font-[350] hover:text-[#77A849]"
                                                         >
@@ -106,11 +105,11 @@ const BlogDetailClient = ({ slug }: { slug: string }) => {
                                                                 <span key={index}> {index > 0 && ", "} {tag.name}</span>
                                                             ))}
                                                         </p>
-                                                    </a>
+                                                    </Link>
                                                 </div>
                                             </div>
                                             <div className="w-full h-[50vh] mt-10 mb-5">
-                                                <Image src={imageSrc} onError={() => setImageSrc(fallbackImage)} width={1010.93} height={540} alt='' className='w-full h-full object-cover' />
+                                                <Image src={imageSrc} onError={() => setImageSrc(fallbackImageSrc)} width={1010.93} height={540} alt='' className='w-full h-full object-cover' />
                                             </div>
                                             <p className="mt-2 text-[#3E3E3E] text-[1.25rem] tracking-[1px] leading-[29px] font-sans font-[350] prose prose-[#77A849] prose-xl prose-li:marker:text-[#77A849]">
                                                 {/* <PortableText value={SingleArticle?.Content} /> */}
@@ -120,7 +119,7 @@ const BlogDetailClient = ({ slug }: { slug: string }) => {
                                             <div className="flex flex-col gap-y-20 mt-16">
                                                 <div className="h-[1px] bg-[#EEEEEE] w-full"></div>
                                                 <div className="flex gap-x-2 justify-between">
-                                                    <Link href={`/blog/${PrevArticle?.BlogID}`}>
+                                                    <Link href={`/blog-forum/${PrevArticle?.BlogID}`}>
                                                         <div className="flex items-center gap-x-2 group">
                                                             <p
                                                                 className="text-[#3E3E3E] text-[1rem] tracking-[1px] leading-[29px] font-sans font-[350] group-hover:text-[#77A849]"
@@ -157,7 +156,7 @@ const BlogDetailClient = ({ slug }: { slug: string }) => {
                                                             <div className="flex items-center pb-4">
                                                                 <div className="w-[80%]">
                                                                     <div className="flex flex-col w-full gap-y-2">
-                                                                        <Link href={`/blog/${item.BlogID}`}>
+                                                                        <Link href={`/blog-forum/${item.BlogID}`}>
                                                                             <span
                                                                                 className="text-[1.125rem] text-[#3E3E3E] font-sans font-[350] leading-[37px] cursor-pointer hover:text-[#77A849]"
                                                                             >{item.Title}</span>

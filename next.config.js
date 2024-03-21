@@ -1,12 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // output: 'export',
-  images: { 
-    unoptimized: true, 
-    remotePatterns:[{
-    hostname:'cdn.sanity.io'
-    }]
-   },
+  output: 'export',
+  images: {
+    unoptimized: true,
+    remotePatterns: [
+      {
+        hostname: 'cdn.sanity.io'
+      }
+    ]
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,

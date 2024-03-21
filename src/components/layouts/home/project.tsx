@@ -80,7 +80,7 @@ export default function Project() {
               {LatestArticle?.List.map((item, index) => (
                 <>
                   <SwiperSlide key={index}>
-                    <StoryCard imgSrc={item.Image} title={item.Title} link={`/blog/${item.BlogID}`} />
+                    <StoryCard imgSrc={item.Image} title={item.Title} link={`/blog-forum/${item.BlogID}`} />
                   </SwiperSlide>
                 </>
               ))}
@@ -92,7 +92,7 @@ export default function Project() {
               {LatestArticle?.List.map((item, index) => (
                 <>
                   <SwiperSlide key={index}>
-                    <StoryCard imgSrc={item.Image} title={item.Title} link={`/blog/${item.BlogID}`} />
+                    <StoryCard imgSrc={item.Image} title={item.Title} link={`/blog-forum/${item.BlogID}`} />
                   </SwiperSlide>
                 </>
               ))}
